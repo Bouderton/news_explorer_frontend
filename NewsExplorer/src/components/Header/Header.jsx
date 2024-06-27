@@ -1,5 +1,6 @@
 import "./Header.css";
 import header_background from "../../images/header_background.png";
+import SearchForm from "../SearchForm/SearchForm";
 
 const Header = () => {
   return (
@@ -16,6 +17,7 @@ const Header = () => {
         </div>
       </div>
       <img src={header_background} className="header__background-image" />
+      <SearchForm />
     </header>
   );
 };

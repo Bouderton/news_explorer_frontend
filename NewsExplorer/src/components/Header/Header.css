@@ -1,6 +1,7 @@
 .header {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   margin: 0 auto;
   text-align: center;
 }
@@ -46,6 +47,7 @@
   width: 49px;
   font-size: 18px;
   padding: 0;
+  cursor: pointer;
 }
 
 .header__bar-button-register {
@@ -57,4 +59,5 @@
   color: white;
   font-size: 18px;
   padding: 12px;
+  cursor: pointer;
 }
