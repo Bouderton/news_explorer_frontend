@@ -36,8 +36,8 @@
   color: white;
   width: 200px;
   height: 24px;
-  font-weight: 700;
   font-size: 20px;
+  font-family: "Roboto-Slab-700";
 }
 
 .header__bar-button-home {
@@ -48,6 +48,7 @@
   font-size: 18px;
   padding: 0;
   cursor: pointer;
+  font-family: "Roboto-400";
 }
 
 .header__bar-button-register {
@@ -60,4 +61,5 @@
   font-size: 18px;
   padding: 12px;
   cursor: pointer;
+  font-family: "Roboto-500";
 }
