@@ -14,7 +14,7 @@
   font-size: 65px;
   font-weight: 400;
   width: 608px;
-  line-height: 64px;
+  line-height: 70px;
   margin: 0;
   font-family: "Roboto-Slab-400";
 }
@@ -36,7 +36,7 @@
 .search__form {
   position: absolute;
   font-family: "Roboto-400";
-  width: 608px;
+  /* width: 608px; */
   margin: 0;
   display: flex;
   justify-content: center;

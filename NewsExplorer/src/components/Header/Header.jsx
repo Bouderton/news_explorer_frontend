@@ -16,7 +16,7 @@ const Header = () => {
           </button>
         </div>
       </div>
-      <img src={header_background} className="header__background-image" />
+      {/* <img src={header_background} className="header__background-image" /> */}
       <SearchForm />
     </header>
   );

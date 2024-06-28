@@ -9,9 +9,11 @@ import Footer from "../Footer/Footer";
 function App() {
   return (
     <>
-      <Header />
-      <About />
-      <Footer />
+      <div className="page">
+        <Header />
+        <About />
+        <Footer />
+      </div>
     </>
   );
 }
