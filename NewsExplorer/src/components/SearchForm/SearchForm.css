@@ -55,6 +55,7 @@
   padding: 21px;
   border: none;
   border-radius: 50px;
+  outline: none;
 }
 
 .search__form-button {

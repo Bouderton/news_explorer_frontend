@@ -1,0 +1,26 @@
+.footer {
+  margin: 500px auto;
+  color: black;
+}
+
+.footer__content {
+  padding: 32px 104px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__content-social {
+  font-family: "Roboto-400";
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.footer__content-copyright {
+  font-family: "Roboto-400";
+  font-size: 16px;
+  line-height: 22px;
+}
