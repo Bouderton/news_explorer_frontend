@@ -17,4 +17,8 @@ function App() {
   );
 }
 
+// NOTES
+// MAKE THE DESIGN ADAPTIVE
+// PRAY
+
 export default App;
