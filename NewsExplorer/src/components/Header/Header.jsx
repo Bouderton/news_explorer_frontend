@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header__bar">
-        <div className="header__bar-title">News Explorer</div>
+        <h2 className="header__bar-title">News Explorer</h2>
         <div className="header__bar-buttons">
           <button type="text" className="header__bar-button-home">
             Home
@@ -16,8 +16,10 @@ const Header = () => {
           </button>
         </div>
       </div>
-      {/* <img src={header_background} className="header__background-image" /> */}
-      <SearchForm />
+      <img src={header_background} className="header__background-image" />
+      <div>
+        <SearchForm />
+      </div>
     </header>
   );
 };

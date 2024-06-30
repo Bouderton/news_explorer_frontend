@@ -3,16 +3,14 @@
   justify-content: center;
   flex-direction: column;
   margin: 0 auto;
-  text-align: center;
-  background-image: url("../../images/header_background.png");
-  background-size: cover;
+  max-width: 1440px;
 }
 
 .header__bar {
   display: flex;
   flex-direction: row;
-  width: 100vw;
-  padding: 25px 75px;
+  max-width: 1440px;
+  padding: 16px 52px 13px;
   align-items: center;
   justify-content: space-between;
   border-bottom: 0.5px solid;
@@ -25,19 +23,19 @@
   gap: 50px;
 }
 
-/* .header__background-image {
+.header__background-image {
   position: absolute;
   top: 0;
-  left: 0;
   z-index: -1;
-  width: 100%;
-} */
+  max-width: 1440px;
+}
 
 .header__bar-title {
   color: white;
-  width: 200px;
+  /* width: 200px; */
   font-size: 20px;
   font-family: "Roboto-Slab-700";
+  margin: 0;
 }
 
 .header__bar-button-home {
@@ -59,7 +57,7 @@
   height: 48px;
   color: white;
   font-size: 18px;
-  padding: 12px;
+  padding: 0;
   cursor: pointer;
   font-family: "Roboto-500";
 }
