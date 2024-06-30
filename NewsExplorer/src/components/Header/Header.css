@@ -1,9 +1,8 @@
 .header {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
   margin: 0 auto;
   max-width: 1440px;
+  position: relative;
+  min-height: 576px;
 }
 
 .header__bar {
@@ -27,7 +26,9 @@
   position: absolute;
   top: 0;
   z-index: -1;
-  max-width: 1440px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .header__bar-title {
