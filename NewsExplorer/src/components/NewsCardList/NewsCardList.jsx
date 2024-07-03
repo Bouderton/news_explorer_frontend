@@ -16,6 +16,11 @@ const NewsCardList = () => {
           <NewsCard />
         </div>
       </div>
+      <div className="card__button-container">
+        <button type="text" className="card__button">
+          Show More
+        </button>
+      </div>
     </div>
   );
 };
