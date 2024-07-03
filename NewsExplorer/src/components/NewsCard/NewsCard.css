@@ -1,7 +1,28 @@
+.card__results {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  border: 1px solid black;
+  /* max-width: 400px; */
+}
+
 .card__container {
   max-width: 400px;
 }
 
 .card__image {
   max-width: 100%;
+}
+
+.card__results-text {
+  max-width: 400px;
+  font-size: 40px;
+  font-family: "Roboto-Slab-400";
+  color: #1a1b22;
 }

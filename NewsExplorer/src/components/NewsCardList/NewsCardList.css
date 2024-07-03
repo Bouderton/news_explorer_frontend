@@ -1,4 +1,15 @@
-.card__list-container {
+.card__grid-container {
   padding: 104px auto 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.card__grid {
   display: grid;
+  grid-gap: 16px;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  grid-template-rows: repeat(auto-fit, 400px);
 }
