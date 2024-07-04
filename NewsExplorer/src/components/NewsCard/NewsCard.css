@@ -1,15 +1,10 @@
-.card__results {
-  max-width: 1440px;
-  margin: 0 auto;
-}
-
 .card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: left;
-  border: 1px solid black;
-  /* max-width: 400px; */
+  border-radius: 10px;
+  box-shadow: 3px 3px grey;
 }
 
 .card__container {
@@ -18,11 +13,42 @@
 
 .card__image {
   max-width: 100%;
+  border-radius: 10px 10px 0 0;
 }
 
-.card__results-text {
-  max-width: 400px;
-  font-size: 40px;
+.card__text-container {
+  padding: 20px 24px 24px;
+}
+
+.card__text {
+  text-align: left;
+  max-width: 352px;
+  overflow-wrap: break-word;
+  font-family: "Roboto-400";
+  font-size: 16px;
+  line-height: 22px;
+  margin: 16px auto 0;
+}
+
+.card__title {
   font-family: "Roboto-Slab-400";
-  color: #1a1b22;
+  font-size: 26px;
+  line-height: 30px;
+  margin: 12px auto 0;
+}
+
+.card__date {
+  font-size: 18px;
+  line-height: 24px;
+  color: #b6bcbf;
+  margin: 0;
+  max-width: 149px;
+}
+
+.card__author {
+  font-family: "Roboto-Slab-700";
+  font-size: 16px;
+  color: #b6bcbf;
+  line-height: 20px;
+  margin: 18px auto 0;
 }
