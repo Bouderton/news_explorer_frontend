@@ -7,14 +7,12 @@ const NewsCardList = () => {
     <div className="card__results">
       <h3 className="card__results-text">Search Results</h3>
       <div className="card__grid-container">
-        <div className="card__grid">
-          <NewsCard />
-          <NewsCard />
-          <NewsCard />
-          <NewsCard />
-          <NewsCard />
-          <NewsCard />
-        </div>
+        <NewsCard />
+        <NewsCard />
+        <NewsCard />
+        <NewsCard />
+        <NewsCard />
+        <NewsCard />
       </div>
       <div className="card__button-container">
         <button type="text" className="card__button">
