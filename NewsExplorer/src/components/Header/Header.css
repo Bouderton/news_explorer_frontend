@@ -5,7 +5,7 @@
   min-height: 576px;
 }
 
-.header__bar {
+.header__nav {
   display: flex;
   flex-direction: row;
   max-width: 1440px;
@@ -16,7 +16,7 @@
   border-color: rgba(255, 255, 255, 0.5);
 }
 
-.header__bar-buttons {
+.header__nav-buttons {
   display: flex;
   justify-content: space-between;
   gap: 50px;
@@ -31,7 +31,7 @@
   object-fit: cover;
 }
 
-.header__bar-title {
+.header__nav-title {
   color: white;
   /* width: 200px; */
   font-size: 20px;
@@ -39,7 +39,7 @@
   margin: 0;
 }
 
-.header__bar-button-home {
+.header__nav-button-home {
   background: none;
   border: none;
   color: white;
@@ -50,7 +50,7 @@
   font-family: "Roboto-400";
 }
 
-.header__bar-button-register {
+.header__nav-button-register {
   background: none;
   border: 1px solid;
   border-radius: 25px;

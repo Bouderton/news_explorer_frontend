@@ -10,17 +10,17 @@ const Header = () => {
         className="header__background-image"
         alt="Background Image"
       />
-      <div className="header__bar">
-        <h2 className="header__bar-title">News Explorer</h2>
-        <div className="header__bar-buttons">
-          <button type="text" className="header__bar-button-home">
+      <nav className="header__nav">
+        <h2 className="header__nav-title">News Explorer</h2>
+        <div className="header__nav-buttons">
+          <button type="text" className="header__nav-button-home">
             Home
           </button>
-          <button type="text" className="header__bar-button-register">
+          <button type="text" className="header__nav-button-register">
             Sign In
           </button>
         </div>
-      </div>
+      </nav>
       <SearchForm />
     </header>
   );

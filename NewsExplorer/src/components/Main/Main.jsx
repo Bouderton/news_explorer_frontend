@@ -4,10 +4,10 @@ import NewsCardList from "../NewsCardList/NewsCardList";
 
 const Main = () => {
   return (
-    <div className="main">
+    <main className="main">
       <NewsCardList />
       <About />
-    </div>
+    </main>
   );
 };
 
