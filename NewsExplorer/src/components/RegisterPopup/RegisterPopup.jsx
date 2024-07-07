@@ -3,7 +3,7 @@ import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
 const RegisterPopup = () => {
   return (
-    <popupWithForm title="Sign Up" buttonText="Sign Up">
+    <PopupWithForm title="Sign Up" buttonText="Sign Up">
       <label className="popup__form-label">
         Email
         <input
@@ -25,7 +25,7 @@ const RegisterPopup = () => {
           placeholder="Enter Password"
         ></input>
       </label>
-    </popupWithForm>
+    </PopupWithForm>
   );
 };
 

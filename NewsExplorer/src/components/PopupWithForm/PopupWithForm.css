@@ -1,5 +1,68 @@
 .popup {
   position: fixed;
   top: 0;
-  opacity: 0.5;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  transition: visibility 0s 0.6s, opacity 0.5s linear;
+  opacity: 0;
+}
+
+.popup_opened {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.6s;
+}
+
+.popup__content {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  max-width: 380px;
+  width: 100%;
+  border-radius: 20px;
+  padding: 28px 28px 36px;
+  font-size: 16px;
+  line-height: 20px;
+}
+.popup__form-title {
+  font-size: 24px;
+  margin: 0 0 24px;
+  width: 95px;
+}
+
+.popup__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup__submit-button {
+  width: 124px;
+  padding: 8px 16px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.popup__submit-button:hover {
+  cursor: pointer;
+}
+
+.popup__form-input {
+  width: 358px;
+  margin: 8px auto 24px;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.popup__form-label {
+  width: 42px;
+  margin-bottom: 8px;
 }
