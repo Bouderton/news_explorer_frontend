@@ -1,32 +1,32 @@
 import { useState, useEffect } from "react";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
-const RegisterModal = () => {
+const RegisterPopup = () => {
   return (
-    <ModalWithForm title="Sign Up" buttonText="Sign Up">
-      <label className="modal__form-label">
+    <popupWithForm title="Sign Up" buttonText="Sign Up">
+      <label className="popup__form-label">
         Email
         <input
           required
           min="1"
           max="30"
-          className="modal__form-input"
+          className="popup__form-input"
           placeholder="Enter Email"
           type="email"
         ></input>
       </label>
-      <label className="modal__form-label">
+      <label className="popup__form-label">
         Password
         <input
           required
           min="2"
           max="30"
-          className="modal__form-input"
+          className="popup__form-input"
           placeholder="Enter Password"
         ></input>
       </label>
-    </ModalWithForm>
+    </popupWithForm>
   );
 };
 
-export default RegisterModal;
+export default RegisterPopup;
