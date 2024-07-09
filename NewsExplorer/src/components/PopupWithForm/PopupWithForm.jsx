@@ -1,10 +1,14 @@
 import "./PopupWithForm.css";
 
-const PopupWithForm = ({ title, buttonText, children, spanText }) => {
+const PopupWithForm = ({ title, buttonText, children, spanText, onClose }) => {
   return (
     <div className="popup popup_opened">
       <div className="popup__content">
-        <button className="popup__close-button" />
+        <button
+          type="button"
+          className="popup__close-button"
+          onClick={onClose}
+        />
         <h3 className="popup__form-title">{title}</h3>
         <form className="popup__form">
           {children}
