@@ -1,5 +1,4 @@
 .card__grid-container {
-  padding: 104px auto 0;
   margin: 64px auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, 400px);
@@ -13,11 +12,13 @@
   line-height: 46px;
   font-family: "Roboto-Slab-400";
   color: #1a1b22;
-  margin: 0 0 0 104px;
+  margin: 0 0 0 50px;
 }
 
 .card__section {
   margin: 80px auto 0;
+  padding: 0 104px;
+  max-width: 1440px;
 }
 
 .card__button-container {
@@ -36,3 +37,5 @@
   padding: 20px 98px;
   cursor: pointer;
 }
+
+/* MEDIA QUERY 1025PX */
