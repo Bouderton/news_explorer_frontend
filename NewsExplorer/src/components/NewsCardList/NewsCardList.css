@@ -7,7 +7,7 @@
   justify-content: center;
 }
 
-.card__results-text {
+.card__section-text {
   max-width: 400px;
   font-size: 40px;
   line-height: 46px;
@@ -16,7 +16,7 @@
   margin: 0 0 0 104px;
 }
 
-.card__results {
+.card__section {
   margin: 80px auto 0;
 }
 
