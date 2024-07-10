@@ -25,7 +25,10 @@ function App() {
       <div className="page">
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/saved-news" element={<SavedNews />} />
+          <Route
+            path="/saved-news"
+            element={<SavedNews isSavedPage={true} name={"Person"} />}
+          />
         </Routes>
         <Footer />
       </div>

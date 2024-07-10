@@ -5,6 +5,7 @@
   padding: 16px 52px 13px;
   align-items: center;
   justify-content: space-between;
+  color: white;
   border-bottom: 0.5px solid;
   border-color: rgba(255, 255, 255, 0.5);
 }
@@ -14,20 +15,41 @@
   justify-content: space-between;
   gap: 50px;
 }
+.nav__buttons-saved {
+  display: flex;
+  justify-content: space-between;
+  gap: 66px;
+}
 
 .nav__title {
   color: white;
-  /* width: 200px; */
   font-size: 20px;
   font-family: "Roboto-Slab-700";
   margin: 0;
 }
 
-.nav__button-home {
+.nav__title-saved {
+  color: #1a1b22;
+  font-size: 20px;
+  font-family: "Roboto-Slab-700";
+  margin: 0;
+}
+
+.nav__button {
+  color: white;
   background: none;
   border: none;
-  color: white;
   width: 49px;
+  font-size: 18px;
+  padding: 0;
+  cursor: pointer;
+  font-family: "Roboto-400";
+}
+
+.nav__button-saved {
+  color: #1a1b22;
+  background: none;
+  border: none;
   font-size: 18px;
   padding: 0;
   cursor: pointer;
@@ -45,4 +67,24 @@
   padding: 0;
   cursor: pointer;
   font-family: "Roboto-500";
+}
+
+.nav__button-logout {
+  background: none;
+  border: 1px solid;
+  border-radius: 25px;
+  color: #1a1b22;
+  font-size: 18px;
+  padding: 12px 19px;
+  cursor: pointer;
+  font-family: "Roboto-500";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav__button-logout-icon {
+  width: 18px;
+  height: 16px;
 }

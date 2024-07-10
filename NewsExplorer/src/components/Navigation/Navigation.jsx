@@ -1,17 +1,38 @@
 import "./Navigation.css";
+import logout_icon from "../../images/logout_icon.svg";
 
-const Navigation = () => {
+const Navigation = ({ isSavedPage, name }) => {
   return (
     <nav className="nav">
-      <h2 className="nav__title">News Explorer</h2>
-      <div className="nav__buttons">
-        <button type="text" className="nav__button-home">
-          Home
-        </button>
-        <button type="text" className="nav__button-register">
-          Sign In
-        </button>
-      </div>
+      {isSavedPage ? (
+        <>
+          <h2 className="nav__title-saved">NewsExplorer</h2>
+          <div className="nav__buttons-saved">
+            <button type="text" className="nav__button-saved">
+              Home
+            </button>
+            <button type="text" className="nav__button-saved">
+              Saved Articles
+            </button>
+            <button type="text" className="nav__button-logout">
+              {name}
+              <img src={logout_icon} className="nav__button-logout-icon" />
+            </button>
+          </div>
+        </>
+      ) : (
+        <>
+          <h2 className="nav__title">NewsExplorer</h2>
+          <div className="nav__buttons">
+            <button type="text" className="nav__button">
+              Home
+            </button>
+            <button type="text" className="nav__button-register">
+              Sign Up
+            </button>
+          </div>
+        </>
+      )}
     </nav>
   );
 };

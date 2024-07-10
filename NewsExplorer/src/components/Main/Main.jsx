@@ -6,7 +6,7 @@ const Main = () => {
   return (
     <main className="main">
       <Header />
-      <NewsCardList />
+      {/* <NewsCardList /> */}
       <About />
     </main>
   );
