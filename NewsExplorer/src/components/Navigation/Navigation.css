@@ -1,0 +1,48 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  max-width: 1440px;
+  padding: 16px 52px 13px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 0.5px solid;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav__buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.nav__title {
+  color: white;
+  /* width: 200px; */
+  font-size: 20px;
+  font-family: "Roboto-Slab-700";
+  margin: 0;
+}
+
+.nav__button-home {
+  background: none;
+  border: none;
+  color: white;
+  width: 49px;
+  font-size: 18px;
+  padding: 0;
+  cursor: pointer;
+  font-family: "Roboto-400";
+}
+
+.nav__button-register {
+  background: none;
+  border: 1px solid;
+  border-radius: 25px;
+  width: 176px;
+  height: 48px;
+  color: white;
+  font-size: 18px;
+  padding: 0;
+  cursor: pointer;
+  font-family: "Roboto-500";
+}
