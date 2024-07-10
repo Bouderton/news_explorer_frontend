@@ -27,7 +27,7 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route
             path="/saved-news"
-            element={<SavedNews isSavedPage={true} name={"Person"} />}
+            element={<SavedNews isSavedPage={true} name={"Person"} num={3} />}
           />
         </Routes>
         <Footer />
