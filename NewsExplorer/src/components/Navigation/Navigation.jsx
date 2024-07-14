@@ -1,7 +1,7 @@
 import "./Navigation.css";
 import logout_icon from "../../images/logout_icon.svg";
 
-const Navigation = ({ isSavedPage, name }) => {
+const Navigation = ({ isSavedPage, name, openPopup }) => {
   return (
     <nav className="nav">
       {isSavedPage ? (
@@ -27,7 +27,11 @@ const Navigation = ({ isSavedPage, name }) => {
             <button type="text" className="nav__button">
               Home
             </button>
-            <button type="text" className="nav__button-register">
+            <button
+              type="text"
+              className="nav__button-register"
+              onClick={openPopup}
+            >
               Sign Up
             </button>
           </div>

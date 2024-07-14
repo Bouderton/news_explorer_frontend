@@ -3,7 +3,7 @@ import header_background from "../../images/header_background.png";
 import SearchForm from "../SearchForm/SearchForm";
 import Navigation from "../Navigation/Navigation";
 
-const Header = () => {
+const Header = ({ openPopup }) => {
   return (
     <header className="header">
       <img
@@ -11,7 +11,7 @@ const Header = () => {
         className="header__background-image"
         alt="Background Image"
       />
-      <Navigation />
+      <Navigation openPopup={openPopup} />
       <SearchForm />
     </header>
   );

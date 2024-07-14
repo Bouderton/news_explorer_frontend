@@ -10,19 +10,16 @@ import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
 
 function App() {
-  // const [activeModal, setActiveModal] = useState("");
+  const [activePopup, setActivePopup] = useState("");
 
-  // function handleCreatePopup() {
-  //   setActiveModal("create");
-  // }
-
-  // function handleClosePopup() {
-  //   setActiveModal("");
-  // }
+  const handleRegisterPopup = () => {
+    setActivePopup("register");
+  };
 
   return (
     <>
       <div className="page">
+        <Header openPopup={handleRegisterPopup} />
         <Routes>
           <Route path="/" element={<Main />} />
           <Route
@@ -31,6 +28,7 @@ function App() {
           />
         </Routes>
         <Footer />
+        <RegisterPopup isOpen={activePopup === "register"} />
       </div>
     </>
   );

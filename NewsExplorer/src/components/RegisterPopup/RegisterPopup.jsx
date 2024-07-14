@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 
-const RegisterPopup = () => {
+const RegisterPopup = ({ isOpen, handleClosePopup, handleRegister }) => {
   return (
-    <PopupWithForm title="Sign Up" buttonText="Sign Up" spanText="Sign In">
+    <PopupWithForm
+      isOpen={isOpen}
+      title="Sign Up"
+      buttonText="Sign Up"
+      spanText="Sign In"
+    >
       <label className="popup__form-label">Email</label>
       <input
         required

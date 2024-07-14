@@ -1,8 +1,15 @@
 import "./PopupWithForm.css";
 
-const PopupWithForm = ({ title, buttonText, children, spanText, onClose }) => {
+const PopupWithForm = ({
+  title,
+  buttonText,
+  children,
+  spanText,
+  onClose,
+  isOpen,
+}) => {
   return (
-    <div className="popup popup_opened">
+    <div className={`popup ${isOpen ? "popup_opened" : ""}`}>
       <div className="popup__content">
         <button
           type="button"
