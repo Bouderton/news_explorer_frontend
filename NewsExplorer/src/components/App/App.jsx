@@ -16,6 +16,10 @@ function App() {
     setActivePopup("register");
   };
 
+  const handleClosePopup = () => {
+    setActivePopup("");
+  };
+
   return (
     <>
       <div className="page">
@@ -28,7 +32,10 @@ function App() {
           />
         </Routes>
         <Footer />
-        <RegisterPopup isOpen={activePopup === "register"} />
+        <RegisterPopup
+          isOpen={activePopup === "register"}
+          closePopup={handleClosePopup}
+        />
       </div>
     </>
   );

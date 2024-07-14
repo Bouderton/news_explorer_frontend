@@ -7,6 +7,7 @@ const PopupWithForm = ({
   spanText,
   onClose,
   isOpen,
+  closePopup,
 }) => {
   return (
     <div className={`popup ${isOpen ? "popup_opened" : ""}`}>
@@ -14,7 +15,7 @@ const PopupWithForm = ({
         <button
           type="button"
           className="popup__close-button"
-          onClick={onClose}
+          onClick={closePopup}
         />
         <h3 className="popup__form-title">{title}</h3>
         <form className="popup__form">
