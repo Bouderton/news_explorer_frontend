@@ -23,9 +23,8 @@ function App() {
   return (
     <>
       <div className="page">
-        <Header openPopup={handleRegisterPopup} />
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<Main openPopup={handleRegisterPopup} />} />
           <Route
             path="/saved-news"
             element={<SavedNews isSavedPage={true} name={"Person"} num={3} />}
