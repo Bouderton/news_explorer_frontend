@@ -2,12 +2,12 @@ import NewsCard from "../NewsCard/NewsCard";
 import "./NewsCardList.css";
 import { useState } from "react";
 
-const NewsCardList = ({ isSavedPage }) => {
+const NewsCardList = ({ loggedIn }) => {
   // need to pass news data to news cards
 
   return (
     <div className="card__section">
-      {isSavedPage ? (
+      {loggedIn ? (
         ""
       ) : (
         <>

@@ -1,15 +1,18 @@
 import "./Navigation.css";
+import { Link } from "react-router-dom";
 import logout_icon from "../../images/logout_icon.svg";
 
-const Navigation = ({ isSavedPage, name, openPopup }) => {
+const Navigation = ({ loggedIn, name, openPopup }) => {
   return (
     <nav className="nav">
-      {isSavedPage ? (
+      {loggedIn ? (
         <>
           <h2 className="nav__title-saved">NewsExplorer</h2>
           <div className="nav__buttons-saved">
             <button type="text" className="nav__button-saved">
-              Home
+              <Link style={{ textDecoration: "none", color: "#1a1b22" }} to="/">
+                Home
+              </Link>
             </button>
             <button type="text" className="nav__button-saved">
               Saved Articles

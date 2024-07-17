@@ -12,6 +12,7 @@ import Footer from "../Footer/Footer";
 
 function App() {
   const [activePopup, setActivePopup] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const handleRegisterPopup = () => {
     setActivePopup("register");
@@ -32,7 +33,7 @@ function App() {
           <Route path="/" element={<Main openPopup={handleLoginPopup} />} />
           <Route
             path="/saved-news"
-            element={<SavedNews isSavedPage={true} name={"Person"} num={3} />}
+            element={<SavedNews loggedIn={true} name={"Person"} num={3} />}
           />
         </Routes>
         <Footer />
