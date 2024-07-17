@@ -1,15 +1,14 @@
-import { useState, useEffect } from "react";
-import PopupWithForm from "../PopupForm/PopupForm";
+import PopupForm from "../PopupForm/PopupForm";
 
-const RegisterPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
+const LoginPopup = ({ isOpen, closePopup, handleRegisterPopup }) => {
   return (
-    <PopupWithForm
+    <PopupForm
       isOpen={isOpen}
       closePopup={closePopup}
-      title="Sign Up"
-      buttonText="Sign Up"
-      spanText="Sign In"
-      popupSwitch={handleLoginPopup}
+      title="Sign In"
+      buttonText="Sign In"
+      spanText="Sign Up"
+      popupSwitch={handleRegisterPopup}
     >
       <label className="popup__form-label">Email</label>
       <input
@@ -28,8 +27,8 @@ const RegisterPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
         className="popup__form-input"
         placeholder="Enter Password"
       ></input>
-    </PopupWithForm>
+    </PopupForm>
   );
 };
 
-export default RegisterPopup;
+export default LoginPopup;

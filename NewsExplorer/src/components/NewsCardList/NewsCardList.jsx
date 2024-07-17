@@ -1,11 +1,19 @@
 import NewsCard from "../NewsCard/NewsCard";
 import "./NewsCardList.css";
+import { useState } from "react";
 
-const NewsCardList = () => {
+const NewsCardList = ({ isSavedPage }) => {
   // need to pass news data to news cards
+
   return (
-    <div className="card__results">
-      <h3 className="card__results-text">Search Results</h3>
+    <div className="card__section">
+      {isSavedPage ? (
+        ""
+      ) : (
+        <>
+          <h3 className="card__section-text">Search Results</h3>
+        </>
+      )}
       <div className="card__grid-container">
         <NewsCard />
         <NewsCard />
