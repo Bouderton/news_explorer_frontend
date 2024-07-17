@@ -31,6 +31,7 @@
   font-size: 24px;
   margin: 0 0 22px;
   width: 95px;
+  font-family: "Roboto-900", serif;
 }
 
 .popup__form {
@@ -60,6 +61,7 @@
   border-radius: 25px;
   font-size: 16px;
   height: 61px;
+  font-family: "Roboto-500", sans-serif;
 }
 
 .popup__submit-button:hover {
@@ -73,19 +75,37 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   padding: 0 0 10px 0;
   outline: none;
+  font-family: "Inter-400", sans-serif;
+  font-size: 14px;
 }
 
 .popup__form-label {
   margin: 0 0 9px;
   color: #2f71e5;
+  font-family: "Inter-400", sans-serif;
+  font-size: 12px;
 }
 
 .popup__or-button {
   background: none;
   border: none;
   cursor: pointer;
+  font-size: 14px;
+  max-width: 224px;
+  padding: 0;
+  font-family: "Inter-400", sans-serif;
+  font-size: 14px;
+  color: #2f71e5;
+}
+
+.popup__or-text {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
   margin: 16px auto 0;
   font-size: 14px;
   max-width: 224px;
   padding: 0;
+  font-family: "Inter-400", sans-serif;
+  font-size: 14px;
 }

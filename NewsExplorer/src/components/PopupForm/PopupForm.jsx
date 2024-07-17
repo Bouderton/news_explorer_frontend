@@ -24,9 +24,12 @@ const PopupWithForm = ({
             {buttonText}
           </button>
         </form>
-        <button type="text" className="popup__or-button">
-          or {spanText}
-        </button>
+        <p className="popup__or-text">
+          or
+          <button type="text" className="popup__or-button">
+            {spanText}
+          </button>
+        </p>
       </div>
     </div>
   );
