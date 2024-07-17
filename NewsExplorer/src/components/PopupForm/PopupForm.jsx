@@ -5,9 +5,9 @@ const PopupWithForm = ({
   buttonText,
   children,
   spanText,
-  onClose,
   isOpen,
   closePopup,
+  popupSwitch,
 }) => {
   return (
     <div className={`popup ${isOpen ? "popup_opened" : ""}`}>
@@ -26,7 +26,11 @@ const PopupWithForm = ({
         </form>
         <p className="popup__or-text">
           or
-          <button type="text" className="popup__or-button">
+          <button
+            onClick={popupSwitch}
+            type="text"
+            className="popup__or-button"
+          >
             {spanText}
           </button>
         </p>

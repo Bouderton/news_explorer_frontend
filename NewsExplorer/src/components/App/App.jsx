@@ -6,6 +6,7 @@ import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import RegisterPopup from "../RegisterPopup/RegisterPopup";
+import LoginPopup from "../LoginPopup/LoginPopup";
 import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
 
@@ -20,11 +21,15 @@ function App() {
     setActivePopup("");
   };
 
+  const handleLoginPopup = () => {
+    setActivePopup("login");
+  };
+
   return (
     <>
       <div className="page">
         <Routes>
-          <Route path="/" element={<Main openPopup={handleRegisterPopup} />} />
+          <Route path="/" element={<Main openPopup={handleLoginPopup} />} />
           <Route
             path="/saved-news"
             element={<SavedNews isSavedPage={true} name={"Person"} num={3} />}
@@ -34,6 +39,12 @@ function App() {
         <RegisterPopup
           isOpen={activePopup === "register"}
           closePopup={handleClosePopup}
+          handleLoginPopup={handleLoginPopup}
+        />
+        <LoginPopup
+          isOpen={activePopup === "login"}
+          closePopup={handleClosePopup}
+          handleRegisterPopup={handleRegisterPopup}
         />
       </div>
     </>

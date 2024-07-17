@@ -32,7 +32,7 @@ const Navigation = ({ isSavedPage, name, openPopup }) => {
               className="nav__button-register"
               onClick={openPopup}
             >
-              Sign Up
+              Sign In
             </button>
           </div>
         </>
