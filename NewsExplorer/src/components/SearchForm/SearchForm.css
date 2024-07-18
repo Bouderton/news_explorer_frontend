@@ -29,7 +29,7 @@
 }
 
 .search__form-container {
-  margin: 42px auto 0;
+  margin: 88px auto 0;
   display: flex;
   justify-content: center;
 }
@@ -110,5 +110,9 @@
 
   .search__form-input {
     max-width: 448px;
+  }
+
+  .search__form-container {
+    margin: 42px auto 0;
   }
 }

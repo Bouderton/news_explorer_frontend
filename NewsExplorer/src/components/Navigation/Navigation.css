@@ -88,3 +88,14 @@
   width: 18px;
   height: 16px;
 }
+
+@media screen and (max-width: 815px) {
+  .nav__button-register {
+    width: 152px;
+    height: 40px;
+  }
+
+  .nav__button {
+    font-size: 16px;
+  }
+}

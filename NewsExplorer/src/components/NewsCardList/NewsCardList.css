@@ -52,6 +52,10 @@
     gap: 8px;
   }
 
+  .card__section {
+    margin: 40px auto;
+  }
+
   .card__section-text {
     font-size: 30px;
     max-width: 336px;
