@@ -30,11 +30,15 @@
   font-size: 18px;
   font-family: "Roboto-500";
   color: #1a1b22;
-  background: #e8e8e8;
+  background: white;
   border: none;
   border-radius: 50px;
   padding: 20px 98px;
+}
+
+.card__button:hover {
   cursor: pointer;
+  background: #e8e8e8;
 }
 
 /* MEDIA QUERY 1025PX */
