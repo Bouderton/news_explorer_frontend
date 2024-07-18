@@ -1,14 +1,12 @@
 import "./NewsCard.css";
 import doggy from "../../images/doggy.jpg";
-import bookmark from "../../images/bookmark.svg";
+// import bookmark from "../../images/bookmark.svg";
 
 const NewsCard = () => {
   // cards accept news data
   return (
-    <div className="card__container">
-      <button className="card__bookmark" type="button">
-        <img src={bookmark} className="card__bookmark-img" />
-      </button>
+    <div>
+      <button className="card__bookmark" type="button" />
       <div className="card">
         <img src={doggy} className="card__image" alt="News Card Image" />
         <div className="card__text-container">

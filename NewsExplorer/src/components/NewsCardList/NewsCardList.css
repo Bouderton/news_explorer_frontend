@@ -1,7 +1,10 @@
 .card__grid-container {
   margin: 64px auto;
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(auto-fit, 400px);
+  grid-template-rows: repeat(auto-fit, 576px); */
+  display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   justify-content: center;
 }
@@ -17,7 +20,7 @@
 
 .card__section {
   margin: 80px auto;
-  padding: 0 104px;
+  /* padding: 0 104px; */
 }
 
 .card__button-container {
@@ -41,4 +44,16 @@
   background: #e8e8e8;
 }
 
-/* MEDIA QUERY 1025PX */
+@media screen and (max-width: 815px) {
+  .card__grid-container {
+    margin: 32px auto;
+    grid-template-columns: repeat(auto-fit, 224px);
+    grid-template-rows: repeat(auto-fit, 420px);
+    gap: 8px;
+  }
+
+  .card__section-text {
+    font-size: 30px;
+    max-width: 336px;
+  }
+}
