@@ -60,4 +60,14 @@
     font-size: 30px;
     max-width: 336px;
   }
+
+  .card__button {
+    padding: 16px 75px;
+    width: 250px;
+    height: 56px;
+  }
+
+  .card__button-container {
+    margin: 48px auto 0;
+  }
 }

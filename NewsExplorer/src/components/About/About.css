@@ -2,8 +2,8 @@
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  padding: 100px 0 0;
-  min-height: 464px;
+  padding: 100px 104px 0;
+  /* min-height: 464px; */
   background: white;
 }
 
@@ -41,4 +41,30 @@
   width: 464px;
   height: 464px;
   border-radius: 250px;
+}
+
+@media screen and (max-width: 990px) {
+  .about {
+    padding: 40px 10px 0;
+  }
+
+  .about__content {
+    gap: 32px;
+  }
+
+  .about__image {
+    width: 232px;
+    height: 232px;
+  }
+
+  .about__text-container {
+    margin: 0;
+  }
+
+  .about__title {
+    font-size: 30px;
+  }
+  .about__text {
+    font-size: 18px;
+  }
 }

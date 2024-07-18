@@ -5,7 +5,7 @@
 }
 
 .footer__content {
-  padding: 112px 104px 32px;
+  padding: 75px 104px 32px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -37,11 +37,9 @@
   padding: 0;
 }
 
-.footer__content_list-item {
-  font-family: "Roboto-400";
-  font-size: 18px;
-  line-height: 24px;
+.footer__content-list-item {
   cursor: pointer;
+  height: 25px;
 }
 
 .footer__content_list-img {
@@ -51,5 +49,23 @@
 }
 
 .footer__content_list-text {
+  font-size: 18px;
+  font-family: "Roboto-400";
+  line-height: 25px;
   margin: 0;
+}
+
+@media screen and (max-width: 990px) {
+  .footer__content {
+    padding: 24px 40px 18px;
+  }
+
+  .footer__content-list-item {
+    height: 30px;
+  }
+
+  .footer__content_list-img {
+    width: 30px;
+    height: 30px;
+  }
 }
