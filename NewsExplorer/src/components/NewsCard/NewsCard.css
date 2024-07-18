@@ -18,14 +18,17 @@
 }
 
 .card__text-container {
-  padding: 20px 24px 24px;
+  padding: 16px;
   text-align: left;
 }
 
 .card__text {
   text-align: left;
+  max-height: 110px;
   max-width: 352px;
-  word-wrap: break-word;
+  white-space: break-spaces;
+  flex-wrap: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
   font-family: "Roboto-400";
   font-size: 16px;
@@ -86,6 +89,7 @@
 @media screen and (max-width: 815px) {
   .card {
     max-width: 224px;
+    max-height: 420px;
   }
 
   .card__image {
@@ -98,16 +102,19 @@
 
   .card__title {
     font-size: 22px;
-    line-height: 24px;
-    max-height: 72px;
+    max-height: 50px;
   }
 
   .card__text {
-    max-height: 88px;
-    overflow: hidden;
+    height: 88px;
+    width: 192px;
   }
 
   .card__bookmark {
     left: 165px;
+  }
+
+  .card__author {
+    margin: 12px auto 0;
   }
 }

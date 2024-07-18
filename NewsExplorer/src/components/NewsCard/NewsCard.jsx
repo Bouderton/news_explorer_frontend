@@ -13,9 +13,10 @@ const NewsCard = () => {
           <p className="card__date">January 1st 2000</p>
           <h3 className="card__title">Good Boy</h3>
           <p className="card__text">
-            whosagoodboywhosagoodboywhosagoodboywhosagoodboywhosagoodboy
-            whosagoodboywhosagoodboywhosagoodboy
-            whosagoodboywhosagoodboywhosagoodboywhosagoodboy
+            whosagoodboywhosagoodboywhosagoodboywhosagoodboywhosagoodboywhosagoodboywho
+            sagoodboywhosagoodboywhosagoodboywhosagoodboywhosagoodboywhosagoodboywhos
+            agoodboywhosagoodboywhosagoodboywwhosagoodboywhosagoodboywhosagoodboywhos
+            whosagoodboywhosagoodboywhosagoodboywhosagoodboywhosagoodboywhosagoodboywho
           </p>
           <p className="card__author">National Geographic</p>
         </div>

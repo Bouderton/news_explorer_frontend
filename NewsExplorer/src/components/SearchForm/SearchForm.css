@@ -29,7 +29,7 @@
 }
 
 .search__form-container {
-  margin: 88px auto 0;
+  margin: 42px auto 0;
   display: flex;
   justify-content: center;
 }
@@ -80,4 +80,35 @@
 
 .search__submit-button:active {
   background: #2a65cc;
+}
+
+@media screen and (max-width: 815px) {
+  .search__text-container {
+    margin: 32px auto 0;
+  }
+
+  .search__title {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: left;
+    max-width: 385px;
+  }
+
+  .search__subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    max-width: 452px;
+    margin: 16px auto 0;
+  }
+
+  .search__form {
+    max-width: 448px;
+  }
+
+  .search__form-input {
+    max-width: 448px;
+  }
 }
