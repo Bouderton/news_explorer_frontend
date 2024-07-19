@@ -2,11 +2,15 @@ import "./NewsCard.css";
 import doggy from "../../images/doggy.jpg";
 // import bookmark from "../../images/bookmark.svg";
 
-const NewsCard = () => {
+const NewsCard = ({ isSavedNews }) => {
   // cards accept news data
   return (
     <div>
-      <button className="card__bookmark" type="button" />
+      {isSavedNews ? (
+        <button className="card__trashcan" type="button" />
+      ) : (
+        <button className="card__bookmark" type="radio" />
+      )}
       <div className="card">
         <img src={doggy} className="card__image" alt="News Card Image" />
         <div className="card__text-container">

@@ -14,7 +14,7 @@ const SavedNews = ({ loggedIn, name, num }) => {
           <span className="saved__text-span"> word, word, and 2 others</span>
         </p>
       </div>
-      <NewsCardList loggedIn={true} />
+      <NewsCardList loggedIn={true} isSavedNews={true} />
     </section>
   );
 };
