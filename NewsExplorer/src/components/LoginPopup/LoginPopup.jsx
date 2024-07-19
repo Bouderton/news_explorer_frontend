@@ -1,6 +1,24 @@
 import PopupForm from "../PopupForm/PopupForm";
+import { useState, useEffect } from "react";
 
 const LoginPopup = ({ isOpen, closePopup, handleRegisterPopup }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      setEmail("");
+      setPassword("");
+    }
+  }, [isOpen]);
   return (
     <PopupForm
       isOpen={isOpen}
@@ -17,7 +35,10 @@ const LoginPopup = ({ isOpen, closePopup, handleRegisterPopup }) => {
         max="30"
         className="popup__form-input"
         placeholder="Enter Email"
-        type="email"
+        type="text"
+        name="email"
+        value={email}
+        onChange={handleEmailChange}
       ></input>
       <label className="popup__form-label">Password</label>
       <input
@@ -26,6 +47,10 @@ const LoginPopup = ({ isOpen, closePopup, handleRegisterPopup }) => {
         max="30"
         className="popup__form-input"
         placeholder="Enter Password"
+        type="text"
+        name="password"
+        value={password}
+        onChange={handlePasswordChange}
       ></input>
     </PopupForm>
   );
