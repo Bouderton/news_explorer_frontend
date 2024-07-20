@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import reactLogo from "../../assets/react.svg";
 import viteLogo from "/favicon.svg";
@@ -25,6 +25,22 @@ function App() {
   const handleLoginPopup = () => {
     setActivePopup("login");
   };
+
+  useEffect(() => {
+    if (!activePopup) return;
+
+    const handleEscClose = (e) => {
+      if (e.key === "Escape") {
+        handleClosePopup();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscClose);
+
+    return () => {
+      document.removeEventListener("keydown", handleEscClose);
+    };
+  }, [activePopup]);
 
   return (
     <>
