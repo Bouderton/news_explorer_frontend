@@ -2,8 +2,7 @@
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  padding: 100px 104px 0;
-  /* min-height: 464px; */
+  padding: 100px 40px 0;
   background: white;
 }
 
@@ -66,5 +65,27 @@
   }
   .about__text {
     font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about {
+    padding: 32px 16px 0;
+  }
+
+  .about__content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .about__image {
+    width: 272px;
+    height: 272px;
+  }
+
+  .about__text {
+    margin: 16px 0 0 0;
   }
 }

@@ -12,16 +12,16 @@ const Footer = () => {
         <div className="footer__content-list-container">
           <ul className="footer__content-list">
             <li className="footer__content_list-item">
-              <p className="footer__content_list-text">Home</p>
-            </li>
-            <li className="footer__content_list-item">
-              <p className="footer__content_list-text">TripleTen</p>
-            </li>
-            <li className="footer__content-list-item">
-              <img src={github} className="footer__content_list-img" />
+              <div className="footer__content_text-container">
+                <p className="footer__content_list-text">Home</p>
+                <p className="footer__content_list-text">TripleTen</p>
+              </div>
             </li>
             <li className="footer__content-list-item">
-              <img src={linkedin} className="footer__content_list-img" />
+              <div className="footer__content_buttons-container">
+                <img src={github} className="footer__content_list-img" />
+                <img src={linkedin} className="footer__content_list-img" />
+              </div>
             </li>
           </ul>
         </div>
