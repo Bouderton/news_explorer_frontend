@@ -7,10 +7,6 @@
   overflow: hidden;
 }
 
-/* .card__container {
-  overflow: hidden;
-} */
-
 .card__image {
   max-height: 272px;
   object-fit: cover;
@@ -114,10 +110,6 @@
     max-height: 150px;
   }
 
-  /* .card__container {
-    max-height: 420px;
-  } */
-
   .card__title {
     font-size: 22px;
     max-height: 50px;
@@ -134,5 +126,16 @@
 
   .card__author {
     margin: 12px auto 0;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .card {
+    max-width: 288px;
+    max-height: 440px;
+  }
+
+  .card__container {
+    margin: 0 auto;
   }
 }

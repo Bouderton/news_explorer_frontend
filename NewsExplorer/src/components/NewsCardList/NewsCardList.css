@@ -71,3 +71,13 @@
     margin: 48px auto 0;
   }
 }
+
+@media screen and (max-width: 550px) {
+  .card__grid-container {
+    display: flex;
+    margin: 56px auto;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

@@ -5,7 +5,7 @@ import doggy from "../../images/doggy.jpg";
 const NewsCard = ({ isSavedNews }) => {
   // cards accept news data
   return (
-    <div>
+    <div className="card__container">
       {isSavedNews ? (
         <button className="card__trashcan" type="button" />
       ) : (
