@@ -9,6 +9,7 @@
   color: white;
   margin: 80px auto 0;
   text-align: left;
+  padding: 0 10px;
 }
 
 .search__title {
@@ -35,7 +36,7 @@
 }
 
 .search__form {
-  position: absolute;
+  /* position: absolute; */
   font-family: "Roboto-400";
   margin: 0;
   display: flex;
@@ -114,5 +115,29 @@
 
   .search__form-container {
     margin: 42px auto 0;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .search__form-fieldset {
+    width: 100vw;
+  }
+
+  .search__form-container {
+    margin: 122px 0 0;
+  }
+
+  .search__title {
+    width: 100%;
+  }
+
+  .search__form-input {
+    width: 100%;
+  }
+
+  .search__submit-button {
+    width: 100%;
+    position: static;
+    margin: 16px 0 0;
   }
 }
