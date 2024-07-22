@@ -138,4 +138,8 @@
   .card__container {
     margin: 0 auto;
   }
+
+  .card__trashcan {
+    left: 160px;
+  }
 }
