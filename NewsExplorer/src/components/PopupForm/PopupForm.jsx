@@ -11,12 +11,12 @@ const PopupWithForm = ({
 }) => {
   return (
     <div className={`popup ${isOpen ? "popup_opened" : ""}`}>
-      <button
-        type="button"
-        className="popup__close-button"
-        onClick={closePopup}
-      />
       <div className="popup__content">
+        <button
+          type="button"
+          className="popup__close-button"
+          onClick={closePopup}
+        />
         <h3 className="popup__form-title">{title}</h3>
         <form className="popup__form">
           {children}
