@@ -38,6 +38,10 @@ const Navigation = ({ loggedIn, name, openPopup }) => {
               Sign In
             </button>
           </div>
+          <div className="nav__mobile">
+            <h2 className="nav__title">NewsExplorer</h2>
+            <button type="button" className="nav__mobile-button" />
+          </div>
         </>
       )}
     </nav>
