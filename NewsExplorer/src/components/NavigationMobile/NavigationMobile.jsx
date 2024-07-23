@@ -1,14 +1,35 @@
 import "./NavigationMobile.css";
+import { useState } from "react";
 
-const NavigationMobile = ({ openPopup, isOpen }) => {
+const NavigationMobile = ({ openPopup }) => {
+  const [dropdown, setDropdown] = useState(false);
+
+  function handleDropdown() {
+    setDropdown(true);
+  }
+
+  function closeDropdown() {
+    setDropdown(false);
+  }
+
   return (
     <nav className="nav__mobile">
       <h2 className="nav__mobile-title">NewsExplorer</h2>
-      <button type="button" className="nav__mobile-button" />
-      <div className={`nav__dropdown ${isOpen ? "nav__dropdown-opened" : ""}`}>
+      <button
+        onClick={handleDropdown}
+        type="button"
+        className="nav__mobile-button"
+      />
+      <div
+        className={`nav__dropdown ${dropdown ? "nav__dropdown-opened" : ""}`}
+      >
         <div className="nav__dropdown-top">
           <h2 className="nav__mobile-title">NewsExplorer</h2>
-          <button type="button" className="nav__dropdown-close-button" />
+          <button
+            type="button"
+            className="nav__dropdown-close-button"
+            onClick={closeDropdown}
+          />
         </div>
         <div className="nav__mobile-buttons">
           <button type="text" className="nav__home-button">

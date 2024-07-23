@@ -18,7 +18,7 @@
 .nav__buttons-saved {
   display: flex;
   justify-content: space-between;
-  gap: 66px;
+  gap: 50px;
 }
 
 .nav__title {
