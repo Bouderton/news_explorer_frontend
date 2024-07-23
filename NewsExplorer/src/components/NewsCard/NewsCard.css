@@ -127,6 +127,10 @@
   .card__author {
     margin: 12px auto 0;
   }
+
+  .card__trashcan {
+    left: 160px;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -139,7 +143,7 @@
     margin: 0 auto;
   }
 
-  .card__trashcan {
+  /* .card__trashcan {
     left: 160px;
-  }
+  } */
 }

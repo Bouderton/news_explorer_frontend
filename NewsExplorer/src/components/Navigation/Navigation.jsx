@@ -1,6 +1,7 @@
 import "./Navigation.css";
 import { Link } from "react-router-dom";
 import logout_icon from "../../images/logout_icon.svg";
+import NavigationMobile from "../NavigationMobile/NavigationMobile";
 
 const Navigation = ({ loggedIn, name, openPopup }) => {
   return (
@@ -38,9 +39,8 @@ const Navigation = ({ loggedIn, name, openPopup }) => {
               Sign In
             </button>
           </div>
-          <div className="nav__mobile">
-            <h2 className="nav__title">NewsExplorer</h2>
-            <button type="button" className="nav__mobile-button" />
+          <div className="nav__mobile-toggle">
+            <NavigationMobile />
           </div>
         </>
       )}
