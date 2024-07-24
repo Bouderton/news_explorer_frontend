@@ -16,7 +16,10 @@ const SavedNews = ({ loggedIn, name, num, isSavedNews, openPopup }) => {
         <h2 className="saved__text-title">{`${name}, you have ${num} saved articles`}</h2>
         <p className="saved__text-keywords">
           By keywords:
-          <span className="saved__text-span"> word, word, and 2 others</span>
+          <span className="saved__text-span">
+            {" "}
+            word, word, words and 2 others
+          </span>
         </p>
       </div>
       <NewsCardList loggedIn={true} isSavedNews={true} />

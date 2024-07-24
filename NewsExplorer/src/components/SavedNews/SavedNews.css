@@ -1,7 +1,7 @@
 .saved {
   min-width: 320px;
   max-width: 1440px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 .saved__text-container {
@@ -9,6 +9,7 @@
   flex-direction: column;
   text-align: left;
   margin: 40px 0 0 50px;
+  min-width: 320px;
 }
 
 .saved__text-subtitle {
@@ -66,5 +67,26 @@
 
   .saved__text-title {
     max-width: 288px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .saved__text-container {
+    justify-content: center;
+    margin: 10px auto 32px;
+    padding: 0 16px 0;
+  }
+
+  .saved__text-keywords {
+    margin: 50px 0 0;
+  }
+
+  .saved__text-title {
+    font-size: 30px;
+    margin: 8px auto 0;
+  }
+
+  .saved__text-subtitle {
+    font-size: 12px;
   }
 }
