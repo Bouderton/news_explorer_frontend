@@ -20,7 +20,8 @@
 
 .card__section {
   margin: 80px auto;
-  /* padding: 0 104px; */
+  max-width: 1440px;
+  min-width: 320px;
 }
 
 .card__button-container {

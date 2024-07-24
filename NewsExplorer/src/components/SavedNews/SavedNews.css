@@ -1,6 +1,8 @@
-/* .saved {
-  min-width: 475px;
-} */
+.saved {
+  min-width: 525px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
 
 .saved__text-container {
   display: flex;

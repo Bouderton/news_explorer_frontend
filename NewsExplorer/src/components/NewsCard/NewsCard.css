@@ -153,4 +153,8 @@
   .card__trashcan {
     left: 235px;
   }
+
+  .card__text {
+    width: 256px;
+  }
 }
