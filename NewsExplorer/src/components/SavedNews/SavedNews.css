@@ -1,3 +1,7 @@
+/* .saved {
+  overflow: hidden;
+} */
+
 .saved__text-container {
   display: flex;
   flex-direction: column;
@@ -54,7 +58,6 @@
 
 @media screen and (max-width: 550px) {
   .saved__text-container {
-    width: 100%;
     margin: 16px 0 0 16px;
   }
 

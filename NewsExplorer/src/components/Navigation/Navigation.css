@@ -1,7 +1,8 @@
 .nav {
   display: flex;
   flex-direction: row;
-  max-width: 1440px;
+  min-width: 475px;
+  /* max-width: 1440px; */
   padding: 16px 52px 13px;
   align-items: center;
   justify-content: space-between;

@@ -49,7 +49,14 @@ function App() {
           <Route path="/" element={<Main openPopup={handleLoginPopup} />} />
           <Route
             path="/saved-news"
-            element={<SavedNews loggedIn={true} name={"Person"} num={3} />}
+            element={
+              <SavedNews
+                loggedIn={true}
+                name={"Person"}
+                num={3}
+                openPopup={handleRegisterPopup}
+              />
+            }
           />
         </Routes>
         <Footer />
