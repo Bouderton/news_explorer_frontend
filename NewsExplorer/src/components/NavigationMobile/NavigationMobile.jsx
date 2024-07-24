@@ -1,7 +1,7 @@
 import "./NavigationMobile.css";
 import { useState } from "react";
 
-const NavigationMobile = ({ openPopup }) => {
+const NavigationMobile = ({ openPopup, isSavedNews }) => {
   const [dropdown, setDropdown] = useState(false);
 
   function handleDropdown() {
@@ -14,11 +14,15 @@ const NavigationMobile = ({ openPopup }) => {
 
   return (
     <nav className="nav__mobile">
-      <h2 className="nav__mobile-title">NewsExplorer</h2>
+      <h2 className={`nav__mobile-title ${isSavedNews ? "nav_saved" : ""}`}>
+        NewsExplorer
+      </h2>
       <button
         onClick={handleDropdown}
         type="button"
-        className="nav__mobile-button"
+        className={`${
+          isSavedNews ? "nav__mobile-button-dark" : "nav__mobile-button"
+        }`}
       />
       <div
         className={`nav__dropdown ${dropdown ? "nav__dropdown-opened" : ""}`}

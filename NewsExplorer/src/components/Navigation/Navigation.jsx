@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import logout_icon from "../../images/logout_icon.svg";
 import NavigationMobile from "../NavigationMobile/NavigationMobile";
 
-const Navigation = ({ loggedIn, name, openPopup }) => {
+const Navigation = ({ loggedIn, name, openPopup, isSavedNews }) => {
   return (
     <>
       <nav className="nav">
@@ -47,7 +47,7 @@ const Navigation = ({ loggedIn, name, openPopup }) => {
         )}
       </nav>
       <div className="nav__mobile-toggle">
-        <NavigationMobile openPopup={openPopup} />
+        <NavigationMobile openPopup={openPopup} isSavedNews={isSavedNews} />
       </div>
     </>
   );
