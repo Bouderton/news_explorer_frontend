@@ -4,7 +4,8 @@
   border-radius: 10px;
   background: white;
   position: relative;
-  overflow: hidden;
+  min-width: 244px;
+  max-width: 400px;
 }
 
 .card__image {
@@ -29,7 +30,7 @@
   font-family: "Roboto-400";
   font-size: 16px;
   line-height: 22px;
-  margin: 16px auto 0;
+  margin: 16px 0 0;
 }
 
 .card__title {
@@ -69,7 +70,7 @@
   outline: none;
   position: relative;
   top: 60px;
-  left: 335px;
+  left: 325px;
   z-index: 1;
 }
 
@@ -89,7 +90,7 @@
   outline: none;
   position: relative;
   top: 60px;
-  left: 335px;
+  left: 325px;
   z-index: 1;
 }
 
@@ -121,7 +122,8 @@
   }
 
   .card__bookmark {
-    left: 165px;
+    left: 190px;
+    top: 55px;
   }
 
   .card__author {
@@ -129,21 +131,26 @@
   }
 
   .card__trashcan {
-    left: 160px;
+    left: 190px;
+    top: 55px;
   }
 }
 
 @media screen and (max-width: 550px) {
   .card {
-    max-width: 288px;
-    max-height: 440px;
+    min-width: 288px;
+    /* max-height: 440px; */
+  }
+
+  .card__bookmark {
+    left: 235px;
   }
 
   .card__container {
     margin: 0 auto;
   }
 
-  /* .card__trashcan {
-    left: 160px;
-  } */
+  .card__trashcan {
+    left: 235px;
+  }
 }
