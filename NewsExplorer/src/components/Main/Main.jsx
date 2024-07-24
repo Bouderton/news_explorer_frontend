@@ -7,7 +7,7 @@ const Main = ({ openPopup }) => {
   return (
     <main className="main">
       <Header openPopup={openPopup} />
-      {/* <NewsCardList /> */}
+      <NewsCardList />
       <About />
     </main>
   );

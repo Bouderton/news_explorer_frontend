@@ -12,8 +12,10 @@ html {
 }
 
 .page {
+  overflow: hidden;
   max-width: 1440px;
   min-width: 320px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
