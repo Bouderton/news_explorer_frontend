@@ -74,6 +74,25 @@
   z-index: 1;
 }
 
+.card__keyword-container {
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 120px;
+  position: relative;
+  left: 20px;
+  top: 50px;
+  z-index: 1;
+}
+
+.card__keyword {
+  font-size: 14px;
+  font-family: "Roboto-500";
+  text-align: center;
+  padding: 8px;
+  width: 100%;
+}
+
 .card__bookmark:hover {
   background: white url("../../images/bookmark-hover.svg") center no-repeat;
   cursor: pointer;
@@ -89,7 +108,7 @@
   border: none;
   outline: none;
   position: relative;
-  top: 60px;
+  top: 90px;
   left: 325px;
   z-index: 1;
 }
@@ -132,7 +151,11 @@
 
   .card__trashcan {
     left: 190px;
-    top: 55px;
+    top: 85px;
+  }
+
+  .card__keyword-container {
+    max-width: 87px;
   }
 }
 

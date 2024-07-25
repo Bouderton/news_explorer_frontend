@@ -6,7 +6,7 @@
 }
 
 .footer__content {
-  padding: 75px 104px 32px;
+  padding: 32px 104px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -14,7 +14,6 @@
 }
 
 .footer__content-list-container {
-  /* width: 100%; */
   display: flex;
   justify-content: end;
 }

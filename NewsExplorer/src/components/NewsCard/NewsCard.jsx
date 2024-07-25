@@ -7,7 +7,12 @@ const NewsCard = ({ isSavedNews }) => {
   return (
     <div className="card__container">
       {isSavedNews ? (
-        <button className="card__trashcan" type="button" />
+        <>
+          <button className="card__trashcan" type="button" />
+          <div className="card__keyword-container">
+            <p className="card__keyword">Keyword</p>
+          </div>
+        </>
       ) : (
         <button className="card__bookmark" type="radio" />
       )}
