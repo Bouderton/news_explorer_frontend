@@ -1,8 +1,5 @@
 .card__grid-container {
-  margin: 64px auto;
-  /* display: grid;
-  grid-template-columns: repeat(auto-fit, 400px);
-  grid-template-rows: repeat(auto-fit, 576px); */
+  margin: 40px auto;
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
@@ -20,7 +17,7 @@
 
 .card__section {
   margin: 0;
-  padding: 80px 0;
+  padding: 40px 0 80px;
   max-width: 1440px;
   min-width: 320px;
   background: #f5f6f7;
@@ -78,7 +75,6 @@
 @media screen and (max-width: 550px) {
   .card__grid-container {
     display: flex;
-    margin: 56px auto;
     justify-content: center;
     flex-direction: column;
     gap: 10px;
