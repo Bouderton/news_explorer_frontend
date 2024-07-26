@@ -72,8 +72,8 @@
   border: none;
   outline: none;
   position: absolute;
-  top: 15px;
-  left: 325px;
+  top: 12px;
+  right: 12px;
   z-index: 1;
 }
 
@@ -140,11 +140,6 @@
   .card__text {
     height: 88px;
     width: 192px;
-  }
-
-  .card__bookmark {
-    top: 12px;
-    right: 12px;
   }
 
   .card__author {
