@@ -54,7 +54,7 @@ const RegisterPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
         max="30"
         value={password}
         name="password"
-        type="text"
+        type="password"
         onChange={handlePasswordChange}
         className="popup__form-input"
         placeholder="Enter Password"
@@ -68,7 +68,7 @@ const RegisterPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
         name="username"
         type="text"
         onChange={handleUsernameChange}
-        className="popup__form-input"
+        className="popup__form-input input_password"
         placeholder="Enter Username"
       ></input>
     </PopupWithForm>

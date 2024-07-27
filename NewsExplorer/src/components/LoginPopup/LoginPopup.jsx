@@ -47,7 +47,7 @@ const LoginPopup = ({ isOpen, closePopup, handleRegisterPopup }) => {
         max="30"
         className="popup__form-input"
         placeholder="Enter Password"
-        type="text"
+        type="password"
         name="password"
         value={password}
         onChange={handlePasswordChange}
