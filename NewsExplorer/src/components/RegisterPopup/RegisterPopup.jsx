@@ -4,6 +4,11 @@ import PopupWithForm from "../PopupForm/PopupForm";
 const RegisterPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value);
+  };
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -17,6 +22,7 @@ const RegisterPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
     if (isOpen) {
       setEmail("");
       setPassword("");
+      setUsername("");
     }
   }, [isOpen]);
 
@@ -52,6 +58,18 @@ const RegisterPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
         onChange={handlePasswordChange}
         className="popup__form-input"
         placeholder="Enter Password"
+      ></input>
+      <label className="popup__form-label">Username</label>
+      <input
+        required
+        min="2"
+        max="30"
+        value={username}
+        name="username"
+        type="text"
+        onChange={handleUsernameChange}
+        className="popup__form-input"
+        placeholder="Enter Username"
       ></input>
     </PopupWithForm>
   );
