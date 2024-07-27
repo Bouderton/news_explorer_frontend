@@ -52,7 +52,7 @@ function App() {
             element={
               <SavedNews
                 loggedIn={true}
-                name={"Person"}
+                name={"User"}
                 num={3}
                 openPopup={handleRegisterPopup}
               />

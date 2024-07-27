@@ -7,8 +7,8 @@ const Navigation = ({ loggedIn, name, openPopup, isSavedNews }) => {
   return (
     <>
       <div className="nav__container">
-        <nav className="nav">
-          {loggedIn ? (
+        <nav className={`nav ${loggedIn ? "nav_dark" : ""}`}>
+          {loggedIn && isSavedNews ? (
             <>
               <h2 className="nav__title-saved">NewsExplorer</h2>
               <div className="nav__buttons-saved">
