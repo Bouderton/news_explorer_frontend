@@ -1,5 +1,6 @@
 import "./NavigationMobile.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const NavigationMobile = ({ openPopup, isSavedNews }) => {
   const [dropdown, setDropdown] = useState(false);
@@ -37,7 +38,9 @@ const NavigationMobile = ({ openPopup, isSavedNews }) => {
         </div>
         <div className="nav__mobile-buttons">
           <button type="text" className="nav__home-button">
-            Home
+            <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+              Home
+            </Link>
           </button>
           <button
             type="text"
