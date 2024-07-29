@@ -1,22 +1,22 @@
 import PopupForm from "../PopupForm/PopupForm";
 import { useState, useEffect } from "react";
+import { useFormWithValidation } from "../../Hooks/useFormWithValidation";
 
 const LoginPopup = ({ isOpen, closePopup, handleRegisterPopup }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+  const inputValues = {
+    email: "",
+    password: "",
   };
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
+  const { values, handleChange, errors, isValid, resetForm } =
+    useFormWithValidation(inputValues);
 
   useEffect(() => {
     if (isOpen) {
-      setEmail("");
-      setPassword("");
+      resetForm(inputValues);
     }
   }, [isOpen]);
   return (
@@ -24,7 +24,7 @@ const LoginPopup = ({ isOpen, closePopup, handleRegisterPopup }) => {
       isOpen={isOpen}
       closePopup={closePopup}
       title="Sign In"
-      buttonText="Sign In"
+      // buttonText="Sign In"
       spanText="Sign Up"
       popupSwitch={handleRegisterPopup}
     >
@@ -37,8 +37,8 @@ const LoginPopup = ({ isOpen, closePopup, handleRegisterPopup }) => {
         placeholder="Enter Email"
         type="text"
         name="email"
-        value={email}
-        onChange={handleEmailChange}
+        value={values.email}
+        onChange={handleChange}
       ></input>
       <label className="popup__form-label">Password</label>
       <input
@@ -49,9 +49,22 @@ const LoginPopup = ({ isOpen, closePopup, handleRegisterPopup }) => {
         placeholder="Enter Password"
         type="password"
         name="password"
-        value={password}
-        onChange={handlePasswordChange}
+        value={values.password}
+        onChange={handleChange}
       ></input>
+      {isValid ? (
+        <button type="text" className="popup__submit-button button_enabled">
+          Sign In
+        </button>
+      ) : (
+        <button
+          disabled
+          type="text"
+          className="popup__submit-button button_disabled"
+        >
+          Sign In
+        </button>
+      )}
     </PopupForm>
   );
 };

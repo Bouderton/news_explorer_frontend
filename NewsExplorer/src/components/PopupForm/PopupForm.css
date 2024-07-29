@@ -89,6 +89,11 @@
   color: white;
 }
 
+.button_enabled:hover {
+  cursor: pointer;
+  background-color: #347eff;
+}
+
 .popup__form-input {
   width: 358px;
   margin: 0 0 31px;
@@ -129,6 +134,11 @@
   padding: 0;
   font-family: "Inter-400", sans-serif;
   font-size: 14px;
+}
+
+.popup__or-button:hover {
+  opacity: 60%;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 645px) {

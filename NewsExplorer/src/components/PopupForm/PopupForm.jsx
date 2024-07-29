@@ -1,5 +1,5 @@
 import "./PopupForm.css";
-import { useForm } from "../../Hooks/useForm";
+import { useFormWithValidation } from "../../Hooks/useFormWithValidation";
 
 const PopupWithForm = ({
   title,
@@ -19,12 +19,7 @@ const PopupWithForm = ({
           onClick={closePopup}
         />
         <h3 className="popup__form-title">{title}</h3>
-        <form className="popup__form">
-          {children}
-          <button type="text" className="popup__submit-button button_disabled">
-            {buttonText}
-          </button>
-        </form>
+        <form className="popup__form">{children}</form>
         <p className="popup__or-text">
           or
           <button
