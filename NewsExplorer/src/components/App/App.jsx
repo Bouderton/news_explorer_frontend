@@ -75,8 +75,10 @@ function App() {
   );
 }
 
-// NOTES
-// MAKE THE DESIGN ADAPTIVE
+// NOTES AND TODO
+// FORM VALIDATION
+// USER STATE
+// FINISH FRONT-END BY WEDNESDAY
 // PRAY
 
 export default App;
