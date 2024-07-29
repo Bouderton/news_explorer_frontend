@@ -71,8 +71,6 @@
 .popup__submit-button {
   width: 100%;
   padding: 8px 16px;
-  background-color: #e6e8eb;
-  color: #b6bcbf;
   border: none;
   border-radius: 25px;
   font-size: 16px;
@@ -80,8 +78,15 @@
   font-family: "Roboto-500", sans-serif;
 }
 
-.popup__submit-button:hover {
-  cursor: pointer;
+.button_disabled {
+  background-color: #e6e8eb;
+  color: #b6bcbf;
+  cursor: not-allowed;
+}
+
+.button_enabled {
+  background-color: #2f71e5;
+  color: white;
 }
 
 .popup__form-input {
