@@ -1,29 +1,22 @@
 import { useState, useEffect } from "react";
 import PopupWithForm from "../PopupForm/PopupForm";
+import { useFormWithValidation } from "../../Hooks/useFormWithValidation";
 
 const RegisterPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
-
-  const handleUsernameChange = (e) => {
-    setUsername(e.target.value);
+  const inputValues = {
+    email: "",
+    password: "",
+    username: "",
   };
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
+  const { values, handleChange, errors, isValid, resetForm } =
+    useFormWithValidation(inputValues);
 
   useEffect(() => {
-    if (isOpen) {
-      setEmail("");
-      setPassword("");
-      setUsername("");
-    }
+    resetForm(inputValues);
   }, [isOpen]);
 
   return (
@@ -44,18 +37,18 @@ const RegisterPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
         placeholder="Enter Email"
         type="text"
         name="email"
-        onChange={handleEmailChange}
-        value={email}
+        onChange={handleChange}
+        value={values.email}
       ></input>
       <label className="popup__form-label">Password</label>
       <input
         required
         min="2"
         max="30"
-        value={password}
+        value={values.password}
         name="password"
         type="password"
-        onChange={handlePasswordChange}
+        onChange={handleChange}
         className="popup__form-input"
         placeholder="Enter Password"
       ></input>
@@ -64,13 +57,26 @@ const RegisterPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
         required
         min="2"
         max="30"
-        value={username}
+        value={values.username}
         name="username"
         type="text"
-        onChange={handleUsernameChange}
+        onChange={handleChange}
         className="popup__form-input input_password"
         placeholder="Enter Username"
       ></input>
+      {isValid ? (
+        <button type="text" className="popup__submit-button button_enabled">
+          Sign Up
+        </button>
+      ) : (
+        <button
+          disabled
+          type="text"
+          className="popup__submit-button button_disabled"
+        >
+          Sign Up
+        </button>
+      )}
     </PopupWithForm>
   );
 };
