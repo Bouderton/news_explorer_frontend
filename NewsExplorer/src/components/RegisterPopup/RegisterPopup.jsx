@@ -3,9 +3,6 @@ import PopupWithForm from "../PopupForm/PopupForm";
 import { useFormWithValidation } from "../../Hooks/useFormWithValidation";
 
 const RegisterPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
   const inputValues = {
     email: "",
     password: "",

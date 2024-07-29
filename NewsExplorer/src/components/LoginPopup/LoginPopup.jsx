@@ -3,9 +3,6 @@ import { useState, useEffect } from "react";
 import { useFormWithValidation } from "../../Hooks/useFormWithValidation";
 
 const LoginPopup = ({ isOpen, closePopup, handleRegisterPopup }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
   const inputValues = {
     email: "",
     password: "",
