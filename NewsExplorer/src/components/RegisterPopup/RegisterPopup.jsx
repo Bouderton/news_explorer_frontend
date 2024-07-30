@@ -37,6 +37,9 @@ const RegisterPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
         onChange={handleChange}
         value={values.email}
       ></input>
+      {errors.email && (
+        <span className="popup__form-error">{errors.email}</span>
+      )}
       <label className="popup__form-label">Password</label>
       <input
         required
@@ -49,6 +52,9 @@ const RegisterPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
         className="popup__form-input"
         placeholder="Enter Password"
       ></input>
+      {errors.email && (
+        <span className="popup__form-error">{errors.email}</span>
+      )}
       <label className="popup__form-label">Username</label>
       <input
         required
@@ -61,6 +67,9 @@ const RegisterPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
         className="popup__form-input input_password"
         placeholder="Enter Username"
       ></input>
+      {errors.email && (
+        <span className="popup__form-error">{errors.email}</span>
+      )}
       {isValid ? (
         <button type="text" className="popup__submit-button button_enabled">
           Sign Up
