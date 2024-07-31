@@ -9,7 +9,7 @@ const NewsCard = ({ isSavedNews }) => {
   const [clicked, setClicked] = useState(false);
 
   const handleClick = () => {
-    setClicked(true);
+    setClicked((prevState) => !prevState);
   };
   return (
     <div className="card__container">
