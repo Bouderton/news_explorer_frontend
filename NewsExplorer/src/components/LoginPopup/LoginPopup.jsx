@@ -3,6 +3,16 @@ import { useState, useEffect } from "react";
 import { useFormWithValidation } from "../../Hooks/useFormWithValidation";
 
 const LoginPopup = ({ isOpen, closePopup, handleRegisterPopup }) => {
+  const [inputFocus, setInputFocus] = useState(false);
+
+  const handleInputFocus = (name) => {
+    setInputFocus(name);
+  };
+
+  const handleInputBlur = () => {
+    setInputFocus(null);
+  };
+
   const inputValues = {
     email: "",
     password: "",
@@ -30,7 +40,11 @@ const LoginPopup = ({ isOpen, closePopup, handleRegisterPopup }) => {
         required
         min="1"
         max="30"
-        className="popup__form-input"
+        className={`popup__form-input ${
+          inputFocus === "email" ? "input-focussed" : ""
+        }`}
+        onFocus={() => handleInputFocus("email")}
+        onBlur={handleInputBlur}
         placeholder="Enter Email"
         type="text"
         name="email"
@@ -45,7 +59,11 @@ const LoginPopup = ({ isOpen, closePopup, handleRegisterPopup }) => {
         required
         min="2"
         max="30"
-        className="popup__form-input"
+        className={`popup__form-input ${
+          inputFocus === "password" ? "input-focussed" : ""
+        }`}
+        onFocus={() => handleInputFocus("password")}
+        onBlur={handleInputBlur}
         placeholder="Enter Password"
         type="password"
         name="password"

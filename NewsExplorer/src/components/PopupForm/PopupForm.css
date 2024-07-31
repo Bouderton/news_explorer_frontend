@@ -105,6 +105,11 @@
   font-size: 14px;
 }
 
+.input-focussed {
+  border-bottom: 1px solid black;
+  transition: border-color 0.3s;
+}
+
 .popup__form-error {
   font-family: "Inter-400";
   color: #ff0000;
