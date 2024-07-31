@@ -1,9 +1,16 @@
 import "./NewsCard.css";
 import doggy from "../../images/doggy.jpg";
+import { useState } from "react";
 // import bookmark from "../../images/bookmark.svg";
 
 const NewsCard = ({ isSavedNews }) => {
   // cards accept news data
+
+  const [clicked, setClicked] = useState(false);
+
+  const handleClick = () => {
+    setClicked(true);
+  };
   return (
     <div className="card__container">
       {isSavedNews ? (
@@ -14,7 +21,11 @@ const NewsCard = ({ isSavedNews }) => {
           </div>
         </>
       ) : (
-        <button className="card__bookmark" type="radio" />
+        <button
+          onClick={handleClick}
+          type="radio"
+          className={`${clicked ? "card__bookmark-active" : "card__bookmark"}`}
+        />
       )}
       <div className="card">
         <img src={doggy} className="card__image" alt="News Card Image" />

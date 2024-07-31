@@ -77,6 +77,21 @@
   z-index: 1;
 }
 
+.card__bookmark-active {
+  background: white url("../../images/bookmark_active.svg") center no-repeat;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1;
+}
+
 .card__keyword-container {
   background: white;
   border-radius: 10px;
