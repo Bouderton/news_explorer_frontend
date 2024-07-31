@@ -5,8 +5,8 @@ import { useFormWithValidation } from "../../Hooks/useFormWithValidation";
 const LoginPopup = ({ isOpen, closePopup, handleRegisterPopup }) => {
   const [inputFocus, setInputFocus] = useState(false);
 
-  const handleInputFocus = (name) => {
-    setInputFocus(name);
+  const handleInputFocus = (value) => {
+    setInputFocus(value);
   };
 
   const handleInputBlur = () => {

@@ -3,10 +3,20 @@ import PopupWithForm from "../PopupForm/PopupForm";
 import { useFormWithValidation } from "../../Hooks/useFormWithValidation";
 
 const RegisterPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
+  const [inputFocus, setInputFocus] = useState(false);
+
   const inputValues = {
     email: "",
     password: "",
     username: "",
+  };
+
+  const handleInputFocus = (value) => {
+    setInputFocus(value);
+  };
+
+  const handleInputBlur = () => {
+    setInputFocus(null);
   };
 
   const { values, handleChange, errors, isValid, resetForm } =
@@ -30,7 +40,10 @@ const RegisterPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
         required
         min="1"
         max="30"
-        className="popup__form-input"
+        onFocus={() => handleInputFocus("email")}
+        className={`popup__form-input ${
+          inputFocus === "email" ? "input-focussed" : ""
+        }`}
         placeholder="Enter Email"
         type="text"
         name="email"
@@ -45,11 +58,15 @@ const RegisterPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
         required
         min="2"
         max="30"
+        onFocus={() => handleInputFocus("password")}
+        onBlur={handleInputBlur}
         value={values.password}
         name="password"
         type="password"
         onChange={handleChange}
-        className="popup__form-input"
+        className={`popup__form-input ${
+          inputFocus === "password" ? "input-focussed" : ""
+        }`}
         placeholder="Enter Password"
       ></input>
       {errors.email && (
@@ -60,11 +77,15 @@ const RegisterPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
         required
         min="2"
         max="30"
+        onFocus={() => handleInputFocus("username")}
+        onBlur={handleInputBlur}
         value={values.username}
         name="username"
         type="text"
         onChange={handleChange}
-        className="popup__form-input input_password"
+        className={`popup__form-input ${
+          inputFocus === "username" ? "input-focussed" : ""
+        }`}
         placeholder="Enter Username"
       ></input>
       {errors.email && (
