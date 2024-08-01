@@ -73,9 +73,13 @@
   height: 48px;
   color: white;
   font-size: 18px;
-  padding: 0;
-  cursor: pointer;
   font-family: "Roboto-500";
+}
+
+.nav__button-register:hover {
+  cursor: pointer;
+  opacity: 50%;
+  scale: 1.025;
 }
 
 .nav__button-logout {
