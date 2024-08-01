@@ -19,8 +19,20 @@ const Footer = () => {
             </li>
             <li className="footer__content-list-item">
               <div className="footer__content_buttons-container">
-                <img src={github} className="footer__content_list-img" />
-                <img src={linkedin} className="footer__content_list-img" />
+                <a
+                  rel="noopener noreferer"
+                  target="_blank"
+                  href="https://github.com/Bouderton"
+                >
+                  <img src={github} className="footer__content_list-img" />
+                </a>
+                <a
+                  rel="noopener noreferer"
+                  target="_blank"
+                  href="https://www.linkedin.com/in/ryankhazal/"
+                >
+                  <img src={linkedin} className="footer__content_list-img" />
+                </a>
               </div>
             </li>
           </ul>

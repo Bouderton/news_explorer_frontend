@@ -63,7 +63,7 @@ const Navigation = ({ loggedIn, name, openPopup, isSavedNews }) => {
                 NewsExplorer
               </h2>
               <div className="nav__buttons" style={{ gap: "15px" }}>
-                <button type="text" className="nav__button-dark">
+                <button type="text" className="nav__button">
                   <Link
                     to="/"
                     style={{ textDecoration: "none", color: "#1a1b22" }}

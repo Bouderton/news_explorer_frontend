@@ -24,24 +24,12 @@
   justify-content: space-between;
   gap: 50px;
 }
-.nav__buttons-dark {
-  display: flex;
-  justify-content: space-between;
-  gap: 50px;
-}
 
 .nav__title {
   color: white;
   font-size: 20px;
   font-family: "Roboto-Slab-700";
   margin: 0 30px 0 0;
-}
-
-.nav__title-dark {
-  color: #1a1b22;
-  font-size: 20px;
-  font-family: "Roboto-Slab-700";
-  margin: 0;
 }
 
 .nav__button {
@@ -55,6 +43,12 @@
   font-family: "Roboto-400";
 }
 
+.nav__button:hover {
+  opacity: 50%;
+  scale: 1.025;
+  cursor: pointer;
+}
+
 .nav__button-saved {
   color: white;
   background: none;
@@ -65,14 +59,10 @@
   font-family: "Roboto-400";
 }
 
-.nav__button-dark {
-  color: #1a1b22;
-  background: none;
-  border: none;
-  font-size: 18px;
-  padding: 0;
+.nav__button-saved:hover {
+  opacity: 50%;
+  scale: 1.025;
   cursor: pointer;
-  font-family: "Roboto-400";
 }
 
 .nav__button-register {
@@ -101,6 +91,12 @@
   justify-content: center;
   align-items: center;
   gap: 15px;
+}
+
+.nav__button-logout:hover {
+  opacity: 50%;
+  scale: 1.025;
+  cursor: pointer;
 }
 
 .nav__button-logout-icon {

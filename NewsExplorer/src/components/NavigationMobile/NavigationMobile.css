@@ -49,6 +49,12 @@
   font-family: "Roboto-500";
 }
 
+.nav__mobile-menu-button:hover {
+  cursor: pointer;
+  opacity: 50%;
+  scale: 1.025;
+}
+
 .nav__mobile-button {
   background: transparent url("../../images/dropdown.svg") center no-repeat;
   width: 24px;
@@ -56,6 +62,12 @@
   transform: scale(1.25);
   border: none;
   outline: none;
+}
+
+.nav__mobile-button:hover {
+  opacity: 50%;
+  scale: 1.15;
+  cursor: pointer;
 }
 
 .nav__mobile-button-register {
@@ -132,6 +144,12 @@
   gap: 25px;
 }
 
+.nav__mobile-button__logout:hover {
+  opacity: 50%;
+  cursor: pointer;
+  scale: 1.025;
+}
+
 .nav__mobile-button__logout-icon {
   width: 20px;
   height: 20px;
@@ -144,4 +162,10 @@
   height: 24px;
   padding: 0;
   cursor: pointer;
+}
+
+.nav__dropdown-close-button:hover {
+  opacity: 50%;
+  cursor: pointer;
+  scale: 1.15;
 }
