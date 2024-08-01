@@ -24,7 +24,7 @@
   justify-content: space-between;
   gap: 50px;
 }
-.nav__buttons-saved {
+.nav__buttons-dark {
   display: flex;
   justify-content: space-between;
   gap: 50px;
@@ -37,7 +37,7 @@
   margin: 0;
 }
 
-.nav__title-saved {
+.nav__title-dark {
   color: #1a1b22;
   font-size: 20px;
   font-family: "Roboto-Slab-700";
@@ -48,7 +48,7 @@
   color: white;
   background: none;
   border: none;
-  width: 49px;
+  width: 50px;
   font-size: 18px;
   padding: 0;
   cursor: pointer;
@@ -56,6 +56,16 @@
 }
 
 .nav__button-saved {
+  color: white;
+  background: none;
+  border: none;
+  width: 200px;
+  font-size: 18px;
+  cursor: pointer;
+  font-family: "Roboto-400";
+}
+
+.nav__button-dark {
   color: #1a1b22;
   background: none;
   border: none;
@@ -82,7 +92,7 @@
   background: none;
   border: 1px solid;
   border-radius: 25px;
-  color: #1a1b22;
+  color: white;
   font-size: 18px;
   padding: 12px 19px;
   cursor: pointer;
@@ -96,6 +106,7 @@
 .nav__button-logout-icon {
   width: 18px;
   height: 16px;
+  filter: invert();
 }
 
 .nav__mobile-toggle {

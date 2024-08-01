@@ -9,10 +9,12 @@ import RegisterPopup from "../RegisterPopup/RegisterPopup";
 import LoginPopup from "../LoginPopup/LoginPopup";
 import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
+import { UserContext } from "../../contexts/UserContext";
 
 function App() {
   const [activePopup, setActivePopup] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
+  const [user, setUser] = useState({});
 
   const handleRegisterPopup = () => {
     setActivePopup("register");
@@ -44,33 +46,35 @@ function App() {
 
   return (
     <>
-      <div className="page">
-        <Routes>
-          <Route path="/" element={<Main openPopup={handleLoginPopup} />} />
-          <Route
-            path="/saved-news"
-            element={
-              <SavedNews
-                loggedIn={true}
-                name={"User"}
-                num={3}
-                openPopup={handleRegisterPopup}
-              />
-            }
+      <UserContext.Provider value={user}>
+        <div className="page">
+          <Routes>
+            <Route path="/" element={<Main openPopup={handleLoginPopup} />} />
+            <Route
+              path="/saved-news"
+              element={
+                <SavedNews
+                  loggedIn={true}
+                  name={"User"}
+                  num={3}
+                  openPopup={handleRegisterPopup}
+                />
+              }
+            />
+          </Routes>
+          <Footer />
+          <RegisterPopup
+            isOpen={activePopup === "register"}
+            closePopup={handleClosePopup}
+            handleLoginPopup={handleLoginPopup}
           />
-        </Routes>
-        <Footer />
-        <RegisterPopup
-          isOpen={activePopup === "register"}
-          closePopup={handleClosePopup}
-          handleLoginPopup={handleLoginPopup}
-        />
-        <LoginPopup
-          isOpen={activePopup === "login"}
-          closePopup={handleClosePopup}
-          handleRegisterPopup={handleRegisterPopup}
-        />
-      </div>
+          <LoginPopup
+            isOpen={activePopup === "login"}
+            closePopup={handleClosePopup}
+            handleRegisterPopup={handleRegisterPopup}
+          />
+        </div>
+      </UserContext.Provider>
     </>
   );
 }
