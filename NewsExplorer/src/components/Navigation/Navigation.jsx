@@ -15,7 +15,10 @@ const Navigation = ({ loggedIn, name, openPopup, isSavedNews }) => {
     <>
       <div className="nav__container">
         {route.pathname === "/" ? (
-          <nav className="nav">
+          <nav
+            className="nav"
+            style={{ borderBottom: "0.5px solid", borderColor: "white" }}
+          >
             <h2 className="nav__title">NewsExplorer</h2>
             {loggedIn ? (
               <>
@@ -58,7 +61,10 @@ const Navigation = ({ loggedIn, name, openPopup, isSavedNews }) => {
           </nav>
         ) : (
           <>
-            <nav className="nav">
+            <nav
+              className="nav"
+              style={{ borderBottom: "0.5px solid", borderColor: "#1a1b22" }}
+            >
               <h2 className="nav__title" style={{ color: "#1a1b22" }}>
                 NewsExplorer
               </h2>

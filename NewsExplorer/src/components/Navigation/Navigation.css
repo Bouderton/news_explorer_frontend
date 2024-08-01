@@ -11,10 +11,6 @@
   justify-content: space-between;
 }
 
-.nav_dark {
-  border-bottom: 0.5px solid;
-  border-color: #1a1b22;
-}
 .nav__container {
   min-height: 66px;
 }
