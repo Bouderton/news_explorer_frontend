@@ -11,7 +11,7 @@ const Header = ({ openPopup }) => {
         className="header__background-image"
         alt="Background Image"
       />
-      <Navigation openPopup={openPopup} loggedIn={false} />
+      <Navigation openPopup={openPopup} loggedIn={true} />
       <SearchForm />
     </header>
   );
