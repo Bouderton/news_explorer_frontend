@@ -1,7 +1,8 @@
 import "./Navigation.css";
 import { Link, useLocation } from "react-router-dom";
 import { useContext } from "react";
-import logout_icon from "../../images/logout_icon.svg";
+import logout_light from "../../images/logout_light.svg";
+import logout_dark from "../../images/logout_dark.svg";
 import { UserContext } from "../../contexts/UserContext";
 import NavigationMobile from "../NavigationMobile/NavigationMobile";
 
@@ -16,9 +17,9 @@ const Navigation = ({ loggedIn, name, openPopup, isSavedNews }) => {
         {route.pathname === "/" ? (
           <nav className="nav">
             <h2 className="nav__title">NewsExplorer</h2>
-            <div className="nav__buttons">
-              {loggedIn ? (
-                <>
+            {loggedIn ? (
+              <>
+                <div className="nav__buttons" style={{ gap: "15px" }}>
                   <button type="text" className="nav__button">
                     Home
                   </button>
@@ -28,31 +29,67 @@ const Navigation = ({ loggedIn, name, openPopup, isSavedNews }) => {
                       style={{
                         textDecoration: "none",
                         color: "white",
-                        width: "100%",
                       }}
                     >
                       Saved Articles
                     </Link>
                   </button>
                   <button type="text" className="nav__button-logout">
-                    {JSON.stringify(currentUser)}
+                    {"Test Name"}
                     <img
-                      src={logout_icon}
+                      src={logout_light}
                       className="nav__button-logout-icon"
                     />
                   </button>
-                </>
-              ) : (
-                <>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="nav__buttons">
                   <button type="text" className="nav__button">
                     Home
                   </button>
-                  <button className="nav__button-register">Sign In</button>
-                </>
-              )}
-            </div>
+                  <button className="nav__button-register" onClick={openPopup}>
+                    Sign In
+                  </button>
+                </div>
+              </>
+            )}
           </nav>
-        ) : null}
+        ) : (
+          <>
+            <nav className="nav">
+              <h2 className="nav__title" style={{ color: "#1a1b22" }}>
+                NewsExplorer
+              </h2>
+              <div className="nav__buttons" style={{ gap: "15px" }}>
+                <button type="text" className="nav__button-dark">
+                  <Link
+                    to="/"
+                    style={{ textDecoration: "none", color: "#1a1b22" }}
+                  >
+                    Home
+                  </Link>
+                </button>
+                <button
+                  type="text"
+                  className="nav__button-saved"
+                  style={{ color: "#1a1b22" }}
+                >
+                  Saved Articles
+                </button>
+                <button
+                  type="text"
+                  className="nav__button-logout"
+                  style={{ color: "#1a1b22" }}
+                >
+                  {"Test Name"}
+                  <img src={logout_dark} className="nav__button-logout-icon" />
+                </button>
+              </div>
+            </nav>
+          </>
+        )}
       </div>
       {/* <div className="nav__container">
         <nav
