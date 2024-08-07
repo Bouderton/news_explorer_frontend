@@ -9,7 +9,7 @@ const Main = ({ openPopup }) => {
     <main className="main">
       <Header openPopup={openPopup} />
       {/* <Preloader searching={false} /> */}
-      <NewsCardList />
+      {/* <NewsCardList /> */}
       <About />
     </main>
   );

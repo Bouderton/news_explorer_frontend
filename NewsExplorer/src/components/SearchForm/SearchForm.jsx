@@ -1,17 +1,30 @@
 import NewsCardList from "../NewsCardList/NewsCardList";
 import "./SearchForm.css";
 import { useState, useEffect } from "react";
+import { searchNews } from "../../utils/NewsApi";
 
 const SearchForm = () => {
-  const [text, setText] = useState("");
+  const [query, setQuery] = useState("");
 
-  function handleTextChange(e) {
-    setText(e.target.value);
+  function handleQueryChange(e) {
+    setQuery(e.target.value);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    setText("");
+    if (!query) {
+      alert("please enter a keyword");
+    }
+
+    searchNews(query)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+        alert("BOOOOO");
+      });
+    setQuery("");
   }
 
   return (
@@ -29,8 +42,9 @@ const SearchForm = () => {
             <input
               placeholder="Enter topic"
               required
+              value={query}
               className="search__form-input"
-              onChange={handleTextChange}
+              onChange={handleQueryChange}
             />
             <button type="submit" className="search__submit-button">
               Search
