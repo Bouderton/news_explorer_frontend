@@ -2,7 +2,7 @@ import NewsCard from "../NewsCard/NewsCard";
 import "./NewsCardList.css";
 import { useState } from "react";
 
-const NewsCardList = ({ loggedIn, isSavedNews }) => {
+const NewsCardList = ({ loggedIn, isSavedNews, articles }) => {
   // need to pass news data to news cards
 
   return (
@@ -15,12 +15,9 @@ const NewsCardList = ({ loggedIn, isSavedNews }) => {
         </>
       )}
       <div className="card__grid-container">
-        <NewsCard isSavedNews={isSavedNews} />
-        <NewsCard isSavedNews={isSavedNews} />
-        <NewsCard isSavedNews={isSavedNews} />
-        <NewsCard isSavedNews={isSavedNews} />
-        <NewsCard isSavedNews={isSavedNews} />
-        <NewsCard isSavedNews={isSavedNews} />
+        {articles.map((article, index) => (
+          <NewsCard key={index} article={article} isSavedNews={isSavedNews} />
+        ))}
       </div>
       <div className="card__button-container">
         <button type="text" className="card__button">

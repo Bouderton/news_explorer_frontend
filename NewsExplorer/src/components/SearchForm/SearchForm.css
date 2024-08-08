@@ -4,6 +4,7 @@
   flex-direction: column;
   max-width: 1440px;
   min-width: 320px;
+  margin: 0 0 48px;
 }
 
 .search__text-container {
@@ -127,7 +128,7 @@
   }
 
   .search__form-container {
-    margin: 122px 0 0;
+    margin: 100px 0 0;
   }
 
   .search__title {

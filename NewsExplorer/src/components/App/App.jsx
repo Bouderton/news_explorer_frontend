@@ -4,17 +4,21 @@ import reactLogo from "../../assets/react.svg";
 import viteLogo from "/favicon.svg";
 import "./App.css";
 import Header from "../Header/Header";
+import Navigation from "../Navigation/Navigation";
 import Main from "../Main/Main";
 import RegisterPopup from "../RegisterPopup/RegisterPopup";
 import LoginPopup from "../LoginPopup/LoginPopup";
 import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
 import { UserContext } from "../../contexts/UserContext";
+import SearchForm from "../SearchForm/SearchForm";
+import { searchNews } from "../../utils/NewsApi";
 
 function App() {
   const [activePopup, setActivePopup] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState({});
+  const [articles, setArticles] = useState([]);
 
   const handleRegisterPopup = () => {
     setActivePopup("register");
@@ -49,7 +53,15 @@ function App() {
       <UserContext.Provider value={user}>
         <div className="page">
           <Routes>
-            <Route path="/" element={<Main openPopup={handleLoginPopup} />} />
+            <Route
+              path="/"
+              element={
+                <>
+                  <Header openPopup={handleLoginPopup} />
+                  <Main articles={articles} />
+                </>
+              }
+            />
             <Route
               path="/saved-news"
               element={
@@ -82,7 +94,6 @@ function App() {
 // NOTES AND TODO
 // FORM VALIDATION
 // USER STATE
-// FINISH FRONT-END BY WEDNESDAY
 // PRAY
 
 export default App;

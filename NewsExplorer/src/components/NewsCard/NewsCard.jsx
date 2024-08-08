@@ -3,7 +3,7 @@ import doggy from "../../images/doggy.jpg";
 import { useState } from "react";
 // import bookmark from "../../images/bookmark.svg";
 
-const NewsCard = ({ isSavedNews }) => {
+const NewsCard = ({ isSavedNews, article }) => {
   // cards accept news data
 
   const [clicked, setClicked] = useState(false);
@@ -28,17 +28,19 @@ const NewsCard = ({ isSavedNews }) => {
         />
       )}
       <div className="card">
-        <img src={doggy} className="card__image" alt="News Card Image" />
+        {article.urlToImage && (
+          <img
+            src={article.urlToImage}
+            className="card__image"
+            alt={article.title}
+          />
+        )}
+
         <div className="card__text-container">
-          <p className="card__date">January 1st 2000</p>
-          <h3 className="card__title">Good Boy</h3>
-          <p className="card__text">
-            whosagoodboywhosagoodboywhosagoodboywhosagoodboywhosagoodboywhosagoodboywho
-            sagoodboywhosagoodboywhosagoodboywhosagoodboywhosagoodboywhosagoodboywhos
-            agoodboywhosagoodboywhosagoodboywwhosagoodboywhosagoodboywhosagoodboywhos
-            whosagoodboywhosagoodboywhosagoodboywhosagoodboywhosagoodboywhosagoodboywho
-          </p>
-          <p className="card__author">National Geographic</p>
+          <p className="card__date">{article.publishedAt}</p>
+          <h3 className="card__title">{article.title}</h3>
+          <p className="card__text">o{article.description}</p>
+          <p className="card__author">{article.source.name}</p>
         </div>
       </div>
     </div>
