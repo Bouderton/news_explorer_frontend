@@ -32,6 +32,14 @@ function App() {
     setActivePopup("login");
   };
 
+  const handleSearchResults = (e) => {
+    searchNews(e)
+      .then((item) => {
+        setArticles([item, ...articles]);
+      })
+      .catch((err) => console.log(err));
+  };
+
   useEffect(() => {
     if (!activePopup) return;
 
@@ -57,7 +65,10 @@ function App() {
               path="/"
               element={
                 <>
-                  <Header openPopup={handleLoginPopup} />
+                  <Header
+                    openPopup={handleLoginPopup}
+                    handleSubmit={handleSearchResults}
+                  />
                   <Main articles={articles} />
                 </>
               }

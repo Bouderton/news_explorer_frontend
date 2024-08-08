@@ -8,9 +8,6 @@ import NotFound from "../NotFound/NotFound";
 const Main = ({ openPopup, articles }) => {
   return (
     <main className="main">
-      {/* <Header openPopup={openPopup} /> */}
-      {/* <Preloader />
-      <NotFound /> */}
       {/* <NewsCardList articles={articles} /> */}
       <About />
     </main>

@@ -4,40 +4,21 @@ import { useState, useEffect } from "react";
 import { searchNews } from "../../utils/NewsApi";
 import Preloader from "../Preloader/Preloader";
 
-const SearchForm = () => {
+const SearchForm = ({ handleSubmit }) => {
   const [query, setQuery] = useState("");
 
   function handleQueryChange(e) {
     setQuery(e.target.value);
   }
 
-  // const handleSearchResults = ({
-  //   title,
-  //   urlToImage,
-  //   description,
-  //   publishedAt,
-  // }) => {
-  //   searchNews({ title, urlToImage, description, publishedAt })
-  //     .then((item) => {
-  //       setArticles([item, ...articles]);
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
-
-  function handleSubmit(e) {
+  function handleSearch(e) {
     e.preventDefault();
+
     if (!query) {
-      alert("please enter a keyword");
+      alert("Please enter a keyword");
     }
 
-    searchNews(query)
-      .then((res) => {
-        console.log("Query Submitted");
-      })
-      .catch((err) => {
-        console.log(err);
-        alert("NOPE");
-      });
+    handleSubmit(query);
     setQuery("");
   }
 
@@ -52,7 +33,7 @@ const SearchForm = () => {
           </p>
         </div>
         <div className="search__form-container">
-          <form className="search__form" onSubmit={handleSubmit}>
+          <form className="search__form" onSubmit={handleSearch}>
             <fieldset className="search__form-fieldset">
               <input
                 placeholder="Enter topic"
