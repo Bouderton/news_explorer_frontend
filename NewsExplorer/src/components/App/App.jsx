@@ -11,6 +11,7 @@ import LoginPopup from "../LoginPopup/LoginPopup";
 import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
 import { UserContext } from "../../contexts/UserContext";
+import { ArticleContext } from "../../contexts/ArticleContext";
 import SearchForm from "../SearchForm/SearchForm";
 import { searchNews } from "../../utils/NewsApi";
 
@@ -34,8 +35,18 @@ function App() {
 
   const handleSearchResults = (e) => {
     searchNews(e)
-      .then((item) => {
-        setArticles([item, ...articles]);
+      .then((data) => {
+        const filteredArticles = data.articles.filter(
+          (article) =>
+            article.urlToImage &&
+            article.title &&
+            !article.title.includes("[Removed]")
+        );
+        setArticles(filteredArticles);
+      })
+      .then((data) => {
+        setArticles(data.articles);
+        console.log(data);
       })
       .catch((err) => console.log(err));
   };
@@ -59,44 +70,46 @@ function App() {
   return (
     <>
       <UserContext.Provider value={user}>
-        <div className="page">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Header
-                    openPopup={handleLoginPopup}
-                    handleSubmit={handleSearchResults}
+        <ArticleContext.Provider value={{ articles, setArticles }}>
+          <div className="page">
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Header
+                      openPopup={handleLoginPopup}
+                      handleSubmit={handleSearchResults}
+                    />
+                    <Main articles={articles} />
+                  </>
+                }
+              />
+              <Route
+                path="/saved-news"
+                element={
+                  <SavedNews
+                    loggedIn={true}
+                    name={"User"}
+                    num={3}
+                    openPopup={handleRegisterPopup}
                   />
-                  <Main articles={articles} />
-                </>
-              }
+                }
+              />
+            </Routes>
+            <Footer />
+            <RegisterPopup
+              isOpen={activePopup === "register"}
+              closePopup={handleClosePopup}
+              handleLoginPopup={handleLoginPopup}
             />
-            <Route
-              path="/saved-news"
-              element={
-                <SavedNews
-                  loggedIn={true}
-                  name={"User"}
-                  num={3}
-                  openPopup={handleRegisterPopup}
-                />
-              }
+            <LoginPopup
+              isOpen={activePopup === "login"}
+              closePopup={handleClosePopup}
+              handleRegisterPopup={handleRegisterPopup}
             />
-          </Routes>
-          <Footer />
-          <RegisterPopup
-            isOpen={activePopup === "register"}
-            closePopup={handleClosePopup}
-            handleLoginPopup={handleLoginPopup}
-          />
-          <LoginPopup
-            isOpen={activePopup === "login"}
-            closePopup={handleClosePopup}
-            handleRegisterPopup={handleRegisterPopup}
-          />
-        </div>
+          </div>
+        </ArticleContext.Provider>
       </UserContext.Provider>
     </>
   );

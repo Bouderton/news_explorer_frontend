@@ -1,7 +1,8 @@
 import "./NewsCard.css";
 import doggy from "../../images/doggy.jpg";
-import { useState } from "react";
+import { useState, useContext } from "react";
 // import bookmark from "../../images/bookmark.svg";
+import { ArticleContext } from "../../contexts/ArticleContext";
 
 const NewsCard = ({ isSavedNews, article }) => {
   // cards accept news data
@@ -39,8 +40,8 @@ const NewsCard = ({ isSavedNews, article }) => {
         <div className="card__text-container">
           <p className="card__date">{article.publishedAt}</p>
           <h3 className="card__title">{article.title}</h3>
-          <p className="card__text">o{article.description}</p>
-          <p className="card__author">{article.source.name}</p>
+          <p className="card__text">{article.description}</p>
+          <p className="card__author">{article.name}</p>
         </div>
       </div>
     </div>

@@ -23,6 +23,9 @@
 // Publication date: publishedAt
 // Publication description: description
 // Related image: urlToImage
+
+import { useContext } from "react";
+
 const baseURL = "https://newsapi.org/v2/everything?";
 
 const checkResponse = (res) => {

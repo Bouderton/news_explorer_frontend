@@ -8,7 +8,7 @@ import NotFound from "../NotFound/NotFound";
 const Main = ({ openPopup, articles }) => {
   return (
     <main className="main">
-      {/* <NewsCardList articles={articles} /> */}
+      <NewsCardList articles={articles} />
       <About />
     </main>
   );

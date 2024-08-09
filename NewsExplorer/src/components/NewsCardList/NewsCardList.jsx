@@ -1,9 +1,12 @@
 import NewsCard from "../NewsCard/NewsCard";
 import "./NewsCardList.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { ArticleContext } from "../../contexts/ArticleContext";
 
-const NewsCardList = ({ loggedIn, isSavedNews, articles }) => {
+const NewsCardList = ({ loggedIn, isSavedNews }) => {
   // need to pass news data to news cards
+
+  const { articles } = useContext(ArticleContext);
 
   return (
     <div className="card__section">
@@ -15,7 +18,7 @@ const NewsCardList = ({ loggedIn, isSavedNews, articles }) => {
         </>
       )}
       <div className="card__grid-container">
-        {articles.map((article, index) => (
+        {articles.slice(0, 6).map((article, index) => (
           <NewsCard key={index} article={article} isSavedNews={isSavedNews} />
         ))}
       </div>
