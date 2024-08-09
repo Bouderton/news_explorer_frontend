@@ -20,10 +20,11 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState({});
   const [articles, setArticles] = useState([]);
-  const [shownArticles, setShownArticles] = useState(6);
+  const [shownArticles, setShownArticles] = useState(3);
   const [isLoading, setIsLoading] = useState(true);
   const [searching, setSearching] = useState(false);
   const [isSavedNews, setIsSavedNews] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleRegisterPopup = () => {
     setActivePopup("register");
@@ -56,7 +57,12 @@ function App() {
           setIsLoading(false);
         }, 1000);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setError(
+          "Sorry, something went wrong during the request. There may be a connection issue or the server may be down. Please try again later."
+        );
+      });
   };
 
   useEffect(() => {

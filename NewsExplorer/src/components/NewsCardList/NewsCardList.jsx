@@ -41,13 +41,15 @@ const NewsCardList = ({
             ))}
           </div>
           <div className="card__button-container">
-            <button
-              type="text"
-              className="card__button"
-              onClick={showMoreArticles}
-            >
-              Show More
-            </button>
+            {articles.length === 100 ? null : (
+              <button
+                type="text"
+                className="card__button"
+                onClick={showMoreArticles}
+              >
+                Show More
+              </button>
+            )}
           </div>
         </div>
       ) : null}
