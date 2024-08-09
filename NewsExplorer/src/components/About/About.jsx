@@ -1,12 +1,16 @@
 import "./About.css";
-import spideylogo from "../../images/spideylogo.jpg";
+import about_me_placeholder from "../../images/about_me_placeholder.png";
 
 const About = () => {
   return (
     <div className="about">
       <div className="about__content">
         <div className="about__image">
-          <img src={spideylogo} alt="Author Image" className="about__image" />
+          <img
+            src={about_me_placeholder}
+            alt="Author Image"
+            className="about__image"
+          />
         </div>
         <div className="about__text-container">
           <h2 className="about__title">About the author</h2>
