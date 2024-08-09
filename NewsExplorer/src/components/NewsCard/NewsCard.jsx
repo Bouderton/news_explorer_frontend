@@ -8,6 +8,7 @@ const NewsCard = ({ isSavedNews, article }) => {
   // cards accept news data
 
   const [clicked, setClicked] = useState(false);
+  const options = { year: "numeric", month: "long", day: "numeric" };
 
   const handleClick = () => {
     setClicked((prevState) => !prevState);
@@ -39,8 +40,8 @@ const NewsCard = ({ isSavedNews, article }) => {
 
         <div className="card__text-container">
           <p className="card__date">{article.publishedAt}</p>
-          <h3 className="card__title">{article.title}</h3>
-          <p className="card__text">{article.description}</p>
+          <h3 className="card__title title_clamp">{article.title}</h3>
+          <p className="card__text text_clamp">{article.description}</p>
           <p className="card__author">{article.source.name}</p>
         </div>
       </div>

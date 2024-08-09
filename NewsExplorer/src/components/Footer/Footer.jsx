@@ -1,6 +1,7 @@
 import "./Footer.css";
 import github from "../../images/github.svg";
 import linkedin from "../../images/linkedin.svg";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -13,8 +14,17 @@ const Footer = () => {
           <ul className="footer__content-list">
             <li className="footer__content_list-item">
               <div className="footer__content_text-container">
-                <p className="footer__content_list-text">Home</p>
-                <p className="footer__content_list-text">TripleTen</p>
+                <a href="#" style={{ textDecoration: "none", color: "black" }}>
+                  <p className="footer__content_list-text">Home</p>
+                </a>
+                <a
+                  href="https://tripleten.com"
+                  rel="noopener noreferer"
+                  target="_blank"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  <p className="footer__content_list-text">TripleTen</p>
+                </a>
               </div>
             </li>
             <li className="footer__content-list-item">

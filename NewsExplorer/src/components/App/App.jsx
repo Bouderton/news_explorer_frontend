@@ -23,6 +23,7 @@ function App() {
   const [shownArticles, setShownArticles] = useState(6);
   const [isLoading, setIsLoading] = useState(true);
   const [searching, setSearching] = useState(false);
+  const [isSavedNews, setIsSavedNews] = useState(false);
 
   const handleRegisterPopup = () => {
     setActivePopup("register");
@@ -109,7 +110,7 @@ function App() {
                 }
               />
             </Routes>
-            <Footer />
+            <Footer isSavedNews={isSavedNews} />
             <RegisterPopup
               isOpen={activePopup === "register"}
               closePopup={handleClosePopup}
