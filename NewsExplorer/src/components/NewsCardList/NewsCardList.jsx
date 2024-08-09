@@ -20,18 +20,17 @@ const NewsCardList = ({
     <>
       {searching ? (
         <div className="card__section">
-          {loggedIn ? (
-            ""
-          ) : (
+          <h3 className="card__section-text">Search Results</h3>
+          {isLoading ? (
             <>
-              <h3 className="card__section-text">Search Results</h3>
-              {isLoading ? (
-                <>
-                  <Preloader />
-                </>
-              ) : null}
+              <Preloader />
             </>
-          )}
+          ) : null}
+          {!isLoading && articles.length === 0 ? (
+            <>
+              <NotFound />
+            </>
+          ) : null}
           <div className="card__grid-container">
             {articles.slice(0, shownArticles).map((article, index) => (
               <NewsCard
