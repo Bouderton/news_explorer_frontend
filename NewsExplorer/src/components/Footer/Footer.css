@@ -57,14 +57,18 @@
 }
 
 .footer__content-list-item {
-  cursor: pointer;
   height: 25px;
 }
 
 .footer__content_list-img {
   width: 25px;
   height: 25px;
+}
+
+.footer__content_list-img:hover {
   cursor: pointer;
+  scale: 1.05;
+  opacity: 50%;
 }
 
 .footer__content_list-text {
@@ -72,6 +76,12 @@
   font-family: "Roboto-400";
   line-height: 25px;
   margin: 0;
+}
+
+.footer__content_list-text:hover {
+  cursor: pointer;
+  scale: 1.05;
+  opacity: 50%;
 }
 
 @media screen and (max-width: 990px) {

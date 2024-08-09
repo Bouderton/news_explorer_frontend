@@ -1,9 +1,12 @@
 import "./Footer.css";
 import github from "../../images/github.svg";
 import linkedin from "../../images/linkedin.svg";
+import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const route = useLocation();
+
   return (
     <footer className="footer">
       <div className="footer__content">
@@ -14,9 +17,21 @@ const Footer = () => {
           <ul className="footer__content-list">
             <li className="footer__content_list-item">
               <div className="footer__content_text-container">
-                <a href="#" style={{ textDecoration: "none", color: "black" }}>
-                  <p className="footer__content_list-text">Home</p>
-                </a>
+                {route.pathname === "/saved-news" ? (
+                  <Link
+                    to="/"
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    <p className="footer__content_list-text">Home</p>
+                  </Link>
+                ) : (
+                  <a
+                    href="#"
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    <p className="footer__content_list-text">Home</p>
+                  </a>
+                )}
                 <a
                   href="https://tripleten.com"
                   rel="noopener noreferer"
