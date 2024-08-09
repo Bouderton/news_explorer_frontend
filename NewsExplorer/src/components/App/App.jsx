@@ -45,14 +45,16 @@ function App() {
     searchNews(query)
       .then((data) => {
         setSearching(true);
-        const filteredArticles = data.articles.filter(
-          (article) =>
-            article.urlToImage &&
-            article.title &&
-            !article.title.includes("[Removed]")
-        );
-        setArticles(filteredArticles);
-        setIsLoading(false);
+        setTimeout(() => {
+          const filteredArticles = data.articles.filter(
+            (article) =>
+              article.urlToImage &&
+              article.title &&
+              !article.title.includes("[Removed]")
+          );
+          setArticles(filteredArticles);
+          setIsLoading(false);
+        }, 1500);
       })
       .catch((err) => console.log(err));
   };
