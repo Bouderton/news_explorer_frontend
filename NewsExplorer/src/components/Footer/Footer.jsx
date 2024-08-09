@@ -26,7 +26,7 @@ const Footer = () => {
                   </Link>
                 ) : (
                   <a
-                    href="#"
+                    href="/"
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     <p className="footer__content_list-text">Home</p>
