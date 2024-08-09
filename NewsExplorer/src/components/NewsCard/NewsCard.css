@@ -5,6 +5,7 @@
   background: white;
   min-width: 244px;
   max-width: 400px;
+  max-height: 576px;
 }
 
 .card__container {
@@ -12,7 +13,7 @@
 }
 
 .card__image {
-  max-height: 272px;
+  height: 272px;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
 }
@@ -39,7 +40,7 @@
 .card__title {
   font-family: "Roboto-Slab-400";
   font-size: 26px;
-  max-height: 60px;
+  /* max-height: 60px; */
   line-height: 30px;
   text-overflow: ellipsis;
   margin: 12px auto 0;

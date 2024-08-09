@@ -20,6 +20,8 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState({});
   const [articles, setArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [searching, setSearching] = useState(false);
 
   const handleRegisterPopup = () => {
     setActivePopup("register");
@@ -33,9 +35,10 @@ function App() {
     setActivePopup("login");
   };
 
-  const handleSearchResults = (e) => {
-    searchNews(e)
+  const handleSearchResults = (query) => {
+    searchNews(query)
       .then((data) => {
+        setSearching(true);
         const filteredArticles = data.articles.filter(
           (article) =>
             article.urlToImage &&
@@ -43,9 +46,7 @@ function App() {
             !article.title.includes("[Removed]")
         );
         setArticles(filteredArticles);
-      })
-      .then((data) => {
-        setArticles(data.articles);
+        setIsLoading(false);
         console.log(data);
       })
       .catch((err) => console.log(err));
@@ -81,7 +82,11 @@ function App() {
                       openPopup={handleLoginPopup}
                       handleSubmit={handleSearchResults}
                     />
-                    <Main articles={articles} />
+                    <Main
+                      articles={articles}
+                      isLoading={isLoading}
+                      searching={searching}
+                    />
                   </>
                 }
               />

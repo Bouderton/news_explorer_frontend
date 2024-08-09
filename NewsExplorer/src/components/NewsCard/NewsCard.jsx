@@ -41,7 +41,7 @@ const NewsCard = ({ isSavedNews, article }) => {
           <p className="card__date">{article.publishedAt}</p>
           <h3 className="card__title">{article.title}</h3>
           <p className="card__text">{article.description}</p>
-          <p className="card__author">{article.name}</p>
+          <p className="card__author">{article.source.name}</p>
         </div>
       </div>
     </div>
