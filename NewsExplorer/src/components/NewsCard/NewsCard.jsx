@@ -10,6 +10,12 @@ const NewsCard = ({ isSavedNews, article }) => {
   const [clicked, setClicked] = useState(false);
   const options = { year: "numeric", month: "long", day: "numeric" };
 
+  const convertDate = (isoDate) => {
+    const date = new Date(isoDate);
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return date.toLocaleDateString("en-US", options);
+  };
+
   const handleClick = () => {
     setClicked((prevState) => !prevState);
   };
@@ -39,7 +45,7 @@ const NewsCard = ({ isSavedNews, article }) => {
         )}
 
         <div className="card__text-container">
-          <p className="card__date">{article.publishedAt}</p>
+          <p className="card__date">{convertDate(article.publishedAt)}</p>
           <h3 className="card__title title_clamp">{article.title}</h3>
           <p className="card__text text_clamp">{article.description}</p>
           <p className="card__author">{article.source.name}</p>
