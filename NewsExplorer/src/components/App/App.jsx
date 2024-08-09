@@ -20,6 +20,7 @@ function App() {
   const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState({});
   const [articles, setArticles] = useState([]);
+  const [shownArticles, setShownArticles] = useState(6);
   const [isLoading, setIsLoading] = useState(true);
   const [searching, setSearching] = useState(false);
 
@@ -35,6 +36,10 @@ function App() {
     setActivePopup("login");
   };
 
+  const showMoreArticles = () => {
+    setShownArticles((prev) => prev + 3);
+  };
+
   const handleSearchResults = (query) => {
     searchNews(query)
       .then((data) => {
@@ -47,7 +52,6 @@ function App() {
         );
         setArticles(filteredArticles);
         setIsLoading(false);
-        console.log(data);
       })
       .catch((err) => console.log(err));
   };
@@ -71,7 +75,9 @@ function App() {
   return (
     <>
       <UserContext.Provider value={user}>
-        <ArticleContext.Provider value={{ articles, setArticles }}>
+        <ArticleContext.Provider
+          value={{ articles, setArticles, shownArticles, setShownArticles }}
+        >
           <div className="page">
             <Routes>
               <Route
@@ -84,6 +90,7 @@ function App() {
                     />
                     <Main
                       articles={articles}
+                      showMoreArticles={showMoreArticles}
                       isLoading={isLoading}
                       searching={searching}
                     />

@@ -3,11 +3,18 @@ import "./NewsCardList.css";
 import { useState, useContext } from "react";
 import { ArticleContext } from "../../contexts/ArticleContext";
 import Preloader from "../Preloader/Preloader";
+import NotFound from "../NotFound/NotFound";
 
-const NewsCardList = ({ loggedIn, isSavedNews, isLoading, searching }) => {
+const NewsCardList = ({
+  loggedIn,
+  isSavedNews,
+  isLoading,
+  searching,
+  showMoreArticles,
+}) => {
   // need to pass news data to news cards
 
-  const { articles } = useContext(ArticleContext);
+  const { articles, shownArticles } = useContext(ArticleContext);
 
   return (
     <>
@@ -26,7 +33,7 @@ const NewsCardList = ({ loggedIn, isSavedNews, isLoading, searching }) => {
             </>
           )}
           <div className="card__grid-container">
-            {articles.slice(0, 6).map((article, index) => (
+            {articles.slice(0, shownArticles).map((article, index) => (
               <NewsCard
                 key={index}
                 article={article}
@@ -35,7 +42,11 @@ const NewsCardList = ({ loggedIn, isSavedNews, isLoading, searching }) => {
             ))}
           </div>
           <div className="card__button-container">
-            <button type="text" className="card__button">
+            <button
+              type="text"
+              className="card__button"
+              onClick={showMoreArticles}
+            >
               Show More
             </button>
           </div>
