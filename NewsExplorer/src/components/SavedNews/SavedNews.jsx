@@ -6,7 +6,7 @@ const SavedNews = ({ loggedIn, name, num, isSavedNews, openPopup }) => {
   return (
     <section className="saved">
       <Navigation
-        loggedIn={true}
+        loggedIn={loggedIn}
         name={name}
         isSavedNews={true}
         openPopup={openPopup}

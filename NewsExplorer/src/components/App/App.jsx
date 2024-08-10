@@ -73,10 +73,12 @@ function App() {
   const handleLogin = () => {
     authorize("user@example.com", "password")
       .then((res) => {
+        setUser(res);
         localStorage.setItem("jwt", res.token);
+      })
+      .then(() => {
         setLoggedIn(true);
         handleClosePopup();
-        setUser(res);
       })
 
       .catch((err) => console.log(err));
@@ -148,7 +150,6 @@ function App() {
                 element={
                   <SavedNews
                     loggedIn={true}
-                    name={"User"}
                     num={3}
                     openPopup={handleRegisterPopup}
                   />
