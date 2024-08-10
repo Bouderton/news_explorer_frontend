@@ -6,7 +6,7 @@ import logout_dark from "../../images/logout_dark.svg";
 import { UserContext } from "../../contexts/UserContext";
 import NavigationMobile from "../NavigationMobile/NavigationMobile";
 
-const Navigation = ({ loggedIn, name, openPopup, isSavedNews }) => {
+const Navigation = ({ loggedIn, openPopup, isSavedNews, handleLogout }) => {
   const route = useLocation();
 
   const currentUser = useContext(UserContext);
@@ -37,8 +37,12 @@ const Navigation = ({ loggedIn, name, openPopup, isSavedNews }) => {
                       Saved Articles
                     </Link>
                   </button>
-                  <button type="text" className="nav__button-logout">
-                    {"Test Name"}
+                  <button
+                    type="text"
+                    className="nav__button-logout"
+                    onClick={handleLogout}
+                  >
+                    {currentUser?.data.name}
                     <img
                       src={logout_light}
                       className="nav__button-logout-icon"
@@ -88,8 +92,9 @@ const Navigation = ({ loggedIn, name, openPopup, isSavedNews }) => {
                   type="text"
                   className="nav__button-logout"
                   style={{ color: "#1a1b22" }}
+                  // onClick={handleLogout}
                 >
-                  {"Test Name"}
+                  {currentUser}
                   <img src={logout_dark} className="nav__button-logout-icon" />
                 </button>
               </div>

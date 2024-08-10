@@ -1,19 +1,23 @@
+// React
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import reactLogo from "../../assets/react.svg";
-import viteLogo from "/favicon.svg";
+
+// Components
 import "./App.css";
 import Header from "../Header/Header";
-import Navigation from "../Navigation/Navigation";
 import Main from "../Main/Main";
 import RegisterPopup from "../RegisterPopup/RegisterPopup";
 import LoginPopup from "../LoginPopup/LoginPopup";
 import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
+
+// API
+import { searchNews } from "../../utils/NewsApi";
+import { authorize, checkToken } from "../../utils/api";
+
+// Context
 import { UserContext } from "../../contexts/UserContext";
 import { ArticleContext } from "../../contexts/ArticleContext";
-import SearchForm from "../SearchForm/SearchForm";
-import { searchNews } from "../../utils/NewsApi";
 
 function App() {
   const [activePopup, setActivePopup] = useState("");
@@ -25,6 +29,7 @@ function App() {
   const [searching, setSearching] = useState(false);
   const [isSavedNews, setIsSavedNews] = useState(false);
   const [error, setError] = useState(null);
+  // const [token, setToken] = useState(null);
 
   const handleRegisterPopup = () => {
     setActivePopup("register");
@@ -65,6 +70,23 @@ function App() {
       });
   };
 
+  const handleLogin = () => {
+    authorize("user@example.com", "password")
+      .then((res) => {
+        localStorage.setItem("jwt", res.token);
+        setLoggedIn(true);
+        handleClosePopup();
+        setUser(res);
+      })
+
+      .catch((err) => console.log(err));
+  };
+
+  const handleLogout = () => {
+    setUser(null);
+    setLoggedIn(false);
+  };
+
   useEffect(() => {
     if (!activePopup) return;
 
@@ -81,6 +103,19 @@ function App() {
     };
   }, [activePopup]);
 
+  useEffect(() => {
+    const token = localStorage.getItem("jwt");
+
+    if (token) {
+      checkToken(token)
+        .then((res) => {
+          setLoggedIn(true);
+          setUser(res);
+        })
+        .catch((err) => console.log(err));
+    }
+  }, []);
+
   return (
     <>
       <UserContext.Provider value={user}>
@@ -96,6 +131,8 @@ function App() {
                     <Header
                       openPopup={handleLoginPopup}
                       handleSubmit={handleSearchResults}
+                      loggedIn={loggedIn}
+                      handleLogout={handleLogout}
                     />
                     <Main
                       articles={articles}
@@ -128,6 +165,7 @@ function App() {
               isOpen={activePopup === "login"}
               closePopup={handleClosePopup}
               handleRegisterPopup={handleRegisterPopup}
+              handleLogin={handleLogin}
             />
           </div>
         </ArticleContext.Provider>

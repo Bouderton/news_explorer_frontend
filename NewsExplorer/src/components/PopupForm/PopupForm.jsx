@@ -9,6 +9,7 @@ const PopupWithForm = ({
   isOpen,
   closePopup,
   popupSwitch,
+  onSubmit,
 }) => {
   return (
     <div className={`popup ${isOpen ? "popup_opened" : ""}`}>
@@ -19,7 +20,9 @@ const PopupWithForm = ({
           onClick={closePopup}
         />
         <h3 className="popup__form-title">{title}</h3>
-        <form className="popup__form">{children}</form>
+        <form className="popup__form" onSubmit={onSubmit}>
+          {children}
+        </form>
         <p className="popup__or-text">
           or
           <button
