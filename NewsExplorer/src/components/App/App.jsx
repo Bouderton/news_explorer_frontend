@@ -14,7 +14,7 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 // API
 import { searchNews } from "../../utils/NewsApi";
-import { authorize, checkToken } from "../../utils/api";
+import { authorize, checkToken } from "../../utils/auth";
 
 // Context
 import { UserContext } from "../../contexts/UserContext";
