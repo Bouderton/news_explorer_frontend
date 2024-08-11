@@ -1,10 +1,13 @@
 import "./NavigationMobile.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import logout_light from "../../images/logout_light.svg";
+import { UserContext } from "../../contexts/UserContext";
 
 const NavigationMobile = ({ route, loggedIn, openPopup, isSavedNews }) => {
   const [dropdown, setDropdown] = useState(false);
+
+  const currentUser = useContext(UserContext);
 
   function handleDropdown() {
     setDropdown(true);
@@ -57,7 +60,7 @@ const NavigationMobile = ({ route, loggedIn, openPopup, isSavedNews }) => {
                 </Link>
               </button>
               <button type="text" className="nav__mobile-button__logout">
-                {"Test Name"}
+                {currentUser?.data.name}
                 <img
                   src={logout_light}
                   className="nav__mobile-button__logout-icon"
@@ -108,7 +111,7 @@ const NavigationMobile = ({ route, loggedIn, openPopup, isSavedNews }) => {
                     className="nav__mobile-button__logout"
                     style={{ color: "#1a1b22" }}
                   >
-                    {"Test Name"}
+                    {currentUser?.data.name}
                     <img
                       src={logout_light}
                       className="nav__mobile-button__logout-icon"

@@ -88,7 +88,10 @@ const Navigation = ({ loggedIn, openPopup, isSavedNews, handleLogout }) => {
                 >
                   Saved Articles
                 </button>
-                <Link to="/">
+                <Link
+                  to="/"
+                  style={{ textDecoration: "none", color: "#1a1b22" }}
+                >
                   <button
                     type="text"
                     className="nav__button-logout"
