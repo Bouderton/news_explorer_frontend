@@ -127,6 +127,7 @@ function App() {
           <div className="page">
             <Routes>
               <Route
+                exact
                 path="/"
                 element={
                   <>
