@@ -94,8 +94,7 @@ const Navigation = ({ loggedIn, openPopup, isSavedNews, handleLogout }) => {
                 >
                   <button
                     type="text"
-                    className="nav__button-logout"
-                    style={{ color: "#1a1b22" }}
+                    className="nav__button-logout dark"
                     onClick={handleLogout}
                   >
                     {currentUser?.data.name}
@@ -114,6 +113,7 @@ const Navigation = ({ loggedIn, openPopup, isSavedNews, handleLogout }) => {
             openPopup={openPopup}
             isSavedNews={isSavedNews}
             loggedIn={loggedIn}
+            handleLogout={handleLogout}
             route={route}
           />
         </div>

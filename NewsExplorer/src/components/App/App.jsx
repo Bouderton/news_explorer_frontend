@@ -10,6 +10,7 @@ import RegisterPopup from "../RegisterPopup/RegisterPopup";
 import LoginPopup from "../LoginPopup/LoginPopup";
 import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 // API
 import { searchNews } from "../../utils/NewsApi";
@@ -147,11 +148,13 @@ function App() {
               <Route
                 path="/saved-news"
                 element={
-                  <SavedNews
-                    loggedIn={true}
-                    num={3}
-                    openPopup={handleRegisterPopup}
-                  />
+                  <ProtectedRoute loggedIn={loggedIn}>
+                    <SavedNews
+                      loggedIn={loggedIn}
+                      num={3}
+                      openPopup={handleRegisterPopup}
+                    />
+                  </ProtectedRoute>
                 }
               />
             </Routes>

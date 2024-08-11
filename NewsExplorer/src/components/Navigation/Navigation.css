@@ -93,6 +93,10 @@
   gap: 15px;
 }
 
+.dark {
+  color: #1a1b22;
+}
+
 .nav__button-logout:hover {
   opacity: 50%;
   scale: 1.025;

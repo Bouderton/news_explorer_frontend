@@ -4,7 +4,13 @@ import { Link } from "react-router-dom";
 import logout_light from "../../images/logout_light.svg";
 import { UserContext } from "../../contexts/UserContext";
 
-const NavigationMobile = ({ route, loggedIn, openPopup, isSavedNews }) => {
+const NavigationMobile = ({
+  route,
+  loggedIn,
+  openPopup,
+  isSavedNews,
+  handleLogout,
+}) => {
   const [dropdown, setDropdown] = useState(false);
 
   const currentUser = useContext(UserContext);
@@ -110,6 +116,7 @@ const NavigationMobile = ({ route, loggedIn, openPopup, isSavedNews }) => {
                     type="text"
                     className="nav__mobile-button__logout"
                     style={{ color: "#1a1b22" }}
+                    onClick={handleLogout}
                   >
                     {currentUser?.data.name}
                     <img

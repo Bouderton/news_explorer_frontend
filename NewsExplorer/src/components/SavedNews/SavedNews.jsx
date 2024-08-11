@@ -22,7 +22,7 @@ const SavedNews = ({ loggedIn, name, num, isSavedNews, openPopup }) => {
           </span>
         </p>
       </div>
-      <NewsCardList loggedIn={true} isSavedNews={true} />
+      <NewsCardList loggedIn={loggedIn} isSavedNews={true} />
     </section>
   );
 };
