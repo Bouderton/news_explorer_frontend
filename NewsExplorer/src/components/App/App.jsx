@@ -73,12 +73,12 @@ function App() {
   const handleLogin = () => {
     authorize("user@example.com", "password")
       .then((res) => {
-        // setUser(res);
         localStorage.setItem("jwt", res.token);
+        console.log(res);
+        setUser(res.data);
         setLoggedIn(true);
         handleClosePopup();
       })
-
       .catch((err) => console.log(err));
   };
 
