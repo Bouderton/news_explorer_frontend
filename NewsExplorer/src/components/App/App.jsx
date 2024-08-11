@@ -13,7 +13,7 @@ import Footer from "../Footer/Footer";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 // API
-import { searchNews } from "../../utils/NewsApi";
+import { searchNews, saveArticle } from "../../utils/NewsApi";
 import { authorize, checkToken } from "../../utils/auth";
 
 // Context
@@ -111,7 +111,6 @@ function App() {
       checkToken(token)
         .then((res) => {
           setLoggedIn(true);
-          console.log(loggedIn);
           setUser(res);
         })
         .catch((err) => console.log(err));

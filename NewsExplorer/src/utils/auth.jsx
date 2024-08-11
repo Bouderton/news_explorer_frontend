@@ -9,7 +9,7 @@ export const checkToken = (token) => {
   // Pretend we did a fetch request that gave us back a user
   return new Promise((resolve, reject) => {
     resolve({
-      data: { name: "user", email: "user@example.com", id: "fake-id" },
+      data: { name: "User", email: "user@example.com", id: "fake-id" },
     });
   });
 };

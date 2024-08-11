@@ -19,7 +19,7 @@ const NewsCardList = ({
   return (
     <>
       {searching ? (
-        <div className="card__section">
+        <section className="card__section">
           <h3 className="card__section-text">Search Results</h3>
           {isLoading ? (
             <>
@@ -51,7 +51,7 @@ const NewsCardList = ({
               </button>
             )}
           </div>
-        </div>
+        </section>
       ) : null}
     </>
   );

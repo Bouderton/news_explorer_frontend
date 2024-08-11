@@ -3,7 +3,7 @@ import about_me_placeholder from "../../images/about_me_placeholder.png";
 
 const About = () => {
   return (
-    <div className="about">
+    <section className="about">
       <div className="about__content">
         <div className="about__image">
           <img
@@ -29,7 +29,7 @@ const About = () => {
           </p>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
