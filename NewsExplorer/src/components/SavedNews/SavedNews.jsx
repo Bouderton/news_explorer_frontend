@@ -11,7 +11,7 @@ const SavedNews = ({ loggedIn, num, isSavedNews, openPopup }) => {
       <Navigation
         loggedIn={loggedIn}
         name={name}
-        isSavedNews={true}
+        isSavedNews={isSavedNews}
         openPopup={openPopup}
       />
       <div className="saved__text-container">

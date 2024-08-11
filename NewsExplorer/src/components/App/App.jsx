@@ -75,7 +75,6 @@ function App() {
     authorize("user@example.com", "password")
       .then((res) => {
         localStorage.setItem("jwt", res.token);
-        console.log(res);
         setUser(res.data);
         setLoggedIn(true);
         handleClosePopup();
@@ -112,6 +111,7 @@ function App() {
       checkToken(token)
         .then((res) => {
           setLoggedIn(true);
+          console.log(loggedIn);
           setUser(res);
         })
         .catch((err) => console.log(err));
@@ -152,6 +152,7 @@ function App() {
                   <ProtectedRoute loggedIn={loggedIn}>
                     <SavedNews
                       loggedIn={loggedIn}
+                      isSavedNews={true}
                       num={3}
                       openPopup={handleRegisterPopup}
                     />
