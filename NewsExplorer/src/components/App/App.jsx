@@ -73,10 +73,8 @@ function App() {
   const handleLogin = () => {
     authorize("user@example.com", "password")
       .then((res) => {
-        setUser(res);
+        // setUser(res);
         localStorage.setItem("jwt", res.token);
-      })
-      .then(() => {
         setLoggedIn(true);
         handleClosePopup();
       })
@@ -117,7 +115,7 @@ function App() {
         })
         .catch((err) => console.log(err));
     }
-  }, []);
+  }, [loggedIn]);
 
   return (
     <>

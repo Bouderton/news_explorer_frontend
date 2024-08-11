@@ -92,9 +92,9 @@ const Navigation = ({ loggedIn, openPopup, isSavedNews, handleLogout }) => {
                   type="text"
                   className="nav__button-logout"
                   style={{ color: "#1a1b22" }}
-                  // onClick={handleLogout}
+                  onClick={handleLogout}
                 >
-                  {currentUser}
+                  {currentUser?.data.name}
                   <img src={logout_dark} className="nav__button-logout-icon" />
                 </button>
               </div>
