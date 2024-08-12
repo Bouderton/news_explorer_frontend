@@ -1,13 +1,11 @@
 import "./NewsCard.css";
-import doggy from "../../images/doggy.jpg";
-import { useState, useContext } from "react";
-// import bookmark from "../../images/bookmark.svg";
-import { ArticleContext } from "../../contexts/ArticleContext";
+import { useState } from "react";
 
-const NewsCard = ({ isSavedNews, article }) => {
+const NewsCard = ({ isSavedNews, article, loggedIn }) => {
   // cards accept news data
 
   const [clicked, setClicked] = useState(false);
+  const [visible, setVisibile] = useState(false);
   const options = { year: "numeric", month: "long", day: "numeric" };
 
   const convertDate = (isoDate) => {
@@ -19,6 +17,11 @@ const NewsCard = ({ isSavedNews, article }) => {
   const handleClick = () => {
     setClicked((prevState) => !prevState);
   };
+
+  const handleHover = () => {
+    setVisibile(true);
+  };
+
   return (
     <div className="card__container">
       {isSavedNews ? (
@@ -29,11 +32,33 @@ const NewsCard = ({ isSavedNews, article }) => {
           </div>
         </>
       ) : (
-        <button
-          onClick={handleClick}
-          type="radio"
-          className={`${clicked ? "card__bookmark-active" : "card__bookmark"}`}
-        />
+        <>
+          {loggedIn === true ? (
+            <button
+              onClick={handleClick}
+              type="radio"
+              className={`${
+                clicked ? "card__bookmark-active" : "card__bookmark"
+              }`}
+            />
+          ) : (
+            <>
+              <button
+                disabled
+                className="card__bookmark-disabled"
+                onMouseOver={handleHover}
+              />
+              <button
+                type="text"
+                className={`card__signin ${
+                  visible === true ? "signin_reveal" : ""
+                }`}
+              >
+                Sign in to save articles
+              </button>
+            </>
+          )}
+        </>
       )}
       <div className="card">
         {article.urlToImage && (

@@ -37,6 +37,7 @@ const NewsCardList = ({
                 key={index}
                 article={article}
                 isSavedNews={isSavedNews}
+                loggedIn={loggedIn}
               />
             ))}
           </div>

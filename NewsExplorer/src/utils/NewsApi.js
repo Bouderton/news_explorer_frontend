@@ -44,3 +44,14 @@ export const searchNews = (query) => {
     }
   ).then(checkResponse);
 };
+
+export function saveArticle(article) {
+  return new Promise((resolve, reject) => {
+    resolve({
+      id: "1234567890",
+      title: article.title,
+      imageUrl: article.urlToImage,
+      ulr: article.url,
+    });
+  });
+}

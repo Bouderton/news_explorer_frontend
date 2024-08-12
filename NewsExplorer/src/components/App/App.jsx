@@ -82,6 +82,14 @@ function App() {
       .catch((err) => console.log(err));
   };
 
+  const handleSaveArticle = (article) => {
+    saveArticle()
+      .then((res) => {
+        console.log("Saved");
+      })
+      .catch((err) => console.log(err));
+  };
+
   const handleLogout = () => {
     setUser(null);
     setLoggedIn(false);
@@ -141,6 +149,7 @@ function App() {
                       showMoreArticles={showMoreArticles}
                       isLoading={isLoading}
                       searching={searching}
+                      loggedIn={loggedIn}
                     />
                   </>
                 }
