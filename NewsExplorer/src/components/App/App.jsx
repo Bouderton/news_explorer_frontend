@@ -150,6 +150,7 @@ function App() {
                       isLoading={isLoading}
                       searching={searching}
                       loggedIn={loggedIn}
+                      openPopup={handleLoginPopup}
                     />
                   </>
                 }

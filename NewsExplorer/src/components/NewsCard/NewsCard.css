@@ -144,6 +144,11 @@
   transition: visibility 0s, opacity 0.25s;
 }
 
+.card__signin:hover {
+  cursor: pointer;
+  scale: 1.025;
+}
+
 .card__keyword-container {
   background: white;
   border-radius: 10px;

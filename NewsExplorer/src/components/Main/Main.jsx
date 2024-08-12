@@ -2,7 +2,13 @@ import "./Main.css";
 import About from "../About/About";
 import NewsCardList from "../NewsCardList/NewsCardList";
 
-const Main = ({ searching, isLoading, showMoreArticles, loggedIn }) => {
+const Main = ({
+  searching,
+  openPopup,
+  isLoading,
+  showMoreArticles,
+  loggedIn,
+}) => {
   return (
     <main className="main">
       <NewsCardList
@@ -10,6 +16,7 @@ const Main = ({ searching, isLoading, showMoreArticles, loggedIn }) => {
         searching={searching}
         isLoading={isLoading}
         showMoreArticles={showMoreArticles}
+        openPopup={openPopup}
       />
       <About />
     </main>

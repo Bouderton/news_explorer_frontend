@@ -1,7 +1,7 @@
 import "./NewsCard.css";
 import { useState } from "react";
 
-const NewsCard = ({ isSavedNews, article, loggedIn }) => {
+const NewsCard = ({ isSavedNews, article, loggedIn, openPopup }) => {
   // cards accept news data
 
   const [clicked, setClicked] = useState(false);
@@ -49,6 +49,7 @@ const NewsCard = ({ isSavedNews, article, loggedIn }) => {
                 onMouseOver={handleHover}
               />
               <button
+                onClick={openPopup}
                 type="text"
                 className={`card__signin ${
                   visible === true ? "signin_reveal" : ""
