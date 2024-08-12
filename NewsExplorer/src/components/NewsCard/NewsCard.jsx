@@ -22,6 +22,10 @@ const NewsCard = ({ isSavedNews, article, loggedIn, openPopup }) => {
     setVisibile(true);
   };
 
+  const handleHoverOut = () => {
+    setVisibile(false);
+  };
+
   return (
     <div className="card__container">
       {isSavedNews ? (
@@ -50,6 +54,7 @@ const NewsCard = ({ isSavedNews, article, loggedIn, openPopup }) => {
               />
               <button
                 onClick={openPopup}
+                onMouseOut={handleHoverOut}
                 type="text"
                 className={`card__signin ${
                   visible === true ? "signin_reveal" : ""
