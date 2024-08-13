@@ -1,12 +1,17 @@
 import "./NewsCard.css";
 import { useState } from "react";
 
-const NewsCard = ({ isSavedNews, article, loggedIn, openPopup }) => {
+const NewsCard = ({
+  isSavedNews,
+  article,
+  loggedIn,
+  openPopup,
+  handleSaveArticle,
+}) => {
   // cards accept news data
 
   const [clicked, setClicked] = useState(false);
   const [visible, setVisibile] = useState(false);
-  const options = { year: "numeric", month: "long", day: "numeric" };
 
   const convertDate = (isoDate) => {
     const date = new Date(isoDate);
@@ -39,7 +44,10 @@ const NewsCard = ({ isSavedNews, article, loggedIn, openPopup }) => {
         <>
           {loggedIn === true ? (
             <button
-              onClick={handleClick}
+              onClick={() => {
+                handleSaveArticle({ article });
+                handleClick();
+              }}
               type="radio"
               className={`${
                 clicked ? "card__bookmark-active" : "card__bookmark"

@@ -8,6 +8,7 @@ const Main = ({
   isLoading,
   showMoreArticles,
   loggedIn,
+  handleSaveArticle,
 }) => {
   return (
     <main className="main">
@@ -17,6 +18,7 @@ const Main = ({
         isLoading={isLoading}
         showMoreArticles={showMoreArticles}
         openPopup={openPopup}
+        handleSaveArticle={handleSaveArticle}
       />
       <About />
     </main>

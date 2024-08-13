@@ -12,6 +12,7 @@ const NewsCardList = ({
   searching,
   showMoreArticles,
   openPopup,
+  handleSaveArticle,
 }) => {
   // need to pass news data to news cards
 
@@ -40,6 +41,7 @@ const NewsCardList = ({
                 isSavedNews={isSavedNews}
                 loggedIn={loggedIn}
                 openPopup={openPopup}
+                handleSaveArticle={handleSaveArticle}
               />
             ))}
           </div>

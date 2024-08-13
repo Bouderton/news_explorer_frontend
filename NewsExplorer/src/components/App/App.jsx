@@ -30,7 +30,7 @@ function App() {
   const [searching, setSearching] = useState(false);
   const [isSavedNews, setIsSavedNews] = useState(false);
   const [error, setError] = useState(null);
-  // const [token, setToken] = useState(null);
+  const [savedArticle, setSavedArticle] = useState([]);
 
   const handleRegisterPopup = () => {
     setActivePopup("register");
@@ -61,7 +61,7 @@ function App() {
           );
           setArticles(filteredArticles);
           setIsLoading(false);
-        }, 1000);
+        }, 500);
       })
       .catch((err) => {
         console.log(err);
@@ -82,10 +82,11 @@ function App() {
       .catch((err) => console.log(err));
   };
 
-  const handleSaveArticle = (article) => {
-    saveArticle()
-      .then((res) => {
-        console.log("Saved");
+  const handleSaveArticle = ({ article }) => {
+    saveArticle({ article })
+      .then((savedArticle) => {
+        console.log("Inside: ", savedArticle);
+        setSavedArticle((prevArticles) => [...prevArticles, savedArticle]);
       })
       .catch((err) => console.log(err));
   };
@@ -151,6 +152,7 @@ function App() {
                       searching={searching}
                       loggedIn={loggedIn}
                       openPopup={handleLoginPopup}
+                      handleSaveArticle={handleSaveArticle}
                     />
                   </>
                 }

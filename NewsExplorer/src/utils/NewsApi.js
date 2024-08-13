@@ -45,13 +45,13 @@ export const searchNews = (query) => {
   ).then(checkResponse);
 };
 
-export function saveArticle(article) {
+export function saveArticle({ article }) {
   return new Promise((resolve, reject) => {
     resolve({
-      id: "1234567890",
+      id: "65f7371e7bce9e7d331b11a0",
       title: article.title,
       imageUrl: article.urlToImage,
-      ulr: article.url,
+      url: article.url,
     });
   });
 }
