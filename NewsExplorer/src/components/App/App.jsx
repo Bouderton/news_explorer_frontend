@@ -19,6 +19,7 @@ import { authorize, checkToken } from "../../utils/auth";
 // Context
 import { UserContext } from "../../contexts/UserContext";
 import { ArticleContext } from "../../contexts/ArticleContext";
+import { SavedArticleContext } from "../../contexts/SavedArticleContext";
 
 function App() {
   const [activePopup, setActivePopup] = useState("");
@@ -30,7 +31,7 @@ function App() {
   const [searching, setSearching] = useState(false);
   const [isSavedNews, setIsSavedNews] = useState(false);
   const [error, setError] = useState(null);
-  const [savedArticle, setSavedArticle] = useState([]);
+  const [savedArticles, setSavedArticles] = useState([]);
 
   const handleRegisterPopup = () => {
     setActivePopup("register");
@@ -84,9 +85,9 @@ function App() {
 
   const handleSaveArticle = ({ article }) => {
     saveArticle({ article })
-      .then((savedArticle) => {
-        console.log("Inside: ", savedArticle);
-        setSavedArticle((prevArticles) => [...prevArticles, savedArticle]);
+      .then((savedArticles) => {
+        console.log("Inside: ", savedArticles);
+        setSavedArticles((prevArticles) => [...prevArticles, savedArticles]);
       })
       .catch((err) => console.log(err));
   };
@@ -132,58 +133,62 @@ function App() {
         <ArticleContext.Provider
           value={{ articles, setArticles, shownArticles, setShownArticles }}
         >
-          <div className="page">
-            <Routes>
-              <Route
-                exact
-                path="/"
-                element={
-                  <>
-                    <Header
-                      openPopup={handleLoginPopup}
-                      handleSubmit={handleSearchResults}
-                      loggedIn={loggedIn}
-                      handleLogout={handleLogout}
-                    />
-                    <Main
-                      articles={articles}
-                      showMoreArticles={showMoreArticles}
-                      isLoading={isLoading}
-                      searching={searching}
-                      loggedIn={loggedIn}
-                      openPopup={handleLoginPopup}
-                      handleSaveArticle={handleSaveArticle}
-                    />
-                  </>
-                }
+          <SavedArticleContext.Provider
+            value={{ savedArticles, setSavedArticles }}
+          >
+            <div className="page">
+              <Routes>
+                <Route
+                  exact
+                  path="/"
+                  element={
+                    <>
+                      <Header
+                        openPopup={handleLoginPopup}
+                        handleSubmit={handleSearchResults}
+                        loggedIn={loggedIn}
+                        handleLogout={handleLogout}
+                      />
+                      <Main
+                        articles={articles}
+                        showMoreArticles={showMoreArticles}
+                        isLoading={isLoading}
+                        searching={searching}
+                        loggedIn={loggedIn}
+                        openPopup={handleLoginPopup}
+                        handleSaveArticle={handleSaveArticle}
+                      />
+                    </>
+                  }
+                />
+                <Route
+                  path="/saved-news"
+                  element={
+                    <ProtectedRoute loggedIn={loggedIn}>
+                      <SavedNews
+                        loggedIn={loggedIn}
+                        isSavedNews={true}
+                        num={3}
+                        openPopup={handleRegisterPopup}
+                      />
+                    </ProtectedRoute>
+                  }
+                />
+              </Routes>
+              <Footer isSavedNews={isSavedNews} />
+              <RegisterPopup
+                isOpen={activePopup === "register"}
+                closePopup={handleClosePopup}
+                handleLoginPopup={handleLoginPopup}
               />
-              <Route
-                path="/saved-news"
-                element={
-                  <ProtectedRoute loggedIn={loggedIn}>
-                    <SavedNews
-                      loggedIn={loggedIn}
-                      isSavedNews={true}
-                      num={3}
-                      openPopup={handleRegisterPopup}
-                    />
-                  </ProtectedRoute>
-                }
+              <LoginPopup
+                isOpen={activePopup === "login"}
+                closePopup={handleClosePopup}
+                handleRegisterPopup={handleRegisterPopup}
+                handleLogin={handleLogin}
               />
-            </Routes>
-            <Footer isSavedNews={isSavedNews} />
-            <RegisterPopup
-              isOpen={activePopup === "register"}
-              closePopup={handleClosePopup}
-              handleLoginPopup={handleLoginPopup}
-            />
-            <LoginPopup
-              isOpen={activePopup === "login"}
-              closePopup={handleClosePopup}
-              handleRegisterPopup={handleRegisterPopup}
-              handleLogin={handleLogin}
-            />
-          </div>
+            </div>
+          </SavedArticleContext.Provider>
         </ArticleContext.Provider>
       </UserContext.Provider>
     </>
