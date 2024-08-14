@@ -169,7 +169,7 @@ function App() {
                       <SavedNews
                         loggedIn={loggedIn}
                         isSavedNews={true}
-                        num={3}
+                        handleLogout={handleLogout}
                         openPopup={handleRegisterPopup}
                         savedArticles={savedArticles}
                       />

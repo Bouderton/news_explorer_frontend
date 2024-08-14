@@ -2,7 +2,7 @@ import NewsCard from "../NewsCard/NewsCard";
 import "./NewsCardList.css";
 import { useState, useContext } from "react";
 import { ArticleContext } from "../../contexts/ArticleContext";
-// import { SavedArticleContext } from "../../contexts/SavedArticleContext";
+import { SavedArticleContext } from "../../contexts/SavedArticleContext";
 import { useLocation } from "react-router-dom";
 import Preloader from "../Preloader/Preloader";
 import NotFound from "../NotFound/NotFound";
@@ -16,14 +16,13 @@ const NewsCardList = ({
   openPopup,
   handleSaveArticle,
   error,
-  savedArticles,
 }) => {
   // need to pass news data to news cards
 
   const route = useLocation();
 
   const { articles, shownArticles } = useContext(ArticleContext);
-  // const { savedArticles } = useContext(SavedArticleContext);
+  const { savedArticles } = useContext(SavedArticleContext);
 
   return (
     <>
