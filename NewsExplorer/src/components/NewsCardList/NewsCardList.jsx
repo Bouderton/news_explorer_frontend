@@ -74,13 +74,15 @@ const NewsCardList = ({
         <>
           <section className="card__section">
             <div className="card__grid-container">
-              {savedArticles.map(({ savedArticle, index }) => {
-                <NewsCard
-                  key={index}
-                  savedArticle={savedArticle}
-                  isSavedNews={isSavedNews}
-                  loggedIn={loggedIn}
-                />;
+              {savedArticles.map((savedArticle, index) => {
+                return (
+                  <NewsCard
+                    key={index}
+                    savedArticle={savedArticle}
+                    isSavedNews={isSavedNews}
+                    loggedIn={loggedIn}
+                  />
+                );
               })}
             </div>
           </section>

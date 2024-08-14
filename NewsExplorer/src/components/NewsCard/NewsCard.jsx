@@ -111,7 +111,7 @@ const NewsCard = ({
                 <p className="card__date">{convertDate(article.publishedAt)}</p>
                 <h3 className="card__title title_clamp">{article.title}</h3>
                 <p className="card__text text_clamp">{article.description}</p>
-                <p className="card__author">{article.source.name}</p>
+                <p className="card__author">{article.author}</p>
               </div>
             </div>
           </div>

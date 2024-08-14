@@ -47,7 +47,9 @@ export const searchNews = (query) => {
 
 export const getTempCards = () => {
   return fetch(
-    "https://newsapi.org/v2/top-headlines?country=us&apiKey=5c724319d04e45dda194b7ce67e76564&pageSize=9",
+    `${baseURL}q=breaking&from=${fromDate.toISOString().split("T")[0]}&to=${
+      toDate.toISOString().split("T")[0]
+    }&sortBy=popularity&apiKey=5c724319d04e45dda194b7ce67e76564&pageSize=10`,
     {
       method: "GET",
     }

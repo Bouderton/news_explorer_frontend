@@ -15,13 +15,13 @@ const SavedNews = ({ loggedIn, num, isSavedNews, openPopup }) => {
     if (isSavedNews) {
       debugger;
       getTempCards().then((data) => {
-        // const filteredArticles = data.articles.filter(
-        //   (savedArticle) =>
-        //     savedArticle.urlToImage &&
-        //     savedArticle.title &&
-        //     !savedArticle.title.includes("[Removed]")
-        // );
-        setSavedArticles(data.articles);
+        const filteredArticles = data.articles.filter(
+          (savedArticle) =>
+            savedArticle.urlToImage &&
+            savedArticle.title &&
+            !savedArticle.title.includes("[Removed]")
+        );
+        setSavedArticles(filteredArticles);
         console.log(data);
         console.log(savedArticles);
       });
