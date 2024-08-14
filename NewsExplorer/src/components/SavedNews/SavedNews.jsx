@@ -8,20 +8,20 @@ import { getTempCards } from "../../utils/NewsApi";
 
 const SavedNews = ({ loggedIn, num, isSavedNews, openPopup }) => {
   const currentUser = useContext(UserContext);
-  const savedArticles = useContext(SavedArticleContext);
+  const { savedArticles, setSavedArticles } = useContext(SavedArticleContext);
 
   // TEMPORARY SAVED CARDS JUST SEARCHING FOR TOP HEADLINES NO BACKEND YET
   useEffect(() => {
     if (isSavedNews) {
       debugger;
       getTempCards().then((data) => {
-        const filteredArticles = data.articles.filter(
-          (savedArticle) =>
-            savedArticle.urlToImage &&
-            savedArticle.title &&
-            !savedArticle.title.includes("[Removed]")
-        );
-        setSavedArticles(filteredArticles);
+        // const filteredArticles = data.articles.filter(
+        //   (savedArticle) =>
+        //     savedArticle.urlToImage &&
+        //     savedArticle.title &&
+        //     !savedArticle.title.includes("[Removed]")
+        // );
+        setSavedArticles(data.articles);
         console.log(data);
         console.log(savedArticles);
       });
@@ -48,7 +48,7 @@ const SavedNews = ({ loggedIn, num, isSavedNews, openPopup }) => {
       </div>
       <NewsCardList
         loggedIn={loggedIn}
-        isSavedNews={true}
+        isSavedNews={isSavedNews}
         savedArticles={savedArticles}
       />
     </section>
