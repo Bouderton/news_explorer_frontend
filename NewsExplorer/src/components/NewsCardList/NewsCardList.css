@@ -44,6 +44,14 @@
   background: #e8e8e8;
 }
 
+.card__search-error {
+  font-size: 15px;
+  font-family: "Roboto-Slab-400";
+  color: #1a1b22;
+  margin: 0 auto;
+  padding: 20px;
+}
+
 @media screen and (max-width: 815px) {
   .card__grid-container {
     margin: 32px auto;

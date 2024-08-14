@@ -9,10 +9,12 @@ const Main = ({
   showMoreArticles,
   loggedIn,
   handleSaveArticle,
+  error,
 }) => {
   return (
     <main className="main">
       <NewsCardList
+        error={error}
         loggedIn={loggedIn}
         searching={searching}
         isLoading={isLoading}

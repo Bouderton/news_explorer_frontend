@@ -2,15 +2,15 @@ import "./SavedNews.css";
 import Navigation from "../Navigation/Navigation";
 import NewsCardList from "../NewsCardList/NewsCardList";
 import { UserContext } from "../../contexts/UserContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 const SavedNews = ({ loggedIn, num, isSavedNews, openPopup }) => {
   const currentUser = useContext(UserContext);
+
   return (
     <section className="saved">
       <Navigation
         loggedIn={loggedIn}
-        name={name}
         isSavedNews={isSavedNews}
         openPopup={openPopup}
       />

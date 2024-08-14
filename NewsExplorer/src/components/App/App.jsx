@@ -155,6 +155,7 @@ function App() {
                         isLoading={isLoading}
                         searching={searching}
                         loggedIn={loggedIn}
+                        error={error}
                         openPopup={handleLoginPopup}
                         handleSaveArticle={handleSaveArticle}
                       />

@@ -15,6 +15,7 @@ const NewsCardList = ({
   showMoreArticles,
   openPopup,
   handleSaveArticle,
+  error,
 }) => {
   // need to pass news data to news cards
 
@@ -27,6 +28,9 @@ const NewsCardList = ({
     <>
       {route.pathname === "/" ? (
         <>
+          {!searching && error ? (
+            <p className="card__search-error">{error}</p>
+          ) : null}
           {searching ? (
             <section className="card__section">
               <h3 className="card__section-text">Search Results</h3>
