@@ -65,7 +65,14 @@ const NavigationMobile = ({
                   Saved Articles
                 </Link>
               </button>
-              <button type="text" className="nav__mobile-button__logout">
+              <button
+                type="text"
+                className="nav__mobile-button__logout"
+                onClick={() => {
+                  handleLogout();
+                  closeDropdown();
+                }}
+              >
                 {currentUser?.data.name}
                 <img
                   src={logout_light}
