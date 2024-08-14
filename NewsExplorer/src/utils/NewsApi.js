@@ -45,6 +45,15 @@ export const searchNews = (query) => {
   ).then(checkResponse);
 };
 
+export const getTempCards = () => {
+  return fetch(
+    "https://newsapi.org/v2/top-headlines?country=us&apiKey=5c724319d04e45dda194b7ce67e76564&pageSize=9",
+    {
+      method: "GET",
+    }
+  ).then(checkResponse);
+};
+
 export function saveArticle({ article }) {
   return new Promise((resolve, reject) => {
     resolve({

@@ -171,6 +171,7 @@ function App() {
                         isSavedNews={true}
                         num={3}
                         openPopup={handleRegisterPopup}
+                        savedArticles={savedArticles}
                       />
                     </ProtectedRoute>
                   }
