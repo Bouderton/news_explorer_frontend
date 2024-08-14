@@ -38,7 +38,7 @@ const SavedNews = ({ loggedIn, num, isSavedNews, openPopup, handleLogout }) => {
       />
       <div className="saved__text-container">
         <p className="saved__text-subtitle">Saved Articles</p>
-        <h2 className="saved__text-title">{`${currentUser?.data.name}, you have ${num} saved articles`}</h2>
+        <h2 className="saved__text-title">{`${currentUser?.data.name}, you have ${savedArticles.length} saved articles`}</h2>
         <p className="saved__text-keywords">
           By keywords:
           <span className="saved__text-span">
