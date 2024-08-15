@@ -1,16 +1,12 @@
 import "./About.css";
-import about_me_placeholder from "../../images/about_me_placeholder.png";
+import rklogo from "../../images/rklogo.svg";
 
 const About = () => {
   return (
     <section className="about">
       <div className="about__content">
         <div className="about__image">
-          <img
-            src={about_me_placeholder}
-            alt="Author Image"
-            className="about__image"
-          />
+          <img src={rklogo} alt="Author Image" className="about__image" />
         </div>
         <div className="about__text-container">
           <h2 className="about__title">About the author</h2>
