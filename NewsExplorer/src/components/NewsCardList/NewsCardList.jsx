@@ -17,8 +17,6 @@ const NewsCardList = ({
   handleSaveArticle,
   error,
 }) => {
-  // need to pass news data to news cards
-
   const route = useLocation();
 
   const { articles, shownArticles } = useContext(ArticleContext);
