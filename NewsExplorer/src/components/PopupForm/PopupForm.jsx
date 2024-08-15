@@ -1,9 +1,7 @@
 import "./PopupForm.css";
-import { useFormWithValidation } from "../../Hooks/useFormWithValidation";
 
 const PopupWithForm = ({
   title,
-  buttonText,
   children,
   spanText,
   isOpen,

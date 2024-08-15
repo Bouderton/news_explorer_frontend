@@ -1,6 +1,6 @@
 import NewsCard from "../NewsCard/NewsCard";
 import "./NewsCardList.css";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { ArticleContext } from "../../contexts/ArticleContext";
 import { SavedArticleContext } from "../../contexts/SavedArticleContext";
 import { useLocation } from "react-router-dom";
@@ -26,12 +26,14 @@ const NewsCardList = ({
 
   return (
     <>
+      {/* HOME PAGE NEWS CARD LIST */}
       {route.pathname === "/" ? (
         <>
           {!searching && error ? (
             <p className="card__search-error">{error}</p>
           ) : null}
           {searching ? (
+            // Search and Loader Components
             <section className="card__section">
               <h3 className="card__section-text">Search Results</h3>
               {isLoading ? (
@@ -44,6 +46,7 @@ const NewsCardList = ({
                   <NotFound />
                 </>
               ) : null}
+              {/* Rendering cards through search */}
               <div className="card__grid-container">
                 {articles.slice(0, shownArticles).map((article, index) => (
                   <NewsCard
@@ -70,6 +73,7 @@ const NewsCardList = ({
           ) : null}
         </>
       ) : (
+        // Rendering saved articles
         <>
           <section className="card__section">
             <div className="card__grid-container">

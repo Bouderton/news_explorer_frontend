@@ -22,6 +22,7 @@ import { ArticleContext } from "../../contexts/ArticleContext";
 import { SavedArticleContext } from "../../contexts/SavedArticleContext";
 
 function App() {
+  // State Variables
   const [activePopup, setActivePopup] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState({});
@@ -32,6 +33,8 @@ function App() {
   const [isSavedNews, setIsSavedNews] = useState(false);
   const [error, setError] = useState(null);
   const [savedArticles, setSavedArticles] = useState([]);
+
+  // Popups
 
   const handleRegisterPopup = () => {
     setActivePopup("register");
@@ -48,6 +51,8 @@ function App() {
   const showMoreArticles = () => {
     setShownArticles((prev) => prev + 3);
   };
+
+  // Articles
 
   const handleSearchResults = (query) => {
     searchNews(query)
@@ -72,6 +77,19 @@ function App() {
       });
   };
 
+  const handleSaveArticle = (article) => {
+    console.log("SAVED: ", article);
+    // For saving articles after DB is created
+    // saveArticle({ article })
+    //   .then((savedArticles) => {
+    //     console.log("Inside: ", savedArticles);
+    //     setSavedArticles((prevArticles) => [...prevArticles, savedArticles]);
+    //   })
+    //   .catch((err) => console.log(err));
+  };
+
+  // User Functions
+
   const handleLogin = () => {
     authorize("user@example.com", "password")
       .then((res) => {
@@ -83,20 +101,13 @@ function App() {
       .catch((err) => console.log(err));
   };
 
-  const handleSaveArticle = ({ article }) => {
-    saveArticle({ article })
-      .then((savedArticles) => {
-        console.log("Inside: ", savedArticles);
-        setSavedArticles((prevArticles) => [...prevArticles, savedArticles]);
-      })
-      .catch((err) => console.log(err));
-  };
-
   const handleLogout = () => {
     setUser(null);
     setLoggedIn(false);
     localStorage.removeItem("jwt");
   };
+
+  // useEffects
 
   useEffect(() => {
     if (!activePopup) return;
@@ -196,10 +207,5 @@ function App() {
     </>
   );
 }
-
-// NOTES AND TODO
-// FORM VALIDATION
-// USER STATE
-// PRAY
 
 export default App;

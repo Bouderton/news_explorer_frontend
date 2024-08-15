@@ -25,6 +25,7 @@ const NavigationMobile = ({
 
   return (
     <nav className="nav__mobile">
+      {/* Mobile menu */}
       {loggedIn ? (
         <>
           <h2 className={`nav__mobile-title ${isSavedNews ? "nav_saved" : ""}`}>
@@ -37,6 +38,7 @@ const NavigationMobile = ({
               isSavedNews ? "nav__mobile-button-dark" : "nav__mobile-button"
             }`}
           />
+          {/* Drop down menu */}
           <div
             style={{ height: "275px" }}
             className={`nav__dropdown ${
@@ -83,6 +85,7 @@ const NavigationMobile = ({
           </div>
         </>
       ) : (
+        // Mobile menu for logged in user/saved news route
         <>
           <h2
             className={`nav__mobile-title ${

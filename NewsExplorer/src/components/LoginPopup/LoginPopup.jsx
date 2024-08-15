@@ -41,7 +41,6 @@ const LoginPopup = ({
       isOpen={isOpen}
       closePopup={closePopup}
       title="Sign In"
-      // buttonText="Sign In"
       spanText="Sign Up"
       popupSwitch={handleRegisterPopup}
       onSubmit={handleSubmit}

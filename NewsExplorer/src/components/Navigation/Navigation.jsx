@@ -15,11 +15,13 @@ const Navigation = ({ loggedIn, openPopup, isSavedNews, handleLogout }) => {
     <>
       <div className="nav__container">
         {route.pathname === "/" ? (
+          // HOMEPAGE NAV BAR (LIGHT MODE)
           <nav
             className="nav"
             style={{ borderBottom: "0.5px solid", borderColor: "white" }}
           >
             <h2 className="nav__title">NewsExplorer</h2>
+            {/* Logged in user nav bar */}
             {loggedIn ? (
               <>
                 <div className="nav__buttons" style={{ gap: "15px" }}>
@@ -51,6 +53,7 @@ const Navigation = ({ loggedIn, openPopup, isSavedNews, handleLogout }) => {
                 </div>
               </>
             ) : (
+              // Logged Out Nav Bar
               <>
                 <div className="nav__buttons">
                   <button type="text" className="nav__button">
@@ -64,6 +67,7 @@ const Navigation = ({ loggedIn, openPopup, isSavedNews, handleLogout }) => {
             )}
           </nav>
         ) : (
+          // SAVED NEWS NAV BAR (DARK MODE)
           <>
             <nav
               className="nav"
@@ -108,6 +112,7 @@ const Navigation = ({ loggedIn, openPopup, isSavedNews, handleLogout }) => {
             </nav>
           </>
         )}
+        {/* Nav Bar Mobile Mode */}
         <div className="nav__mobile-toggle">
           <NavigationMobile
             openPopup={openPopup}
