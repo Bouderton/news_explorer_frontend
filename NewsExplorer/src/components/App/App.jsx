@@ -8,6 +8,7 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import RegisterPopup from "../RegisterPopup/RegisterPopup";
 import LoginPopup from "../LoginPopup/LoginPopup";
+import SuccessPopup from "../SuccessPopup/SuccessPopup";
 import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
@@ -199,6 +200,11 @@ function App() {
                 closePopup={handleClosePopup}
                 handleRegisterPopup={handleRegisterPopup}
                 handleLogin={handleLogin}
+              />
+              <SuccessPopup
+                isOpen={false}
+                closePopup={handleClosePopup}
+                handleLoginPopup={handleLoginPopup}
               />
             </div>
           </SavedArticleContext.Provider>

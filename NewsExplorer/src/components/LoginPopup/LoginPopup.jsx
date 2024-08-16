@@ -9,6 +9,7 @@ const LoginPopup = ({
   handleLogin,
 }) => {
   const [inputFocus, setInputFocus] = useState(false);
+  const [orText, setOrText] = useState(false);
 
   const handleInputFocus = (value) => {
     setInputFocus(value);
@@ -44,6 +45,7 @@ const LoginPopup = ({
       spanText="Sign Up"
       popupSwitch={handleRegisterPopup}
       onSubmit={handleSubmit}
+      orText={true}
     >
       <label className="popup__form-label">Email</label>
       <input

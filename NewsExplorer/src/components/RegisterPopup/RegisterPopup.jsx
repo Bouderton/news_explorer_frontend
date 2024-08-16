@@ -4,6 +4,7 @@ import { useFormWithValidation } from "../../Hooks/useFormWithValidation";
 
 const RegisterPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
   const [inputFocus, setInputFocus] = useState(false);
+  const [orText, setOrText] = useState(false);
 
   const inputValues = {
     email: "",
@@ -34,6 +35,7 @@ const RegisterPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
       buttonText="Sign Up"
       spanText="Sign In"
       popupSwitch={handleLoginPopup}
+      orText={true}
     >
       <label className="popup__form-label">Email</label>
       <input
