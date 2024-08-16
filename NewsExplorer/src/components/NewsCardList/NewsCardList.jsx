@@ -45,16 +45,22 @@ const NewsCardList = ({
                 </>
               ) : null}
               {/* Rendering cards through search */}
-              <div className="card__grid-container">
-                {articles.slice(0, shownArticles).map((article, index) => (
-                  <NewsCard
-                    key={index}
-                    article={article}
-                    loggedIn={loggedIn}
-                    openPopup={openPopup}
-                    handleSaveArticle={handleSaveArticle}
-                  />
-                ))}
+              <div className="card__list-container">
+                <ul className="card__list">
+                  {articles.slice(0, shownArticles).map((article, index) => {
+                    return (
+                      <li className="card__list-item" key={index}>
+                        <NewsCard
+                          key={index}
+                          article={article}
+                          loggedIn={loggedIn}
+                          openPopup={openPopup}
+                          handleSaveArticle={handleSaveArticle}
+                        />
+                      </li>
+                    );
+                  })}
+                </ul>
               </div>
               <div className="card__button-container">
                 {articles.length === 100 ? null : (
@@ -74,17 +80,21 @@ const NewsCardList = ({
         // Rendering saved articles
         <>
           <section className="card__section">
-            <div className="card__grid-container">
-              {savedArticles.map((savedArticle, index) => {
-                return (
-                  <NewsCard
-                    key={index}
-                    savedArticle={savedArticle}
-                    isSavedNews={isSavedNews}
-                    loggedIn={loggedIn}
-                  />
-                );
-              })}
+            <div className="card__list-container">
+              <ul className="card__list">
+                {savedArticles.map((savedArticle, index) => {
+                  return (
+                    <li className="card__list-item">
+                      <NewsCard
+                        key={index}
+                        savedArticle={savedArticle}
+                        isSavedNews={isSavedNews}
+                        loggedIn={loggedIn}
+                      />
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           </section>
         </>

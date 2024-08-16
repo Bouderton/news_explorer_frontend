@@ -43,7 +43,7 @@ const NewsCard = ({
             <div className="card__keyword-container">
               <p className="card__keyword">Keyword</p>
             </div>
-            <div className="card">
+            <article className="card">
               {savedArticle.urlToImage && (
                 <img
                   className="card__image"
@@ -63,7 +63,7 @@ const NewsCard = ({
                 </p>
                 <p className="card__author">{savedArticle.source.name}</p>
               </div>
-            </div>
+            </article>
           </div>
         </>
       ) : (
@@ -99,7 +99,7 @@ const NewsCard = ({
                 </button>
               </>
             )}
-            <div className="card">
+            <article className="card">
               {article.urlToImage && (
                 <img
                   className="card__image"
@@ -113,7 +113,7 @@ const NewsCard = ({
                 <p className="card__text text_clamp">{article.description}</p>
                 <p className="card__author">{article.author}</p>
               </div>
-            </div>
+            </article>
           </div>
         </>
       )}
@@ -122,63 +122,3 @@ const NewsCard = ({
 };
 
 export default NewsCard;
-
-// <div className="card__container">
-//   {isSavedNews ? (
-//     <>
-//       <button className="card__trashcan" type="button" />
-//       <div className="card__keyword-container">
-//         <p className="card__keyword">Keyword</p>
-//       </div>
-//     </>
-//   ) : (
-//     <>
-//       {loggedIn === true ? (
-//         <button
-//           onClick={() => {
-//             handleSaveArticle({ article });
-//             handleClick();
-//           }}
-//           type="radio"
-//           className={`${
-//             clicked ? "card__bookmark-active" : "card__bookmark"
-//           }`}
-//         />
-//       ) : (
-//         <>
-//           <button
-//             disabled
-//             className="card__bookmark-disabled"
-//             onMouseOver={handleHover}
-//           />
-//           <button
-//             onClick={openPopup}
-//             onMouseOut={handleHoverOut}
-//             type="text"
-//             className={`card__signin ${
-//               visible === true ? "signin_reveal" : ""
-//             }`}
-//           >
-//             Sign in to save articles
-//           </button>
-//         </>
-//       )}
-//     </>
-//   )}
-//   <div className="card">
-//     {article.urlToImage && (
-//       <img
-//         src={article.urlToImage}
-//         className="card__image"
-//         alt={article.title}
-//       />
-//     )}
-
-//     <div className="card__text-container">
-//       <p className="card__date">{convertDate(article.publishedAt)}</p>
-//       <h3 className="card__title title_clamp">{article.title}</h3>
-//       <p className="card__text text_clamp">{article.description}</p>
-//       <p className="card__author">{article.source.name}</p>
-//     </div>
-//   </div>
-// </div>

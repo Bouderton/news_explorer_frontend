@@ -6,7 +6,7 @@ import { SavedArticleContext } from "../../contexts/SavedArticleContext";
 import { useContext, useEffect } from "react";
 import { getTempCards } from "../../utils/NewsApi";
 
-const SavedNews = ({ loggedIn, num, isSavedNews, openPopup, handleLogout }) => {
+const SavedNews = ({ loggedIn, isSavedNews, openPopup, handleLogout }) => {
   const currentUser = useContext(UserContext);
   const { savedArticles, setSavedArticles } = useContext(SavedArticleContext);
 
@@ -29,23 +29,25 @@ const SavedNews = ({ loggedIn, num, isSavedNews, openPopup, handleLogout }) => {
 
   return (
     <section className="saved">
-      <Navigation
-        loggedIn={loggedIn}
-        isSavedNews={isSavedNews}
-        openPopup={openPopup}
-        handleLogout={handleLogout}
-      />
-      <div className="saved__text-container">
-        <p className="saved__text-subtitle">Saved Articles</p>
-        <h2 className="saved__text-title">{`${currentUser?.data.name}, you have ${savedArticles.length} saved articles`}</h2>
-        <p className="saved__text-keywords">
-          By keywords:
-          <span className="saved__text-span">
-            {" "}
-            word, word, words and 2 others
-          </span>
-        </p>
-      </div>
+      <header className="saved__header">
+        <Navigation
+          loggedIn={loggedIn}
+          isSavedNews={isSavedNews}
+          openPopup={openPopup}
+          handleLogout={handleLogout}
+        />
+        <div className="saved__text-container">
+          <p className="saved__text-subtitle">Saved Articles</p>
+          <h2 className="saved__text-title">{`${currentUser?.data.name}, you have ${savedArticles.length} saved articles`}</h2>
+          <p className="saved__text-keywords">
+            By keywords:
+            <span className="saved__text-span">
+              {" "}
+              word, word, words and 2 others
+            </span>
+          </p>
+        </div>
+      </header>
       <NewsCardList loggedIn={loggedIn} isSavedNews={isSavedNews} />
     </section>
   );

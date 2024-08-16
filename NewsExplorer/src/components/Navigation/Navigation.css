@@ -9,8 +9,9 @@
   justify-content: space-between;
 }
 
-.nav__container {
+.nav-section {
   min-height: 66px;
+  position: relative;
 }
 
 .nav__outline {
