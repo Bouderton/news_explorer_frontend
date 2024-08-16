@@ -22,7 +22,9 @@ const PopupWithForm = ({
         <form
           className="popup__form"
           onSubmit={onSubmit}
-          style={{ margin: orText === true ? "22px 0 0" : "0" }}
+          style={{
+            margin: orText === true ? "22px 0 0" : "0",
+          }}
         >
           {children}
         </form>

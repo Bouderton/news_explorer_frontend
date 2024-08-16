@@ -7,8 +7,9 @@ const SuccessPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
     <PopupWithForm
       title="Registration successfully completed!"
       isOpen={isOpen}
-      handleLoginPopup={handleLoginPopup}
+      popupSwitch={handleLoginPopup}
       spanText="Sign In"
+      closePopup={closePopup}
       orText={orText}
     ></PopupWithForm>
   );

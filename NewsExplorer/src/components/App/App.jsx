@@ -41,6 +41,10 @@ function App() {
     setActivePopup("register");
   };
 
+  const handleSuccessPopup = () => {
+    setActivePopup("success");
+  };
+
   const handleClosePopup = () => {
     setActivePopup("");
   };
@@ -194,6 +198,7 @@ function App() {
                 isOpen={activePopup === "register"}
                 closePopup={handleClosePopup}
                 handleLoginPopup={handleLoginPopup}
+                handleSuccessPopup={handleSuccessPopup}
               />
               <LoginPopup
                 isOpen={activePopup === "login"}
@@ -202,7 +207,7 @@ function App() {
                 handleLogin={handleLogin}
               />
               <SuccessPopup
-                isOpen={false}
+                isOpen={activePopup === "success"}
                 closePopup={handleClosePopup}
                 handleLoginPopup={handleLoginPopup}
               />
