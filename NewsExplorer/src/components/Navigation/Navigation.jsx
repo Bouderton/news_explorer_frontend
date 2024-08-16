@@ -21,13 +21,14 @@ const Navigation = ({ loggedIn, openPopup, isSavedNews, handleLogout }) => {
             style={{ borderBottom: "0.5px solid", borderColor: "white" }}
           >
             <h2 className="nav__title">NewsExplorer</h2>
-            {/* Logged in user nav bar */}
+            {/* Logged In Nav Bar */}
             {loggedIn ? (
               <>
                 <div className="nav__buttons" style={{ gap: "15px" }}>
                   <button type="text" className="nav__button">
                     Home
                   </button>
+                  <hr className="nav__outline" style={{ right: "380px" }} />
                   <button type="text" className="nav__button-saved">
                     <Link
                       to="/saved-news"
@@ -59,6 +60,7 @@ const Navigation = ({ loggedIn, openPopup, isSavedNews, handleLogout }) => {
                   <button type="text" className="nav__button">
                     Home
                   </button>
+                  <hr className="nav__outline" />
                   <button className="nav__button-register" onClick={openPopup}>
                     Sign In
                   </button>
@@ -85,6 +87,7 @@ const Navigation = ({ loggedIn, openPopup, isSavedNews, handleLogout }) => {
                     Home
                   </Link>
                 </button>
+                <hr className="nav__outline-black" />
                 <button
                   type="text"
                   className="nav__button-saved"

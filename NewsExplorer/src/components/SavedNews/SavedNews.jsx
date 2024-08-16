@@ -13,7 +13,6 @@ const SavedNews = ({ loggedIn, num, isSavedNews, openPopup, handleLogout }) => {
   // TEMPORARY SAVED CARDS JUST SEARCHING FOR TOP HEADLINES NO BACKEND YET
   useEffect(() => {
     if (isSavedNews) {
-      debugger;
       getTempCards().then((data) => {
         const filteredArticles = data.articles.filter(
           (savedArticle) =>

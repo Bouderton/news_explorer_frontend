@@ -2,8 +2,6 @@
   min-width: 320px;
   max-width: 1440px;
   color: white;
-  border-bottom: 0.5px solid;
-  border-color: rgba(255, 255, 255, 0.5);
   padding: 16px 52px 13px;
   display: flex;
   flex-direction: row;
@@ -13,6 +11,24 @@
 
 .nav__container {
   min-height: 66px;
+}
+
+.nav__outline {
+  width: 70px;
+  border-bottom: 2px solid white;
+  outline: none;
+  position: absolute;
+  top: 73px;
+  right: 265px;
+}
+
+.nav__outline-black {
+  width: 175px;
+  border-bottom: 2px solid black;
+  outline: none;
+  position: absolute;
+  top: 73px;
+  right: 185px;
 }
 
 .nav__buttons {
@@ -122,13 +138,9 @@
   .nav__buttons {
     gap: 15px;
   }
-
-  .nav__button {
-    font-size: 16px;
-  }
 }
 
-@media screen and (max-width: 645px) {
+@media screen and (max-width: 660px) {
   .nav__mobile-toggle {
     visibility: visible;
     display: contents;
