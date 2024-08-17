@@ -1,5 +1,4 @@
 .footer {
-  /* margin: 0 auto; */
   color: black;
   background: white;
   max-width: 1440px;
@@ -18,16 +17,8 @@
   justify-content: end;
 }
 
-.footer__content-social {
-  font-family: "Roboto-400";
-  font-size: 18px;
-  display: flex;
-  flex-direction: row;
-  gap: 40px;
-}
-
 .footer__content-copyright {
-  font-family: "Roboto-400";
+  font-family: "Roboto-400", sans-serif;
   font-size: 16px;
   line-height: 22px;
   color: #b6bcbf;
@@ -73,7 +64,7 @@
 
 .footer__content_list-text {
   font-size: 18px;
-  font-family: "Roboto-400";
+  font-family: "Roboto-400", sans-serif;
   line-height: 25px;
   margin: 0;
 }

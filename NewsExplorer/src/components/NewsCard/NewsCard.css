@@ -31,7 +31,7 @@
   flex-wrap: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-family: "Roboto-400";
+  font-family: "Roboto-400", sans-serif;
   font-size: 16px;
   line-height: 22px;
   margin: 16px 0 0;
@@ -52,7 +52,7 @@
 }
 
 .card__title {
-  font-family: "Roboto-Slab-400";
+  font-family: "Roboto-Slab-400", serif;
   font-size: 26px;
   line-height: 30px;
   text-overflow: ellipsis;
@@ -68,7 +68,7 @@
 }
 
 .card__author {
-  font-family: "Roboto-Slab-700";
+  font-family: "Roboto-Slab-700", sans-serif;
   font-size: 16px;
   color: #b6bcbf;
   line-height: 20px;
@@ -124,7 +124,7 @@
 
 .card__signin {
   font-size: 12px;
-  font-family: "Roboto-500";
+  font-family: "Roboto-500", sans-serif;
   line-height: 14px;
   padding: 12px 20px;
   background: white;
@@ -162,7 +162,7 @@
 
 .card__keyword {
   font-size: 14px;
-  font-family: "Roboto-500";
+  font-family: "Roboto-500", sans-serif;
   text-align: center;
   padding: 12px 22px;
   width: 100%;

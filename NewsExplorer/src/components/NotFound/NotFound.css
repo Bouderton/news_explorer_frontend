@@ -20,7 +20,7 @@
 
 .notfound__header {
   font-size: 26px;
-  font-family: "Roboto-Slab-400", sans-serif;
+  font-family: "Roboto-Slab-400", serif;
   font-weight: 400;
   line-height: 30px;
   color: #1a1b22;
@@ -28,6 +28,6 @@
 
 .notfound__text {
   font-size: 18px;
-  font-family: "Roboto-400";
+  font-family: "Roboto-400", sans-serif;
   color: #b6bcbf;
 }

@@ -9,7 +9,7 @@
   max-width: 400px;
   font-size: 40px;
   line-height: 46px;
-  font-family: "Roboto-Slab-400";
+  font-family: "Roboto-Slab-400", serif;
   color: #1a1b22;
   margin: 0 0 0 50px;
 }
@@ -41,7 +41,7 @@
 
 .cards__button {
   font-size: 18px;
-  font-family: "Roboto-500";
+  font-family: "Roboto-500", sans-serif;
   color: #1a1b22;
   background: white;
   border: none;
@@ -56,7 +56,7 @@
 
 .cards__search-error {
   font-size: 15px;
-  font-family: "Roboto-Slab-400";
+  font-family: "Roboto-Slab-400", serif;
   color: #1a1b22;
   margin: 0 auto;
   padding: 20px;
