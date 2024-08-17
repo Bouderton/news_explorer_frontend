@@ -51,7 +51,6 @@ const NewsCardList = ({
                     return (
                       <li className="cards__list-item" key={index}>
                         <NewsCard
-                          key={index}
                           article={article}
                           loggedIn={loggedIn}
                           openPopup={openPopup}
@@ -84,9 +83,8 @@ const NewsCardList = ({
               <ul className="cards__list">
                 {savedArticles.map((savedArticle, index) => {
                   return (
-                    <li className="cards__list-item">
+                    <li className="cards__list-item" key={index}>
                       <NewsCard
-                        key={index}
                         savedArticle={savedArticle}
                         isSavedNews={isSavedNews}
                         loggedIn={loggedIn}

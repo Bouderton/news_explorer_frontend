@@ -31,7 +31,7 @@ export const getTempCards = () => {
 };
 
 export function saveArticle({ article }) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     resolve({
       id: "65f7371e7bce9e7d331b11a0",
       title: article.title,

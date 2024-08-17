@@ -24,7 +24,7 @@ import { SavedArticleContext } from "../../contexts/SavedArticleContext";
 
 function App() {
   // State Variables
-  const [activePopup, setActivePopup] = useState("");
+  const [activePopup, setActivePopup] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState({});
   const [articles, setArticles] = useState([]);

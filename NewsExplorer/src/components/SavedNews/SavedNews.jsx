@@ -21,8 +21,6 @@ const SavedNews = ({ loggedIn, isSavedNews, openPopup, handleLogout }) => {
             !savedArticle.title.includes("[Removed]")
         );
         setSavedArticles(filteredArticles);
-        console.log(data);
-        console.log(savedArticles);
       });
     }
   }, [isSavedNews]);

@@ -9,7 +9,6 @@ const RegisterPopup = ({
   handleSuccessPopup,
 }) => {
   const [inputFocus, setInputFocus] = useState(false);
-  const [orText, setOrText] = useState(false);
 
   const inputValues = {
     email: "",

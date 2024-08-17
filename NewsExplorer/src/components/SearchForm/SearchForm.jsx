@@ -1,7 +1,5 @@
-import NewsCardList from "../NewsCardList/NewsCardList";
 import "./SearchForm.css";
 import { useState } from "react";
-import Preloader from "../Preloader/Preloader";
 
 const SearchForm = ({ handleSubmit }) => {
   const [query, setQuery] = useState("");
