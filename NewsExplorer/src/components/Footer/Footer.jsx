@@ -49,14 +49,22 @@ const Footer = () => {
                   target="_blank"
                   href="https://github.com/Bouderton"
                 >
-                  <img src={github} className="footer__content_list-img" />
+                  <img
+                    src={github}
+                    className="footer__content_list-img"
+                    alt="Github Log"
+                  />
                 </a>
                 <a
                   rel="noopener noreferer"
                   target="_blank"
                   href="https://www.linkedin.com/in/ryankhazal/"
                 >
-                  <img src={linkedin} className="footer__content_list-img" />
+                  <img
+                    src={linkedin}
+                    className="footer__content_list-img"
+                    alt="LinkedIn Logo"
+                  />
                 </a>
               </div>
             </li>

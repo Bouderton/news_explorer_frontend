@@ -1,11 +1,11 @@
-.card__grid-container {
+.cards__grid-container {
   margin: 40px auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.card__section-text {
+.cards__text {
   max-width: 400px;
   font-size: 40px;
   line-height: 46px;
@@ -14,7 +14,7 @@
   margin: 0 0 0 50px;
 }
 
-.card__list {
+.cards__list {
   margin: 40px 0 0;
   display: flex;
   justify-content: center;
@@ -22,24 +22,24 @@
   gap: 16px;
 }
 
-.card__list-item {
+.cards__list-item {
   list-style-type: none;
 }
 
-.card__section {
+.cards {
   padding: 40px 0 80px;
   max-width: 1440px;
   min-width: 320px;
   background: #f5f6f7;
 }
 
-.card__button-container {
+.cards__button-container {
   margin: 64px auto 0;
   display: flex;
   justify-content: center;
 }
 
-.card__button {
+.cards__button {
   font-size: 18px;
   font-family: "Roboto-500";
   color: #1a1b22;
@@ -49,12 +49,12 @@
   padding: 20px 98px;
 }
 
-.card__button:hover {
+.cards__button:hover {
   cursor: pointer;
   background: #e8e8e8;
 }
 
-.card__search-error {
+.cards__search-error {
   font-size: 15px;
   font-family: "Roboto-Slab-400";
   color: #1a1b22;

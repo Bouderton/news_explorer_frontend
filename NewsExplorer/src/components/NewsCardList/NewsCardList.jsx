@@ -28,12 +28,12 @@ const NewsCardList = ({
       {route.pathname === "/" ? (
         <>
           {!searching && error ? (
-            <p className="card__search-error">{error}</p>
+            <p className="cards__search-error">{error}</p>
           ) : null}
           {searching ? (
             // Search and Loader Components
-            <section className="card__section">
-              <h3 className="card__section-text">Search Results</h3>
+            <section className="cards">
+              <h3 className="cards__text">Search Results</h3>
               {isLoading ? (
                 <>
                   <Preloader />
@@ -45,11 +45,11 @@ const NewsCardList = ({
                 </>
               ) : null}
               {/* Rendering cards through search */}
-              <div className="card__list-container">
-                <ul className="card__list">
+              <div className="cards__list-container">
+                <ul className="cards__list">
                   {articles.slice(0, shownArticles).map((article, index) => {
                     return (
-                      <li className="card__list-item" key={index}>
+                      <li className="cards__list-item" key={index}>
                         <NewsCard
                           key={index}
                           article={article}
@@ -62,11 +62,11 @@ const NewsCardList = ({
                   })}
                 </ul>
               </div>
-              <div className="card__button-container">
+              <div className="cards__button-container">
                 {articles.length === 100 ? null : (
                   <button
                     type="text"
-                    className="card__button"
+                    className="cards__button"
                     onClick={showMoreArticles}
                   >
                     Show More
@@ -79,12 +79,12 @@ const NewsCardList = ({
       ) : (
         // Rendering saved articles
         <>
-          <section className="card__section">
-            <div className="card__list-container">
-              <ul className="card__list">
+          <section className="cards">
+            <div className="cards__list-container">
+              <ul className="cards__list">
                 {savedArticles.map((savedArticle, index) => {
                   return (
-                    <li className="card__list-item">
+                    <li className="cards__list-item">
                       <NewsCard
                         key={index}
                         savedArticle={savedArticle}
