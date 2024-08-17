@@ -1,4 +1,9 @@
 .nav {
+  min-height: 66px;
+  position: relative;
+}
+
+.nav__content {
   min-width: 320px;
   max-width: 1440px;
   color: white;
@@ -7,11 +12,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-}
-
-.nav-section {
-  min-height: 66px;
-  position: relative;
 }
 
 .nav__outline {

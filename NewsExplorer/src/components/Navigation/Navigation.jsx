@@ -13,11 +13,11 @@ const Navigation = ({ loggedIn, openPopup, isSavedNews, handleLogout }) => {
 
   return (
     <>
-      <section className="nav-section">
+      <section className="nav">
         {route.pathname === "/" ? (
           // HOMEPAGE NAV BAR (LIGHT MODE)
           <nav
-            className="nav"
+            className="nav__content"
             style={{ borderBottom: "0.5px solid", borderColor: "white" }}
           >
             <h1 className="nav__title">NewsExplorer</h1>
@@ -72,7 +72,7 @@ const Navigation = ({ loggedIn, openPopup, isSavedNews, handleLogout }) => {
           // SAVED NEWS NAV BAR (DARK MODE)
           <>
             <nav
-              className="nav"
+              className="nav__content"
               style={{ borderBottom: "0.5px solid", borderColor: "#1a1b22" }}
             >
               <h2 className="nav__title" style={{ color: "#1a1b22" }}>
