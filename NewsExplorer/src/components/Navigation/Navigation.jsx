@@ -20,7 +20,7 @@ const Navigation = ({ loggedIn, openPopup, isSavedNews, handleLogout }) => {
             className="nav__content"
             style={{ borderBottom: "0.5px solid", borderColor: "white" }}
           >
-            <h1 className="nav__title">NewsExplorer</h1>
+            <h2 className="nav__title">NewsExplorer</h2>
             {/* Logged In Nav Bar */}
             {loggedIn ? (
               <>
@@ -49,6 +49,7 @@ const Navigation = ({ loggedIn, openPopup, isSavedNews, handleLogout }) => {
                     <img
                       src={logout_light}
                       className="nav__button-logout-icon"
+                      alt="Logout Icon"
                     />
                   </button>
                 </div>

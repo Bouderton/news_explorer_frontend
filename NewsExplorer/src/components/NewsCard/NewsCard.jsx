@@ -38,12 +38,12 @@ const NewsCard = ({
     <>
       {isSavedNews ? (
         <>
-          <div className="card__container">
+          <div className="card">
             <button className="card__trashcan" type="button" />
             <div className="card__keyword-container">
               <p className="card__keyword">Keyword</p>
             </div>
-            <article className="card">
+            <article className="card__content">
               {savedArticle.urlToImage && (
                 <img
                   className="card__image"
@@ -68,7 +68,7 @@ const NewsCard = ({
         </>
       ) : (
         <>
-          <div className="card__container">
+          <div className="card">
             {loggedIn === true ? (
               <button
                 onClick={() => {
@@ -99,7 +99,7 @@ const NewsCard = ({
                 </button>
               </>
             )}
-            <article className="card">
+            <article className="card__content">
               {article.urlToImage && (
                 <img
                   className="card__image"
