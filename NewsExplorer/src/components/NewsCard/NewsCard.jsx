@@ -1,47 +1,123 @@
 import "./NewsCard.css";
-import doggy from "../../images/doggy.jpg";
 import { useState } from "react";
-// import bookmark from "../../images/bookmark.svg";
+// import { useLocation } from "react-router-dom";
 
-const NewsCard = ({ isSavedNews }) => {
+const NewsCard = ({
+  isSavedNews,
+  article,
+  loggedIn,
+  openPopup,
+  handleSaveArticle,
+  savedArticle,
+}) => {
   // cards accept news data
 
   const [clicked, setClicked] = useState(false);
+  const [visible, setVisibile] = useState(false);
+  // const route = useLocation();
+
+  const convertDate = (isoDate) => {
+    const date = new Date(isoDate);
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return date.toLocaleDateString("en-US", options);
+  };
 
   const handleClick = () => {
     setClicked((prevState) => !prevState);
   };
+
+  const handleHover = () => {
+    setVisibile(true);
+  };
+
+  const handleHoverOut = () => {
+    setVisibile(false);
+  };
+
   return (
-    <div className="card__container">
+    <>
       {isSavedNews ? (
         <>
-          <button className="card__trashcan" type="button" />
-          <div className="card__keyword-container">
-            <p className="card__keyword">Keyword</p>
+          <div className="card">
+            <button className="card__trashcan" type="button" />
+            <div className="card__keyword-container">
+              <p className="card__keyword">Keyword</p>
+            </div>
+            <article className="card__content">
+              {savedArticle.urlToImage && (
+                <img
+                  className="card__image"
+                  src={savedArticle.urlToImage}
+                  alt={savedArticle.title}
+                />
+              )}
+              <div className="card__text-container">
+                <p className="card__date">
+                  {convertDate(savedArticle.publishedAt)}
+                </p>
+                <h3 className="card__title title_clamp">
+                  {savedArticle.title}
+                </h3>
+                <p className="card__text text_clamp">
+                  {savedArticle.description}
+                </p>
+                <p className="card__author">{savedArticle.source.name}</p>
+              </div>
+            </article>
           </div>
         </>
       ) : (
-        <button
-          onClick={handleClick}
-          type="radio"
-          className={`${clicked ? "card__bookmark-active" : "card__bookmark"}`}
-        />
+        <>
+          <div className="card">
+            {loggedIn === true ? (
+              <button
+                onClick={() => {
+                  handleSaveArticle({ article });
+                  handleClick();
+                }}
+                type="radio"
+                className={`${
+                  clicked ? "card__bookmark-active" : "card__bookmark"
+                }`}
+              />
+            ) : (
+              <>
+                <button
+                  disabled
+                  className="card__bookmark-disabled"
+                  onMouseOver={handleHover}
+                />
+                <button
+                  onClick={openPopup}
+                  onMouseOut={handleHoverOut}
+                  type="text"
+                  className={`card__signin ${
+                    visible === true ? "signin_reveal" : ""
+                  }`}
+                >
+                  Sign in to save articles
+                </button>
+              </>
+            )}
+            <article className="card__content">
+              {article.urlToImage && (
+                <img
+                  className="card__image"
+                  src={article.urlToImage}
+                  alt={article.title}
+                />
+              )}
+              <div className="card__text-container">
+                <p className="card__date">{convertDate(article.publishedAt)}</p>
+                <h3 className="card__title title_clamp">{article.title}</h3>
+                <p className="card__text text_clamp">{article.description}</p>
+                <p className="card__author">{article.author}</p>
+              </div>
+            </article>
+          </div>
+        </>
       )}
-      <div className="card">
-        <img src={doggy} className="card__image" alt="News Card Image" />
-        <div className="card__text-container">
-          <p className="card__date">January 1st 2000</p>
-          <h3 className="card__title">Good Boy</h3>
-          <p className="card__text">
-            whosagoodboywhosagoodboywhosagoodboywhosagoodboywhosagoodboywhosagoodboywho
-            sagoodboywhosagoodboywhosagoodboywhosagoodboywhosagoodboywhosagoodboywhos
-            agoodboywhosagoodboywhosagoodboywwhosagoodboywhosagoodboywhosagoodboywhos
-            whosagoodboywhosagoodboywhosagoodboywhosagoodboywhosagoodboywhosagoodboywho
-          </p>
-          <p className="card__author">National Geographic</p>
-        </div>
-      </div>
-    </div>
+    </>
   );
 };
 

@@ -2,7 +2,12 @@ import { useState, useEffect } from "react";
 import PopupWithForm from "../PopupForm/PopupForm";
 import { useFormWithValidation } from "../../Hooks/useFormWithValidation";
 
-const RegisterPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
+const RegisterPopup = ({
+  isOpen,
+  closePopup,
+  handleLoginPopup,
+  handleSuccessPopup,
+}) => {
   const [inputFocus, setInputFocus] = useState(false);
 
   const inputValues = {
@@ -17,6 +22,11 @@ const RegisterPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
 
   const handleInputBlur = () => {
     setInputFocus(null);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleSuccessPopup();
   };
 
   const { values, handleChange, errors, isValid, resetForm } =
@@ -34,6 +44,7 @@ const RegisterPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
       buttonText="Sign Up"
       spanText="Sign In"
       popupSwitch={handleLoginPopup}
+      orText={true}
     >
       <label className="popup__form-label">Email</label>
       <input
@@ -92,7 +103,13 @@ const RegisterPopup = ({ isOpen, closePopup, handleLoginPopup }) => {
         <span className="popup__form-error">{errors.email}</span>
       )}
       {isValid ? (
-        <button type="text" className="popup__submit-button button_enabled">
+        /* until backend is created there is no way of verifying user data
+        so it automatically assumes a valid registration for now */
+        <button
+          type="text"
+          className="popup__submit-button button_enabled"
+          onClick={handleSubmit}
+        >
           Sign Up
         </button>
       ) : (

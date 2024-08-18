@@ -2,8 +2,14 @@ import PopupForm from "../PopupForm/PopupForm";
 import { useState, useEffect } from "react";
 import { useFormWithValidation } from "../../Hooks/useFormWithValidation";
 
-const LoginPopup = ({ isOpen, closePopup, handleRegisterPopup }) => {
+const LoginPopup = ({
+  isOpen,
+  closePopup,
+  handleRegisterPopup,
+  handleLogin,
+}) => {
   const [inputFocus, setInputFocus] = useState(false);
+  const [orText, setOrText] = useState(false);
 
   const handleInputFocus = (value) => {
     setInputFocus(value);
@@ -11,6 +17,11 @@ const LoginPopup = ({ isOpen, closePopup, handleRegisterPopup }) => {
 
   const handleInputBlur = () => {
     setInputFocus(null);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleLogin();
   };
 
   const inputValues = {
@@ -31,9 +42,10 @@ const LoginPopup = ({ isOpen, closePopup, handleRegisterPopup }) => {
       isOpen={isOpen}
       closePopup={closePopup}
       title="Sign In"
-      // buttonText="Sign In"
       spanText="Sign Up"
       popupSwitch={handleRegisterPopup}
+      onSubmit={handleSubmit}
+      orText={true}
     >
       <label className="popup__form-label">Email</label>
       <input

@@ -1,10 +1,19 @@
 import "./NavigationMobile.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import logout_light from "../../images/logout_light.svg";
+import { UserContext } from "../../contexts/UserContext";
 
-const NavigationMobile = ({ route, loggedIn, openPopup, isSavedNews }) => {
+const NavigationMobile = ({
+  route,
+  loggedIn,
+  openPopup,
+  isSavedNews,
+  handleLogout,
+}) => {
   const [dropdown, setDropdown] = useState(false);
+
+  const currentUser = useContext(UserContext);
 
   function handleDropdown() {
     setDropdown(true);
@@ -16,6 +25,7 @@ const NavigationMobile = ({ route, loggedIn, openPopup, isSavedNews }) => {
 
   return (
     <nav className="nav__mobile">
+      {/* Mobile menu */}
       {loggedIn ? (
         <>
           <h2 className={`nav__mobile-title ${isSavedNews ? "nav_saved" : ""}`}>
@@ -28,6 +38,7 @@ const NavigationMobile = ({ route, loggedIn, openPopup, isSavedNews }) => {
               isSavedNews ? "nav__mobile-button-dark" : "nav__mobile-button"
             }`}
           />
+          {/* Drop down menu */}
           <div
             style={{ height: "275px" }}
             className={`nav__dropdown ${
@@ -56,8 +67,15 @@ const NavigationMobile = ({ route, loggedIn, openPopup, isSavedNews }) => {
                   Saved Articles
                 </Link>
               </button>
-              <button type="text" className="nav__mobile-button__logout">
-                {"Test Name"}
+              <button
+                type="text"
+                className="nav__mobile-button__logout"
+                onClick={() => {
+                  handleLogout();
+                  closeDropdown();
+                }}
+              >
+                {currentUser?.data.name}
                 <img
                   src={logout_light}
                   className="nav__mobile-button__logout-icon"
@@ -67,6 +85,7 @@ const NavigationMobile = ({ route, loggedIn, openPopup, isSavedNews }) => {
           </div>
         </>
       ) : (
+        // Mobile menu for logged in user/saved news route
         <>
           <h2
             className={`nav__mobile-title ${
@@ -107,8 +126,9 @@ const NavigationMobile = ({ route, loggedIn, openPopup, isSavedNews }) => {
                     type="text"
                     className="nav__mobile-button__logout"
                     style={{ color: "#1a1b22" }}
+                    onClick={handleLogout}
                   >
-                    {"Test Name"}
+                    {currentUser?.data.name}
                     <img
                       src={logout_light}
                       className="nav__mobile-button__logout-icon"

@@ -26,12 +26,12 @@
   font-size: 40px;
   line-height: 46px;
   margin: 0;
-  font-family: "Roboto-Slab-400";
+  font-family: "Roboto-Slab-400", sans-serif;
   font-weight: 200;
 }
 
 .about__text {
-  font-family: "Roboto-400";
+  font-family: "Roboto-400", sans-serif;
   font-size: 18px;
   margin: 24px 0 0;
 }
