@@ -19,7 +19,7 @@
   border-bottom: 2px solid white;
   outline: none;
   position: absolute;
-  top: 73px;
+  top: 75px;
   right: 265px;
 }
 
@@ -139,6 +139,11 @@
   .nav__buttons {
     gap: 15px;
   }
+
+  .nav__outline {
+    top: 66px;
+    right: 205px;
+  }
 }
 
 @media screen and (max-width: 660px) {
@@ -147,7 +152,7 @@
     display: contents;
   }
 
-  .nav {
+  .nav__content {
     visibility: hidden;
     display: none;
   }
