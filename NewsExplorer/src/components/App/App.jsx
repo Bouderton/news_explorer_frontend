@@ -8,6 +8,7 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import RegisterPopup from "../RegisterPopup/RegisterPopup";
 import LoginPopup from "../LoginPopup/LoginPopup";
+import EditProfilePopup from "../EditProfilePopup/EditProfilePopup";
 import SuccessPopup from "../SuccessPopup/SuccessPopup";
 import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
@@ -39,6 +40,10 @@ function App() {
 
   const handleRegisterPopup = () => {
     setActivePopup("register");
+  };
+
+  const handleEditProfilePopup = () => {
+    setActivePopup("edit");
   };
 
   const handleSuccessPopup = () => {
@@ -210,6 +215,11 @@ function App() {
                 isOpen={activePopup === "success"}
                 closePopup={handleClosePopup}
                 handleLoginPopup={handleLoginPopup}
+              />
+              <EditProfilePopup
+                // isOpen={activePopup === "edit"}
+                isOpen={true}
+                closePopup={handleClosePopup}
               />
             </div>
           </SavedArticleContext.Provider>
