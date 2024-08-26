@@ -8,7 +8,7 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import RegisterPopup from "../RegisterPopup/RegisterPopup";
 import LoginPopup from "../LoginPopup/LoginPopup";
-import EditProfilePopup from "../EditProfilePopup/EditProfilePopup";
+import EditProfilePopup from "../EditPopup/EditPopup";
 import SuccessPopup from "../SuccessPopup/SuccessPopup";
 import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
@@ -42,7 +42,7 @@ function App() {
     setActivePopup("register");
   };
 
-  const handleEditProfilePopup = () => {
+  const handleEditPopup = () => {
     setActivePopup("edit");
   };
 
@@ -218,7 +218,7 @@ function App() {
               />
               <EditProfilePopup
                 isOpen={activePopup === "edit"}
-                handleEditProfilePopup={handleEditProfilePopup}
+                handleEditPopup={handleEditPopup}
                 closePopup={handleClosePopup}
               />
             </div>

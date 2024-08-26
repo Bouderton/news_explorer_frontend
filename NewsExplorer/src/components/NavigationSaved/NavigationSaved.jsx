@@ -4,7 +4,7 @@ import { useContext } from "react";
 import logout_dark from "../../images/logout_dark.svg";
 import { UserContext } from "../../contexts/UserContext";
 
-const NavigationSaved = ({ handleLogout }) => {
+const NavigationSaved = ({ handleLogout, handleEditPopup }) => {
   const currentUser = useContext(UserContext);
   return (
     <>

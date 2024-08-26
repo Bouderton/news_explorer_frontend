@@ -196,7 +196,7 @@
 /* FIX THE BOOKMARK IMAGES */
 
 @media screen and (max-width: 815px) {
-  .card {
+  .card__content {
     max-width: 224px;
     height: 420px;
   }
@@ -231,7 +231,7 @@
 }
 
 @media screen and (max-width: 550px) {
-  .card {
+  .card__content {
     min-width: 288px;
   }
 
@@ -239,7 +239,7 @@
     left: 235px;
   }
 
-  .card__container {
+  .card {
     margin: 0 auto;
   }
 
