@@ -24,6 +24,12 @@ const EditProfilePopup = ({ isOpen, closePopup }) => {
   const { values, handleChange, errors, isValid, resetForm } =
     useFormWithValidation(inputValue);
 
+  useEffect(() => {
+    if (isOpen) {
+      resetForm(inputValue);
+    }
+  }, [isOpen]);
+
   return (
     <PopupForm
       title="Edit Profile"
