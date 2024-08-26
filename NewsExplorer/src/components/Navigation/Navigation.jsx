@@ -29,7 +29,10 @@ const Navigation = ({ loggedIn, openPopup, isSavedNews, handleLogout }) => {
                   <button type="text" className="nav__button">
                     Home
                   </button>
-                  <hr className="nav__outline" style={{ right: "380px" }} />
+                  <hr
+                    className="nav__outline"
+                    style={{ right: "330px", top: "73px" }}
+                  />
                   <button type="text" className="nav__button-saved">
                     <Link
                       to="/saved-news"

@@ -217,8 +217,8 @@ function App() {
                 handleLoginPopup={handleLoginPopup}
               />
               <EditProfilePopup
-                // isOpen={activePopup === "edit"}
-                isOpen={true}
+                isOpen={activePopup === "edit"}
+                handleEditProfilePopup={handleEditProfilePopup}
                 closePopup={handleClosePopup}
               />
             </div>

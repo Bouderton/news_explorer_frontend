@@ -24,12 +24,12 @@
 }
 
 .nav__outline-black {
-  width: 175px;
+  width: 150px;
   border-bottom: 2px solid black;
   outline: none;
   position: absolute;
   top: 73px;
-  right: 185px;
+  right: 290px;
 }
 
 .nav__buttons {
@@ -130,23 +130,7 @@
   display: none;
 }
 
-@media screen and (max-width: 715px) {
-  .nav__button-register {
-    width: 152px;
-    height: 40px;
-  }
-
-  .nav__buttons {
-    gap: 15px;
-  }
-
-  .nav__outline {
-    top: 66px;
-    right: 205px;
-  }
-}
-
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 730px) {
   .nav__mobile-toggle {
     visibility: visible;
     display: contents;

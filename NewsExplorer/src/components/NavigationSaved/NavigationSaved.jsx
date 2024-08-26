@@ -29,6 +29,13 @@ const NavigationSaved = ({ handleLogout }) => {
           >
             Saved Articles
           </button>
+          <button
+            className="nav__button"
+            style={{ textDecoration: "none", color: "#1a1b22", width: "100px" }}
+            type="text"
+          >
+            Edit Profile
+          </button>
           <Link to="/" style={{ textDecoration: "none", color: "#1a1b22" }}>
             <button
               type="text"
