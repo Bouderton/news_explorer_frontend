@@ -6,7 +6,13 @@ import { SavedArticleContext } from "../../contexts/SavedArticleContext";
 import { useContext, useEffect } from "react";
 import { getTempCards } from "../../utils/NewsApi";
 
-const SavedNews = ({ loggedIn, isSavedNews, openPopup, handleLogout }) => {
+const SavedNews = ({
+  loggedIn,
+  isSavedNews,
+  openPopup,
+  handleLogout,
+  handleEditPopup,
+}) => {
   const currentUser = useContext(UserContext);
   const { savedArticles, setSavedArticles } = useContext(SavedArticleContext);
 
@@ -33,6 +39,7 @@ const SavedNews = ({ loggedIn, isSavedNews, openPopup, handleLogout }) => {
           isSavedNews={isSavedNews}
           openPopup={openPopup}
           handleLogout={handleLogout}
+          handleEditPopup={handleEditPopup}
         />
         <div className="saved__text-container">
           <p className="saved__text-subtitle">Saved Articles</p>

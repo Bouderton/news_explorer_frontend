@@ -8,7 +8,7 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import RegisterPopup from "../RegisterPopup/RegisterPopup";
 import LoginPopup from "../LoginPopup/LoginPopup";
-import EditProfilePopup from "../EditPopup/EditPopup";
+import EditPopup from "../EditPopup/EditPopup";
 import SuccessPopup from "../SuccessPopup/SuccessPopup";
 import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
@@ -193,6 +193,7 @@ function App() {
                         handleLogout={handleLogout}
                         openPopup={handleRegisterPopup}
                         savedArticles={savedArticles}
+                        handleEditPopup={handleEditPopup}
                       />
                     </ProtectedRoute>
                   }
@@ -216,7 +217,7 @@ function App() {
                 closePopup={handleClosePopup}
                 handleLoginPopup={handleLoginPopup}
               />
-              <EditProfilePopup
+              <EditPopup
                 isOpen={activePopup === "edit"}
                 handleEditPopup={handleEditPopup}
                 closePopup={handleClosePopup}

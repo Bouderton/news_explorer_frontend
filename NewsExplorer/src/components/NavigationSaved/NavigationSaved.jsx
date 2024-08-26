@@ -33,6 +33,7 @@ const NavigationSaved = ({ handleLogout, handleEditPopup }) => {
             className="nav__button"
             style={{ textDecoration: "none", color: "#1a1b22", width: "100px" }}
             type="text"
+            onClick={handleEditPopup}
           >
             Edit Profile
           </button>

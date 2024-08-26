@@ -7,7 +7,13 @@ import { UserContext } from "../../contexts/UserContext";
 import NavigationMobile from "../NavigationMobile/NavigationMobile";
 import NavigationSaved from "../NavigationSaved/NavigationSaved";
 
-const Navigation = ({ loggedIn, openPopup, isSavedNews, handleLogout }) => {
+const Navigation = ({
+  loggedIn,
+  openPopup,
+  isSavedNews,
+  handleLogout,
+  handleEditPopup,
+}) => {
   const route = useLocation();
 
   const currentUser = useContext(UserContext);
@@ -75,7 +81,10 @@ const Navigation = ({ loggedIn, openPopup, isSavedNews, handleLogout }) => {
           </nav>
         ) : (
           // SAVED NEWS NAV BAR (DARK MODE)
-          <NavigationSaved handleLogout={handleLogout} />
+          <NavigationSaved
+            handleLogout={handleLogout}
+            handleEditPopup={handleEditPopup}
+          />
         )}
         {/* Nav Bar Mobile Mode */}
         <div className="nav__mobile-toggle">
