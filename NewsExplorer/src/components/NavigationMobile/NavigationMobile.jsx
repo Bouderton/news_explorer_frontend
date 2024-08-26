@@ -10,6 +10,7 @@ const NavigationMobile = ({
   openPopup,
   isSavedNews,
   handleLogout,
+  handleEditPopup,
 }) => {
   const [dropdown, setDropdown] = useState(false);
 
@@ -40,7 +41,7 @@ const NavigationMobile = ({
           />
           {/* Drop down menu */}
           <div
-            style={{ height: "275px" }}
+            style={{ height: "325px" }}
             className={`nav__dropdown ${
               dropdown ? "nav__dropdown-opened" : ""
             }`}
@@ -66,6 +67,19 @@ const NavigationMobile = ({
                 >
                   Saved Articles
                 </Link>
+              </button>
+              <button
+                className="nav__button"
+                style={{
+                  textDecoration: "none",
+                  color: "white",
+                  width: "100px",
+                  textAlign: "left",
+                }}
+                type="text"
+                onClick={handleEditPopup}
+              >
+                Edit Profile
               </button>
               <button
                 type="text"

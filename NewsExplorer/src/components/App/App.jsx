@@ -169,6 +169,7 @@ function App() {
                         handleSubmit={handleSearchResults}
                         loggedIn={loggedIn}
                         handleLogout={handleLogout}
+                        handleEditPopup={handleEditPopup}
                       />
                       <Main
                         articles={articles}

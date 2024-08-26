@@ -3,7 +3,13 @@ import header_background from "../../images/header_background.png";
 import SearchForm from "../SearchForm/SearchForm";
 import Navigation from "../Navigation/Navigation";
 
-const Header = ({ openPopup, handleSubmit, loggedIn, handleLogout }) => {
+const Header = ({
+  openPopup,
+  handleSubmit,
+  loggedIn,
+  handleLogout,
+  handleEditPopup,
+}) => {
   return (
     <header className="header">
       <img
@@ -15,6 +21,7 @@ const Header = ({ openPopup, handleSubmit, loggedIn, handleLogout }) => {
         openPopup={openPopup}
         loggedIn={loggedIn}
         handleLogout={handleLogout}
+        handleEditPopup={handleEditPopup}
       />
       <SearchForm handleSubmit={handleSubmit} />
     </header>

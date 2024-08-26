@@ -94,6 +94,7 @@ const Navigation = ({
             loggedIn={loggedIn}
             handleLogout={handleLogout}
             route={route}
+            handleEditPopup={handleEditPopup}
           />
         </div>
       </section>
