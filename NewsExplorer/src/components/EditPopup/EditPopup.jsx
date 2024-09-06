@@ -2,7 +2,7 @@ import PopupForm from "../PopupForm/PopupForm";
 import { useState, useEffect } from "react";
 import { useFormWithValidation } from "../../Hooks/useFormWithValidation";
 
-const EditProfilePopup = ({ isOpen, closePopup }) => {
+const EditProfilePopup = ({ isOpen, closePopup, handleEditProfile }) => {
   const [inputFocus, setInputFocus] = useState(false);
 
   const handleInputFocus = (value) => {
@@ -15,6 +15,7 @@ const EditProfilePopup = ({ isOpen, closePopup }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    handleEditProfile(values);
   };
 
   const inputValue = {

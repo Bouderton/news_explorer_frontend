@@ -21,7 +21,7 @@ const LoginPopup = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleLogin({ email, password });
+    handleLogin(values);
   };
 
   const inputValues = {

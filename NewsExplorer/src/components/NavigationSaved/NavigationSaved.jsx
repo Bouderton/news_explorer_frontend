@@ -43,7 +43,7 @@ const NavigationSaved = ({ handleLogout, handleEditPopup }) => {
               className="nav__button-logout dark"
               onClick={handleLogout}
             >
-              {currentUser?.data.name}
+              {currentUser?.username}
               <img src={logout_dark} className="nav__button-logout-icon" />
             </button>
           </Link>

@@ -55,7 +55,7 @@ const Navigation = ({
                     className="nav__button-logout"
                     onClick={handleLogout}
                   >
-                    {currentUser?.data.name}
+                    {currentUser?.username}
                     <img
                       src={logout_light}
                       className="nav__button-logout-icon"

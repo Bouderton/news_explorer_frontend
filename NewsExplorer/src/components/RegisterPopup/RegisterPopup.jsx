@@ -7,6 +7,7 @@ const RegisterPopup = ({
   closePopup,
   handleLoginPopup,
   handleSuccessPopup,
+  handleRegister,
 }) => {
   const [inputFocus, setInputFocus] = useState(false);
 
@@ -26,6 +27,7 @@ const RegisterPopup = ({
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    handleRegister(values);
     handleSuccessPopup();
   };
 

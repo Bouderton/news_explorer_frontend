@@ -89,7 +89,7 @@ const NavigationMobile = ({
                   closeDropdown();
                 }}
               >
-                {currentUser?.data.name}
+                {currentUser?.username}
                 <img
                   src={logout_light}
                   className="nav__mobile-button__logout-icon"
@@ -142,7 +142,7 @@ const NavigationMobile = ({
                     style={{ color: "#1a1b22" }}
                     onClick={handleLogout}
                   >
-                    {currentUser?.data.name}
+                    {currentUser?.username}
                     <img
                       src={logout_light}
                       className="nav__mobile-button__logout-icon"

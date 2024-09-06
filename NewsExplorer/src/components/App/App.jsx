@@ -16,7 +16,7 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 // API
 import { searchNews, saveArticle } from "../../utils/NewsApi";
-import { signUp, signIn, checkToken } from "../../utils/auth";
+import { signUp, signIn, editProfile, checkToken } from "../../utils/auth";
 
 // Context
 import { UserContext } from "../../contexts/UserContext";
@@ -100,11 +100,29 @@ function App() {
 
   // User Functions
 
+  const handleRegister = ({ email, password, username }) => {
+    signUp({ email, password, username })
+      .then((res) => {
+        console.log(`User: ${res}`);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const handleEditProfile = ({ username }) => {
+    const token = localStorage.getItem("jwt");
+    editProfile({ username }, token)
+      .then((res) => {
+        setUser(res);
+        handleClosePopup();
+      })
+      .catch((err) => console.log(err));
+  };
+
   const handleLogin = ({ email, password }) => {
     signIn({ email, password })
       .then((res) => {
         localStorage.setItem("jwt", res.token);
-        setUser(res.data);
+        setUser(res);
         setLoggedIn(true);
         handleClosePopup();
       })
@@ -206,6 +224,7 @@ function App() {
                 closePopup={handleClosePopup}
                 handleLoginPopup={handleLoginPopup}
                 handleSuccessPopup={handleSuccessPopup}
+                handleRegister={handleRegister}
               />
               <LoginPopup
                 isOpen={activePopup === "login"}
@@ -222,6 +241,7 @@ function App() {
                 isOpen={activePopup === "edit"}
                 handleEditPopup={handleEditPopup}
                 closePopup={handleClosePopup}
+                handleEditProfile={handleEditProfile}
               />
             </div>
           </SavedArticleContext.Provider>
