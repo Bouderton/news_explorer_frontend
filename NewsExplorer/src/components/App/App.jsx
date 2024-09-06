@@ -16,7 +16,7 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 // API
 import { searchNews, saveArticle } from "../../utils/NewsApi";
-import { authorize, checkToken } from "../../utils/auth";
+import { signUp, signIn, checkToken } from "../../utils/auth";
 
 // Context
 import { UserContext } from "../../contexts/UserContext";
@@ -100,8 +100,8 @@ function App() {
 
   // User Functions
 
-  const handleLogin = () => {
-    authorize("user@example.com", "password")
+  const handleLogin = ({ email, password }) => {
+    signIn({ email, password })
       .then((res) => {
         localStorage.setItem("jwt", res.token);
         setUser(res.data);
