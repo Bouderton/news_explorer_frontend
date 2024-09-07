@@ -87,15 +87,14 @@ function App() {
       });
   };
 
-  const handleSaveArticle = (article) => {
+  const handleSaveArticle = ({ article }) => {
     console.log("SAVED: ", article);
-    // For saving articles after DB is created
-    // saveArticle({ article })
-    //   .then((savedArticles) => {
-    //     console.log("Inside: ", savedArticles);
-    //     setSavedArticles((prevArticles) => [...prevArticles, savedArticles]);
-    //   })
-    //   .catch((err) => console.log(err));
+    saveArticle({ article })
+      .then((savedArticles) => {
+        // console.log("Inside: ", savedArticles);
+        setSavedArticles((prevArticles) => [...prevArticles, savedArticles]);
+      })
+      .catch((err) => console.log(err));
   };
 
   // User Functions
