@@ -1,12 +1,12 @@
 import { checkResponse } from "./NewsApi";
 
-const baseUrl = "http://localhost:3001";
+export const baseUrl = "http://localhost:3001";
 
-const authorize = (email, password) => {
-  return new Promise((resolve) => {
-    resolve({ token: "jwt" });
-  });
-};
+// const authorize = (email, password) => {
+//   return new Promise((resolve) => {
+//     resolve({ token: "jwt" });
+//   });
+// };
 
 const signUp = ({ email, password, username }) => {
   return fetch(`${baseUrl}/signup`, {
@@ -55,7 +55,6 @@ const auth = {
   signUp,
   signIn,
   editProfile,
-  authorize,
 };
 
 export default auth;

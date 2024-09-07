@@ -1,5 +1,6 @@
-import baseUrl from "./auth";
 import { checkResponse } from "./NewsApi";
+
+const baseUrl = "http://localhost:3001";
 
 export const saveArticle = ({ article }, token) => {
   return fetch(`${baseUrl}/articles`, {
@@ -11,10 +12,10 @@ export const saveArticle = ({ article }, token) => {
     body: JSON.stringify({
       title: article.title,
       description: article.description,
-      imageUrl: article.imageUrl,
+      imageUrl: article.urlToImage,
       date: article.publishedAt,
-      keyword: article.title,
-      author: article.author,
+      keyword: "Real",
+      author: article.source.name,
     }),
   }).then(checkResponse);
 };
