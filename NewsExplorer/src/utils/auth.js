@@ -2,13 +2,13 @@ import { checkResponse } from "./NewsApi";
 
 const baseUrl = "http://localhost:3001";
 
-export const authorize = (email, password) => {
+const authorize = (email, password) => {
   return new Promise((resolve) => {
     resolve({ token: "jwt" });
   });
 };
 
-export const signUp = ({ email, password, username }) => {
+const signUp = ({ email, password, username }) => {
   return fetch(`${baseUrl}/signup`, {
     method: "POST",
     headers: {
@@ -18,7 +18,7 @@ export const signUp = ({ email, password, username }) => {
   }).then(checkResponse);
 };
 
-export const signIn = ({ email, password }) => {
+const signIn = ({ email, password }) => {
   return fetch(`${baseUrl}/signin`, {
     method: "POST",
     headers: {
@@ -28,7 +28,7 @@ export const signIn = ({ email, password }) => {
   }).then(checkResponse);
 };
 
-export const editProfile = ({ username }, token) => {
+const editProfile = ({ username }, token) => {
   return fetch(`${baseUrl}/users/me`, {
     method: "PATCH",
     headers: {
@@ -40,7 +40,7 @@ export const editProfile = ({ username }, token) => {
   }).then(checkResponse);
 };
 
-export const checkToken = (token) => {
+const checkToken = (token) => {
   return fetch(`${baseUrl}/users/me`, {
     method: "GET",
     headers: {
@@ -49,3 +49,13 @@ export const checkToken = (token) => {
     },
   }).then(checkResponse);
 };
+
+const auth = {
+  checkToken,
+  signUp,
+  signIn,
+  editProfile,
+  authorize,
+};
+
+export default auth;

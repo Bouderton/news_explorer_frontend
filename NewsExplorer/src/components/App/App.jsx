@@ -15,8 +15,9 @@ import Footer from "../Footer/Footer";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 // API
-import { searchNews, saveArticle } from "../../utils/NewsApi";
-import { signUp, signIn, editProfile, checkToken } from "../../utils/auth";
+import { searchNews } from "../../utils/NewsApi";
+import auth from "../../utils/auth";
+import { saveArticle } from "../../utils/article-api";
 
 // Context
 import { UserContext } from "../../contexts/UserContext";
@@ -88,10 +89,10 @@ function App() {
   };
 
   const handleSaveArticle = ({ article }) => {
-    console.log("SAVED: ", article);
-    saveArticle({ article })
+    const token = localStorage.getItem("jwt");
+    saveArticle({ article }, token)
       .then((savedArticles) => {
-        // console.log("Inside: ", savedArticles);
+        console.log("Saved: ", savedArticles);
         setSavedArticles((prevArticles) => [...prevArticles, savedArticles]);
       })
       .catch((err) => console.log(err));
@@ -100,7 +101,8 @@ function App() {
   // User Functions
 
   const handleRegister = ({ email, password, username }) => {
-    signUp({ email, password, username })
+    auth
+      .signUp({ email, password, username })
       .then((res) => {
         console.log(`User: ${res}`);
       })
@@ -109,7 +111,8 @@ function App() {
 
   const handleEditProfile = ({ username }) => {
     const token = localStorage.getItem("jwt");
-    editProfile({ username }, token)
+    auth
+      .editProfile({ username }, token)
       .then((res) => {
         setUser(res);
         handleClosePopup();
@@ -118,7 +121,8 @@ function App() {
   };
 
   const handleLogin = ({ email, password }) => {
-    signIn({ email, password })
+    auth
+      .signIn({ email, password })
       .then((res) => {
         localStorage.setItem("jwt", res.token);
         setUser(res);
@@ -156,7 +160,8 @@ function App() {
     const token = localStorage.getItem("jwt");
 
     if (token) {
-      checkToken(token)
+      auth
+        .checkToken(token)
         .then((res) => {
           setLoggedIn(true);
           setUser(res);
