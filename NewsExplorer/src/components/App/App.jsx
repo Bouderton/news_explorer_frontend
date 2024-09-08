@@ -98,6 +98,21 @@ function App() {
       .catch((err) => console.log(err));
   };
 
+  const handleUnsaveArticle = (article) => {
+    const token = localStorage.getItem("jwt");
+    unsaveArticle(article._id, token)
+      .then(() => {
+        const postUnsave = articles.filter((card) => {
+          return card._id !== article._id;
+        });
+        setArticles(postUnsave);
+        handleClosePopup();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   // User Functions
 
   const handleRegister = ({ email, password, username }) => {
