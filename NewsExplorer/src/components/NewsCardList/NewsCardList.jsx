@@ -15,6 +15,7 @@ const NewsCardList = ({
   showMoreArticles,
   openPopup,
   handleSaveArticle,
+  handleUnsaveArticle,
   error,
 }) => {
   const route = useLocation();
@@ -85,6 +86,7 @@ const NewsCardList = ({
                   return (
                     <li className="cards__list-item" key={index}>
                       <NewsCard
+                        handleUnsaveArticle={handleUnsaveArticle}
                         savedArticle={savedArticle}
                         isSavedNews={isSavedNews}
                         loggedIn={loggedIn}

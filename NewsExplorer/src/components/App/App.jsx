@@ -17,7 +17,7 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 // API
 import { searchNews } from "../../utils/NewsApi";
 import auth from "../../utils/auth";
-import { saveArticle } from "../../utils/article-api";
+import { saveArticle, unsaveArticle } from "../../utils/article-api";
 
 // Context
 import { UserContext } from "../../contexts/UserContext";
@@ -232,6 +232,7 @@ function App() {
                         openPopup={handleRegisterPopup}
                         savedArticles={savedArticles}
                         handleEditPopup={handleEditPopup}
+                        handleUnsaveArticle={handleUnsaveArticle}
                       />
                     </ProtectedRoute>
                   }
