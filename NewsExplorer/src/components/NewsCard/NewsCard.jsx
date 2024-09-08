@@ -23,7 +23,7 @@ const NewsCard = ({
   };
 
   const handleClick = () => {
-    setClicked((prevState) => !prevState);
+    setClicked(true);
   };
 
   const handleHover = () => {
@@ -61,7 +61,7 @@ const NewsCard = ({
                 <p className="card__text text_clamp">
                   {savedArticle.description}
                 </p>
-                <p className="card__author">{savedArticle.source.name}</p>
+                <p className="card__author">{savedArticle.author}</p>
               </div>
             </article>
           </div>
@@ -71,8 +71,9 @@ const NewsCard = ({
           <div className="card">
             {loggedIn === true ? (
               <button
-                onClick={() => {
+                onClick={(e) => {
                   handleSaveArticle({ article });
+                  e.currentTarget.disabled = true;
                   handleClick();
                 }}
                 type="radio"
@@ -111,7 +112,7 @@ const NewsCard = ({
                 <p className="card__date">{convertDate(article.publishedAt)}</p>
                 <h3 className="card__title title_clamp">{article.title}</h3>
                 <p className="card__text text_clamp">{article.description}</p>
-                <p className="card__author">{article.source.name}</p>
+                <p className="card__author">{article.author}</p>
               </div>
             </article>
           </div>

@@ -12,7 +12,7 @@ export const saveArticle = ({ article }, token) => {
     body: JSON.stringify({
       title: article.title,
       description: article.description,
-      imageUrl: article.urlToImage,
+      urlToImage: article.urlToImage,
       date: article.publishedAt,
       keyword: "Real",
       author: article.source.name,

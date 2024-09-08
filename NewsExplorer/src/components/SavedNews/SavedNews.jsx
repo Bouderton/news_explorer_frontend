@@ -4,8 +4,7 @@ import NewsCardList from "../NewsCardList/NewsCardList";
 import { UserContext } from "../../contexts/UserContext";
 import { SavedArticleContext } from "../../contexts/SavedArticleContext";
 import { useContext, useEffect } from "react";
-import { getTempCards } from "../../utils/NewsApi";
-
+import { getArticles } from "../../utils/article-api";
 const SavedNews = ({
   loggedIn,
   isSavedNews,
@@ -19,15 +18,21 @@ const SavedNews = ({
   // TEMPORARY SAVED CARDS JUST SEARCHING FOR TOP HEADLINES NO BACKEND YET
   useEffect(() => {
     if (isSavedNews) {
-      getTempCards().then((data) => {
-        const filteredArticles = data.articles.filter(
-          (savedArticle) =>
-            savedArticle.urlToImage &&
-            savedArticle.title &&
-            !savedArticle.title.includes("[Removed]")
-        );
-        setSavedArticles(filteredArticles);
-      });
+      getArticles()
+        .then((articles) => {
+          setSavedArticles(articles);
+        })
+        .catch((err) => console.log(err));
+      // Temp fetch
+      // getTempCards().then((data) => {
+      //   const filteredArticles = data.articles.filter(
+      //     (savedArticle) =>
+      //       savedArticle.urlToImage &&
+      //       savedArticle.title &&
+      //       !savedArticle.title.includes("[Removed]")
+      //   );
+      //   setSavedArticles(filteredArticles);
+      // });
     }
   }, [isSavedNews]);
 

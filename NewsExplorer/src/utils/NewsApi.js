@@ -35,7 +35,7 @@ export function saveArticle({ article }) {
     resolve({
       id: "65f7371e7bce9e7d331b11a0",
       title: article.title,
-      imageUrl: article.urlToImage,
+      urlToImage: article.urlToImage,
       url: article.url,
     });
   });
