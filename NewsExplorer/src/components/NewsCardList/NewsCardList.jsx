@@ -16,6 +16,7 @@ const NewsCardList = ({
   openPopup,
   handleSaveArticle,
   handleUnsaveArticle,
+  handleConfirmPopup,
   error,
 }) => {
   const route = useLocation();
@@ -82,14 +83,15 @@ const NewsCardList = ({
           <section className="cards">
             <div className="cards__list-container">
               <ul className="cards__list">
-                {savedArticles.map((savedArticle, index) => {
+                {savedArticles.map((savedArticle) => {
                   return (
-                    <li className="cards__list-item" key={index}>
+                    <li className="cards__list-item" key={savedArticle._id}>
                       <NewsCard
                         handleUnsaveArticle={handleUnsaveArticle}
                         savedArticle={savedArticle}
                         isSavedNews={isSavedNews}
                         loggedIn={loggedIn}
+                        handleConfirmPopup={handleConfirmPopup}
                       />
                     </li>
                   );

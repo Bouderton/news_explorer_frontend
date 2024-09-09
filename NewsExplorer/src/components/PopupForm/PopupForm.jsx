@@ -42,7 +42,10 @@ const PopupWithForm = ({
             </>
           </p>
         ) : (
-          <p className="popup__or-text" style={{ margin: "14px auto  0 0" }}>
+          <p
+            className="popup__or-text"
+            style={{ margin: "14px auto  0 0", display: "none" }}
+          >
             <button
               onClick={popupSwitch}
               type="text"

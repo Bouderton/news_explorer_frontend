@@ -12,6 +12,7 @@ const SavedNews = ({
   handleLogout,
   handleEditPopup,
   handleUnsaveArticle,
+  handleConfirmPopup,
 }) => {
   const currentUser = useContext(UserContext);
   const { savedArticles, setSavedArticles } = useContext(SavedArticleContext);
@@ -63,6 +64,7 @@ const SavedNews = ({
         loggedIn={loggedIn}
         isSavedNews={isSavedNews}
         handleUnsaveArticle={handleUnsaveArticle}
+        handleConfirmPopup={handleConfirmPopup}
       />
     </section>
   );

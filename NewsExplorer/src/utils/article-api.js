@@ -20,8 +20,8 @@ export const saveArticle = ({ article }, token) => {
   }).then(checkResponse);
 };
 
-export const unsaveArticle = (_id, token) => {
-  return fetch(`${baseUrl}/articles/${_id}`, {
+export const unsaveArticle = (id, token) => {
+  return fetch(`${baseUrl}/articles/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",

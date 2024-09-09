@@ -9,6 +9,7 @@ import Main from "../Main/Main";
 import RegisterPopup from "../RegisterPopup/RegisterPopup";
 import LoginPopup from "../LoginPopup/LoginPopup";
 import EditPopup from "../EditPopup/EditPopup";
+import ConfirmPopup from "../ConfirmPopup/ConfirmPopup";
 import SuccessPopup from "../SuccessPopup/SuccessPopup";
 import SavedNews from "../SavedNews/SavedNews";
 import Footer from "../Footer/Footer";
@@ -36,6 +37,7 @@ function App() {
   const [isSavedNews, setIsSavedNews] = useState(false);
   const [error, setError] = useState(null);
   const [savedArticles, setSavedArticles] = useState([]);
+  const [article, setArticle] = useState({});
 
   // Popups
 
@@ -45,6 +47,12 @@ function App() {
 
   const handleEditPopup = () => {
     setActivePopup("edit");
+  };
+
+  const handleConfirmPopup = (article) => {
+    setActivePopup("confirm");
+    setArticle(article);
+    console.log(article);
   };
 
   const handleSuccessPopup = () => {
@@ -105,7 +113,7 @@ function App() {
         const postUnsave = articles.filter((card) => {
           return card._id !== article._id;
         });
-        setArticles(postUnsave);
+        setSavedArticles(postUnsave);
         handleClosePopup();
       })
       .catch((err) => {
@@ -233,6 +241,7 @@ function App() {
                         savedArticles={savedArticles}
                         handleEditPopup={handleEditPopup}
                         handleUnsaveArticle={handleUnsaveArticle}
+                        handleConfirmPopup={handleConfirmPopup}
                       />
                     </ProtectedRoute>
                   }
@@ -259,9 +268,14 @@ function App() {
               />
               <EditPopup
                 isOpen={activePopup === "edit"}
-                handleEditPopup={handleEditPopup}
                 closePopup={handleClosePopup}
                 handleEditProfile={handleEditProfile}
+              />
+              <ConfirmPopup
+                isOpen={activePopup === "confirm"}
+                closePopup={handleClosePopup}
+                handleUnsaveArticle={handleUnsaveArticle}
+                article={article}
               />
             </div>
           </SavedArticleContext.Provider>

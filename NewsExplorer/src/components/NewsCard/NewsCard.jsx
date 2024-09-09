@@ -10,6 +10,7 @@ const NewsCard = ({
   handleSaveArticle,
   handleUnsaveArticle,
   savedArticle,
+  handleConfirmPopup,
 }) => {
   // cards accept news data
 
@@ -32,6 +33,10 @@ const NewsCard = ({
     handleUnsaveArticle(savedArticle);
   };
 
+  const handleConfirm = (article) => {
+    handleConfirmPopup(article);
+  };
+
   const handleHover = () => {
     setVisibile(true);
   };
@@ -48,7 +53,7 @@ const NewsCard = ({
             <button
               className="card__trashcan"
               type="button"
-              onClick={handleDelete}
+              onClick={handleConfirm}
             />
             <div className="card__keyword-container">
               <p className="card__keyword">Keyword</p>
