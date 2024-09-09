@@ -1,6 +1,6 @@
 import "./PopupForm.css";
 
-const PopupWithForm = ({
+const PopupForm = ({
   title,
   children,
   spanText,
@@ -61,4 +61,4 @@ const PopupWithForm = ({
   );
 };
 
-export default PopupWithForm;
+export default PopupForm;
