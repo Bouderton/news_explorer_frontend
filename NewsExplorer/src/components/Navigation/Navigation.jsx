@@ -35,10 +35,7 @@ const Navigation = ({
                   <button type="text" className="nav__button">
                     Home
                   </button>
-                  <hr
-                    className="nav__outline"
-                    style={{ right: "330px", top: "73px" }}
-                  />
+                  <hr className="nav__outline" />
                   <button type="text" className="nav__button-saved">
                     <Link
                       to="/saved-news"

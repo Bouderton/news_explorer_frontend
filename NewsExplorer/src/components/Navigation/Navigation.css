@@ -19,8 +19,8 @@
   border-bottom: 2px solid white;
   outline: none;
   position: absolute;
-  top: 75px;
-  right: 265px;
+  bottom: -13px;
+  left: -10px;
 }
 
 .nav__outline-black {
@@ -28,13 +28,14 @@
   border-bottom: 2px solid black;
   outline: none;
   position: absolute;
-  top: 73px;
-  right: 290px;
+  bottom: -13px;
+  left: 65px;
 }
 
 .nav__buttons {
   display: flex;
   justify-content: space-between;
+  position: relative;
   gap: 50px;
 }
 
