@@ -3,6 +3,14 @@ import { checkResponse } from "./NewsApi";
 const baseUrl = "http://localhost:3001";
 
 export const saveArticle = ({ article }, token) => {
+  const convertDate = (isoDate) => {
+    const date = new Date(isoDate);
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return date.toLocaleDateString("en-US", options);
+  };
+
+  const formattedDate = convertDate(article.publishedAt);
+
   return fetch(`${baseUrl}/articles`, {
     method: "POST",
     headers: {
@@ -13,7 +21,7 @@ export const saveArticle = ({ article }, token) => {
       title: article.title,
       description: article.description,
       urlToImage: article.urlToImage,
-      date: article.publishedAt,
+      date: formattedDate,
       keyword: "Real",
       author: article.source.name,
     }),

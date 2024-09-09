@@ -52,7 +52,7 @@ const NewsCard = ({
               onClick={() => handleConfirmPopup(savedArticle)}
             />
             <div className="card__keyword-container">
-              <p className="card__keyword">Keyword</p>
+              <p className="card__keyword">{savedArticle.keyword}</p>
             </div>
             <article className="card__content">
               {savedArticle.urlToImage && (
@@ -63,9 +63,7 @@ const NewsCard = ({
                 />
               )}
               <div className="card__text-container">
-                <p className="card__date">
-                  {convertDate(savedArticle.publishedAt)}
-                </p>
+                <p className="card__date">{savedArticle.date}</p>
                 <h3 className="card__title title_clamp">
                   {savedArticle.title}
                 </h3>
