@@ -99,7 +99,7 @@ function App() {
     const token = localStorage.getItem("jwt");
     saveArticle({ article }, token)
       .then((savedArticles) => {
-        console.log("Saved: ", savedArticles);
+        // console.log("Saved: ", savedArticles);
         setSavedArticles((prevArticles) => [...prevArticles, savedArticles]);
       })
       .catch((err) => console.log(err));

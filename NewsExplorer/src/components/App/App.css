@@ -12,6 +12,18 @@ html {
   /* outline: red 1px solid; */
 }
 
+a {
+  color: #000c1f;
+}
+
+a:visited {
+  color: inherit;
+}
+
+a:hover {
+  color: #003fa3;
+}
+
 .page {
   max-width: 1440px;
   min-width: 320px;

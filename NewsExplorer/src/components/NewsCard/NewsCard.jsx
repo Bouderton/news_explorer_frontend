@@ -59,7 +59,13 @@ const NewsCard = ({
               <div className="card__text-container">
                 <p className="card__date">{savedArticle.date}</p>
                 <h3 className="card__title title_clamp">
-                  {savedArticle.title}
+                  <a
+                    href={savedArticle.url}
+                    rel="noopener noreferer"
+                    target="_blank"
+                  >
+                    {savedArticle.title}
+                  </a>
                 </h3>
                 <p className="card__text text_clamp">
                   {savedArticle.description}
@@ -113,7 +119,15 @@ const NewsCard = ({
               )}
               <div className="card__text-container">
                 <p className="card__date">{convertDate(article.publishedAt)}</p>
-                <h3 className="card__title title_clamp">{article.title}</h3>
+                <h3 className="card__title title_clamp">
+                  <a
+                    href={article.url}
+                    rel="noopener noreferer"
+                    target="_blank"
+                  >
+                    {article.title}
+                  </a>
+                </h3>
                 <p className="card__text text_clamp">{article.description}</p>
                 <p className="card__author">{article.author}</p>
               </div>
