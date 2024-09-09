@@ -8,7 +8,6 @@ const NewsCard = ({
   loggedIn,
   openPopup,
   handleSaveArticle,
-  handleUnsaveArticle,
   savedArticle,
   handleConfirmPopup,
 }) => {
@@ -26,11 +25,6 @@ const NewsCard = ({
 
   const handleClick = () => {
     setClicked(true);
-  };
-
-  const handleDelete = (e) => {
-    e.preventDefault();
-    handleUnsaveArticle(savedArticle);
   };
 
   const handleHover = () => {

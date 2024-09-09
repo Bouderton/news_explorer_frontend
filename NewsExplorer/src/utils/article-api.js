@@ -24,6 +24,7 @@ export const saveArticle = ({ article }, token) => {
       date: formattedDate,
       keyword: "Real",
       author: article.source.name,
+      url: article.url,
     }),
   }).then(checkResponse);
 };
