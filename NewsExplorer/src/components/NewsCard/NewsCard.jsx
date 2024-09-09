@@ -33,10 +33,6 @@ const NewsCard = ({
     handleUnsaveArticle(savedArticle);
   };
 
-  const handleConfirm = (article) => {
-    handleConfirmPopup(article);
-  };
-
   const handleHover = () => {
     setVisibile(true);
   };
@@ -53,7 +49,7 @@ const NewsCard = ({
             <button
               className="card__trashcan"
               type="button"
-              onClick={handleConfirm}
+              onClick={() => handleConfirmPopup(savedArticle)}
             />
             <div className="card__keyword-container">
               <p className="card__keyword">Keyword</p>

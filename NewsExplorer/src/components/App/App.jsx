@@ -52,7 +52,6 @@ function App() {
   const handleConfirmPopup = (article) => {
     setActivePopup("confirm");
     setArticle(article);
-    console.log(article);
   };
 
   const handleSuccessPopup = () => {
@@ -108,9 +107,10 @@ function App() {
 
   const handleUnsaveArticle = (article) => {
     const token = localStorage.getItem("jwt");
+    console.log(article);
     unsaveArticle(article._id, token)
       .then(() => {
-        const postUnsave = articles.filter((card) => {
+        const postUnsave = savedArticles.filter((card) => {
           return card._id !== article._id;
         });
         setSavedArticles(postUnsave);
