@@ -1,6 +1,7 @@
 import NewsCard from "../NewsCard/NewsCard";
 import "./NewsCardList.css";
 import { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 import { ArticleContext } from "../../contexts/ArticleContext";
 import { SavedArticleContext } from "../../contexts/SavedArticleContext";
 import { useLocation } from "react-router-dom";
@@ -21,6 +22,7 @@ const NewsCardList = ({
 }) => {
   const route = useLocation();
 
+  const currentUser = useContext(UserContext);
   const { articles, shownArticles } = useContext(ArticleContext);
   const { savedArticles } = useContext(SavedArticleContext);
 
@@ -84,17 +86,20 @@ const NewsCardList = ({
             <div className="cards__list-container">
               <ul className="cards__list">
                 {savedArticles.map((savedArticle) => {
-                  return (
-                    <li className="cards__list-item" key={savedArticle._id}>
-                      <NewsCard
-                        handleUnsaveArticle={handleUnsaveArticle}
-                        savedArticle={savedArticle}
-                        isSavedNews={isSavedNews}
-                        loggedIn={loggedIn}
-                        handleConfirmPopup={handleConfirmPopup}
-                      />
-                    </li>
-                  );
+                  // Rendering only cards that the current user saved
+                  if (savedArticle.owner === currentUser._id) {
+                    return (
+                      <li className="cards__list-item" key={savedArticle._id}>
+                        <NewsCard
+                          handleUnsaveArticle={handleUnsaveArticle}
+                          savedArticle={savedArticle}
+                          isSavedNews={isSavedNews}
+                          loggedIn={loggedIn}
+                          handleConfirmPopup={handleConfirmPopup}
+                        />
+                      </li>
+                    );
+                  }
                 })}
               </ul>
             </div>
