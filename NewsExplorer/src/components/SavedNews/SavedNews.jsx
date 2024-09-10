@@ -25,16 +25,6 @@ const SavedNews = ({
           setSavedArticles(articles);
         })
         .catch((err) => console.log(err));
-      // Temp fetch
-      // getTempCards().then((data) => {
-      //   const filteredArticles = data.articles.filter(
-      //     (savedArticle) =>
-      //       savedArticle.urlToImage &&
-      //       savedArticle.title &&
-      //       !savedArticle.title.includes("[Removed]")
-      //   );
-      //   setSavedArticles(filteredArticles);
-      // });
     }
   }, [isSavedNews]);
 
