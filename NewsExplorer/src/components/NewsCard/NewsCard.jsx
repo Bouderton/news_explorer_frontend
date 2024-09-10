@@ -10,6 +10,7 @@ const NewsCard = ({
   handleSaveArticle,
   savedArticle,
   handleConfirmPopup,
+  keyword,
 }) => {
   // cards accept news data
 
@@ -81,7 +82,8 @@ const NewsCard = ({
             {loggedIn === true ? (
               <button
                 onClick={(e) => {
-                  handleSaveArticle({ article });
+                  handleSaveArticle({ article }, keyword);
+                  console.log(keyword);
                   e.currentTarget.disabled = true;
                   handleClick();
                 }}

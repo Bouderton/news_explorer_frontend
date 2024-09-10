@@ -19,6 +19,7 @@ const NewsCardList = ({
   handleUnsaveArticle,
   handleConfirmPopup,
   error,
+  keyword,
 }) => {
   const route = useLocation();
 
@@ -59,6 +60,7 @@ const NewsCardList = ({
                           loggedIn={loggedIn}
                           openPopup={openPopup}
                           handleSaveArticle={handleSaveArticle}
+                          keyword={keyword}
                         />
                       </li>
                     );
@@ -96,6 +98,7 @@ const NewsCardList = ({
                           isSavedNews={isSavedNews}
                           loggedIn={loggedIn}
                           handleConfirmPopup={handleConfirmPopup}
+                          keyword={keyword}
                         />
                       </li>
                     );

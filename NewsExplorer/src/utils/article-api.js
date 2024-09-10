@@ -2,7 +2,7 @@ import { checkResponse } from "./NewsApi";
 
 const baseUrl = "http://localhost:3001";
 
-export const saveArticle = ({ article }, token) => {
+export const saveArticle = ({ article }, token, keyword) => {
   const convertDate = (isoDate) => {
     const date = new Date(isoDate);
     const options = { year: "numeric", month: "long", day: "numeric" };
@@ -22,7 +22,7 @@ export const saveArticle = ({ article }, token) => {
       description: article.description,
       urlToImage: article.urlToImage,
       date: formattedDate,
-      keyword: "Real",
+      keyword: keyword,
       author: article.source.name,
       url: article.url,
     }),

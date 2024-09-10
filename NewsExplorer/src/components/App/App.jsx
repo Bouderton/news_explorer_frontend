@@ -38,6 +38,7 @@ function App() {
   const [error, setError] = useState(null);
   const [savedArticles, setSavedArticles] = useState([]);
   const [article, setArticle] = useState({});
+  const [keyword, setKeyword] = useState([]);
 
   // Popups
 
@@ -86,6 +87,7 @@ function App() {
           setArticles(filteredArticles);
           setIsLoading(false);
         }, 500);
+        setKeyword(query);
       })
       .catch((err) => {
         console.log(err);
@@ -95,9 +97,9 @@ function App() {
       });
   };
 
-  const handleSaveArticle = ({ article }) => {
+  const handleSaveArticle = ({ article }, keyword) => {
     const token = localStorage.getItem("jwt");
-    saveArticle({ article }, token)
+    saveArticle({ article }, token, keyword)
       .then((savedArticles) => {
         // console.log("Saved: ", savedArticles);
         setSavedArticles((prevArticles) => [...prevArticles, savedArticles]);
@@ -218,6 +220,7 @@ function App() {
                       />
                       <Main
                         articles={articles}
+                        keyword={keyword}
                         showMoreArticles={showMoreArticles}
                         isLoading={isLoading}
                         searching={searching}
@@ -242,6 +245,7 @@ function App() {
                         handleEditPopup={handleEditPopup}
                         handleUnsaveArticle={handleUnsaveArticle}
                         handleConfirmPopup={handleConfirmPopup}
+                        keyword={keyword}
                       />
                     </ProtectedRoute>
                   }

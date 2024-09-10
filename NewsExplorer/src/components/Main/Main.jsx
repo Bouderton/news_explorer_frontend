@@ -10,6 +10,7 @@ const Main = ({
   loggedIn,
   handleSaveArticle,
   error,
+  keyword,
 }) => {
   return (
     <main className="main">
@@ -21,6 +22,7 @@ const Main = ({
         showMoreArticles={showMoreArticles}
         openPopup={openPopup}
         handleSaveArticle={handleSaveArticle}
+        keyword={keyword}
       />
       <About />
     </main>
