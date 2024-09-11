@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import PopupWithForm from "../PopupForm/PopupForm";
+import PopupForm from "../PopupForm/PopupForm";
 import { useFormWithValidation } from "../../Hooks/useFormWithValidation";
 
 const RegisterPopup = ({
@@ -39,7 +39,7 @@ const RegisterPopup = ({
   }, [isOpen]);
 
   return (
-    <PopupWithForm
+    <PopupForm
       isOpen={isOpen}
       closePopup={closePopup}
       title="Sign Up"
@@ -123,7 +123,7 @@ const RegisterPopup = ({
           Sign Up
         </button>
       )}
-    </PopupWithForm>
+    </PopupForm>
   );
 };
 
