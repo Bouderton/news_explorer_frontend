@@ -18,6 +18,11 @@ const SavedNews = ({
   const currentUser = useContext(UserContext);
   const { savedArticles, setSavedArticles } = useContext(SavedArticleContext);
 
+  // Filtering only cards to count for the current user
+  const userArticleFilter = savedArticles.filter(
+    (article) => article.owner === currentUser._id
+  );
+
   // TEMPORARY SAVED CARDS JUST SEARCHING FOR TOP HEADLINES NO BACKEND YET
   useEffect(() => {
     if (isSavedNews) {
@@ -41,7 +46,7 @@ const SavedNews = ({
         />
         <div className="saved__text-container">
           <p className="saved__text-subtitle">Saved Articles</p>
-          <h1 className="saved__text-title">{`${currentUser?.username}, you have ${savedArticles.length} saved articles`}</h1>
+          <h1 className="saved__text-title">{`${currentUser?.username}, you have ${userArticleFilter.length} saved articles`}</h1>
           <p className="saved__text-keywords">
             By keywords:
             <span className="saved__text-span">
