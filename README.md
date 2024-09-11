@@ -18,7 +18,7 @@
 - **React Router**: For handling navigation and routing within the app.
 - **CSS**: For styling the application.
 
-### Backend (Planned)
+### Backend
 
 - **Node.js**: JavaScript runtime for the server-side.
 - **Express.js**: Web framework for building the backend API.
