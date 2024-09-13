@@ -29,3 +29,6 @@
 ### API
 
 - **Open Source News API**: The app will integrate with an open-source news API to fetch real-time news articles: [https://newsapi.org]
+
+### Deployment
+#### This app's deployment is in progress!!!
