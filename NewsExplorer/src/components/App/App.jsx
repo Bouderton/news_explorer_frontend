@@ -39,6 +39,7 @@ function App() {
   const [savedArticles, setSavedArticles] = useState([]);
   const [article, setArticle] = useState({});
   const [keyword, setKeyword] = useState([]);
+  const [serverError, setServerError] = useState({});
 
   // Popups
 
@@ -129,9 +130,19 @@ function App() {
     auth
       .signUp({ email, password, username })
       .then((res) => {
-        console.log(`User: ${res}`);
+        if (res) {
+          console.log(res);
+          handleSuccessPopup();
+          setServerError(null);
+        }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        setServerError({
+          ...serverError,
+          conflictError: "Email is already in use",
+        });
+        console.log(err);
+      });
   };
 
   const handleEditProfile = ({ username }) => {
@@ -258,6 +269,8 @@ function App() {
                 handleLoginPopup={handleLoginPopup}
                 handleSuccessPopup={handleSuccessPopup}
                 handleRegister={handleRegister}
+                serverError={serverError}
+                setServerError={setServerError}
               />
               <LoginPopup
                 isOpen={activePopup === "login"}

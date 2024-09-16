@@ -6,8 +6,9 @@ const RegisterPopup = ({
   isOpen,
   closePopup,
   handleLoginPopup,
-  handleSuccessPopup,
   handleRegister,
+  serverError,
+  setServerError,
 }) => {
   const [inputFocus, setInputFocus] = useState(false);
 
@@ -28,7 +29,6 @@ const RegisterPopup = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     handleRegister(values);
-    handleSuccessPopup();
   };
 
   const { values, handleChange, errors, isValid, resetForm } =
@@ -36,6 +36,7 @@ const RegisterPopup = ({
 
   useEffect(() => {
     resetForm(inputValues);
+    setServerError({});
   }, [isOpen]);
 
   return (
@@ -102,7 +103,11 @@ const RegisterPopup = ({
         placeholder="Enter Username"
       ></input>
       <span className="popup__form-error">{errors.username}</span>
-
+      {serverError.conflictError ? (
+        <span className="popup__form-error conflict">
+          {serverError.conflictError}
+        </span>
+      ) : null}
       {isValid ? (
         <button
           type="text"
