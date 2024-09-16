@@ -104,7 +104,7 @@ const RegisterPopup = ({
       ></input>
       <span className="popup__form-error">{errors.username}</span>
       {serverError.conflictError ? (
-        <span className="popup__form-error conflict">
+        <span className="popup__form-error error">
           {serverError.conflictError}
         </span>
       ) : null}

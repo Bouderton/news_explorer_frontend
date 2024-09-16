@@ -7,6 +7,8 @@ const LoginPopup = ({
   closePopup,
   handleRegisterPopup,
   handleLogin,
+  serverError,
+  setServerError,
 }) => {
   const [inputFocus, setInputFocus] = useState(false);
   const [orText, setOrText] = useState(false);
@@ -33,9 +35,8 @@ const LoginPopup = ({
     useFormWithValidation(inputValues);
 
   useEffect(() => {
-    if (isOpen) {
-      resetForm(inputValues);
-    }
+    resetForm(inputValues);
+    setServerError({});
   }, [isOpen]);
   return (
     <PopupForm
@@ -85,7 +86,11 @@ const LoginPopup = ({
       ></input>
 
       <span className="popup__form-error">{errors.password}</span>
-
+      {serverError.invalidError ? (
+        <span className="popup__form-error error">
+          {serverError.invalidError}
+        </span>
+      ) : null}
       {isValid ? (
         <button type="text" className="popup__submit-button button_enabled">
           Sign In

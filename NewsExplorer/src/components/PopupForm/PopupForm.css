@@ -121,9 +121,9 @@
   position: relative;
 }
 
-.conflict {
+.error {
   text-align: center;
-  margin-bottom: 5px;
+  margin: -10px 0 10px 0;
 }
 
 .popup__form-label {

@@ -160,12 +160,20 @@ function App() {
     auth
       .signIn({ email, password })
       .then((res) => {
-        localStorage.setItem("jwt", res.token);
-        setUser(res);
-        setLoggedIn(true);
-        handleClosePopup();
+        if (res) {
+          localStorage.setItem("jwt", res.token);
+          setUser(res);
+          setLoggedIn(true);
+          handleClosePopup();
+        }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setServerError({
+          ...serverError,
+          invalidError: "Invalid credentials",
+        });
+      });
   };
 
   const handleLogout = () => {
@@ -277,6 +285,8 @@ function App() {
                 closePopup={handleClosePopup}
                 handleRegisterPopup={handleRegisterPopup}
                 handleLogin={handleLogin}
+                serverError={serverError}
+                setServerError={setServerError}
               />
               <SuccessPopup
                 isOpen={activePopup === "success"}
