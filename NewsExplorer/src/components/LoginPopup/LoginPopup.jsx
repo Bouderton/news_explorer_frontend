@@ -63,9 +63,9 @@ const LoginPopup = ({
         value={values.email}
         onChange={handleChange}
       ></input>
-      {errors.email && (
-        <span className="popup__form-error">{errors.email}</span>
-      )}
+
+      <span className="popup__form-error">{errors.email}</span>
+
       <label className="popup__form-label">Password</label>
       <input
         required
@@ -83,9 +83,9 @@ const LoginPopup = ({
         value={values.password}
         onChange={handleChange}
       ></input>
-      {errors.email && (
-        <span className="popup__form-error">{errors.email}</span>
-      )}
+
+      <span className="popup__form-error">{errors.password}</span>
+
       {isValid ? (
         <button type="text" className="popup__submit-button button_enabled">
           Sign In
