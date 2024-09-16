@@ -51,14 +51,14 @@ const RegisterPopup = ({
       <label className="popup__form-label">Email</label>
       <input
         required
-        min="1"
-        max="30"
+        minLength="1"
+        maxLength="30"
         onFocus={() => handleInputFocus("email")}
         className={`popup__form-input ${
           inputFocus === "email" ? "input-focussed" : ""
         }`}
         placeholder="Enter Email"
-        type="text"
+        type="email"
         name="email"
         onChange={handleChange}
         value={values.email}
@@ -69,8 +69,8 @@ const RegisterPopup = ({
       <label className="popup__form-label">Password</label>
       <input
         required
-        min="2"
-        max="30"
+        minLength="2"
+        maxLength="30"
         onFocus={() => handleInputFocus("password")}
         onBlur={handleInputBlur}
         value={values.password}
@@ -88,13 +88,13 @@ const RegisterPopup = ({
       <label className="popup__form-label">Username</label>
       <input
         required
-        min="2"
-        max="30"
+        minLength="2"
+        maxLength="30"
         onFocus={() => handleInputFocus("username")}
         onBlur={handleInputBlur}
         value={values.username}
         name="username"
-        type="text"
+        type="username"
         onChange={handleChange}
         className={`popup__form-input ${
           inputFocus === "username" ? "input-focussed" : ""
