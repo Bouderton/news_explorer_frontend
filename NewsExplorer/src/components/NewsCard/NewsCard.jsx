@@ -131,7 +131,7 @@ const NewsCard = ({
                   </a>
                 </h3>
                 <p className="card__text text_clamp">{article.description}</p>
-                <p className="card__author">{article.author}</p>
+                <p className="card__author">{article.source.name}</p>
               </div>
             </article>
           </div>
