@@ -1,6 +1,5 @@
 import "./NewsCard.css";
 import { useState } from "react";
-// import { useLocation } from "react-router-dom";
 
 const NewsCard = ({
   isSavedNews,
@@ -16,7 +15,6 @@ const NewsCard = ({
 
   const [clicked, setClicked] = useState(false);
   const [visible, setVisibile] = useState(false);
-  // const route = useLocation();
 
   const convertDate = (isoDate) => {
     const date = new Date(isoDate);
@@ -83,7 +81,6 @@ const NewsCard = ({
               <button
                 onClick={(e) => {
                   handleSaveArticle({ article }, keyword);
-                  console.log(keyword);
                   e.currentTarget.disabled = true;
                   handleClick();
                 }}

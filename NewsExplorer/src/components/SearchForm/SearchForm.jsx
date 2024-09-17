@@ -15,6 +15,7 @@ const SearchForm = ({
 
   function handleSearch(e) {
     e.preventDefault();
+    // resetting the search results every search
     setArticles([]);
     setSearching(false);
     setIsLoading(true);

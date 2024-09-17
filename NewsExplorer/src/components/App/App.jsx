@@ -102,7 +102,6 @@ function App() {
     const token = localStorage.getItem("jwt");
     saveArticle({ article }, token, keyword)
       .then((savedArticles) => {
-        // console.log("Saved: ", savedArticles);
         setSavedArticles((prevArticles) => [...prevArticles, savedArticles]);
       })
       .catch((err) => console.log(err));
@@ -110,7 +109,6 @@ function App() {
 
   const handleUnsaveArticle = (article) => {
     const token = localStorage.getItem("jwt");
-    // console.log(article);
     unsaveArticle(article._id, token)
       .then(() => {
         const postUnsave = savedArticles.filter((card) => {
@@ -131,7 +129,6 @@ function App() {
       .signUp({ email, password, username })
       .then((res) => {
         if (res) {
-          // console.log(res);
           handleSuccessPopup();
           setServerError(null);
         }
