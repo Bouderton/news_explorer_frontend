@@ -110,7 +110,7 @@ function App() {
 
   const handleUnsaveArticle = (article) => {
     const token = localStorage.getItem("jwt");
-    console.log(article);
+    // console.log(article);
     unsaveArticle(article._id, token)
       .then(() => {
         const postUnsave = savedArticles.filter((card) => {
@@ -131,7 +131,7 @@ function App() {
       .signUp({ email, password, username })
       .then((res) => {
         if (res) {
-          console.log(res);
+          // console.log(res);
           handleSuccessPopup();
           setServerError(null);
         }

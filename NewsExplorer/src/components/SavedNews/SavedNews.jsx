@@ -22,9 +22,62 @@ const SavedNews = ({
   const userArticleFilter = savedArticles.filter(
     (article) => article.owner === currentUser._id
   );
+  //keyword array
+  const keywordArray = userArticleFilter.map((article) => article.keyword);
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
+  const getKeywordString = (keywords) => {
+    if (keywordArray.length === 0) {
+      return "";
+    }
+    if (keywordArray.length === 1) {
+      return `${capitalizeFirstLetter(keywordArray[0])}`;
+    }
+    if (keywordArray.length > 1) {
+      const count = {};
+      for (let keyword of keywords) {
+        if (count[keyword]) {
+          count[keyword]++;
+        } else {
+          count[keyword] = 1;
+        }
+      }
+
+      //sort the array, style
+      const sortedKeywordArray = [];
+      for (const item in count) {
+        sortedKeywordArray.push([item, count[item]]);
+      }
+      sortedKeywordArray.sort((a, b) => {
+        return b[1] - a[1];
+      });
+
+      if (sortedKeywordArray.length === 1) {
+        return `${capitalizeFirstLetter(sortedKeywordArray[0][0])}`;
+      } else if (sortedKeywordArray.length === 2) {
+        return `${capitalizeFirstLetter(
+          sortedKeywordArray[0][0]
+        )} and ${capitalizeFirstLetter(sortedKeywordArray[1][0])}`;
+      } else {
+        const firstKeywords = sortedKeywordArray
+          .slice(0, 2)
+          .map((keyword) => capitalizeFirstLetter(keyword[0]))
+          .join(", ");
+        const moreCount = sortedKeywordArray.length - 2;
+        return `${firstKeywords}, and ${moreCount} more`;
+      }
+    } else {
+      return null;
+    }
+  };
+
+  const keywordString = getKeywordString(keywordArray);
 
   // TEMPORARY SAVED CARDS JUST SEARCHING FOR TOP HEADLINES NO BACKEND YET
   useEffect(() => {
+    console.log(keyword);
     if (isSavedNews) {
       getArticles()
         .then((articles) => {
@@ -49,10 +102,7 @@ const SavedNews = ({
           <h1 className="saved__text-title">{`${currentUser?.username}, you have ${userArticleFilter.length} saved articles`}</h1>
           <p className="saved__text-keywords">
             By keywords:
-            <span className="saved__text-span">
-              {" "}
-              word, word, words and 2 others
-            </span>
+            <span className="saved__text-span"> {keywordString}</span>
           </p>
         </div>
       </header>
