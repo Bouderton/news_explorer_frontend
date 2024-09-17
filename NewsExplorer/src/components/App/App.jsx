@@ -236,6 +236,9 @@ function App() {
                         loggedIn={loggedIn}
                         handleLogout={handleLogout}
                         handleEditPopup={handleEditPopup}
+                        setSearching={setSearching}
+                        setIsLoading={setIsLoading}
+                        setArticles={setArticles}
                       />
                       <Main
                         articles={articles}

@@ -1,7 +1,12 @@
 import "./SearchForm.css";
 import { useState } from "react";
 
-const SearchForm = ({ handleSubmit }) => {
+const SearchForm = ({
+  handleSubmit,
+  setSearching,
+  setIsLoading,
+  setArticles,
+}) => {
   const [query, setQuery] = useState("");
 
   function handleQueryChange(e) {
@@ -10,6 +15,9 @@ const SearchForm = ({ handleSubmit }) => {
 
   function handleSearch(e) {
     e.preventDefault();
+    setArticles([]);
+    setSearching(false);
+    setIsLoading(true);
 
     if (!query) {
       alert("Please enter a keyword");

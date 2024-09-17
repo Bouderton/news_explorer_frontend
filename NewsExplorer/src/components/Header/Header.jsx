@@ -9,6 +9,9 @@ const Header = ({
   loggedIn,
   handleLogout,
   handleEditPopup,
+  setSearching,
+  setIsLoading,
+  setArticles,
 }) => {
   return (
     <header className="header">
@@ -23,7 +26,12 @@ const Header = ({
         handleLogout={handleLogout}
         handleEditPopup={handleEditPopup}
       />
-      <SearchForm handleSubmit={handleSubmit} />
+      <SearchForm
+        handleSubmit={handleSubmit}
+        setSearching={setSearching}
+        setIsLoading={setIsLoading}
+        setArticles={setArticles}
+      />
     </header>
   );
 };
