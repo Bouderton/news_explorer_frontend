@@ -72,7 +72,6 @@ const LoginPopup = ({
         required
         minLength="2"
         maxLength="30"
-        a
         className={`popup__form-input ${
           inputFocus === "password" ? "input-focussed" : ""
         }`}
