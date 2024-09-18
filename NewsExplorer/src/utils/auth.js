@@ -1,6 +1,9 @@
 import { checkResponse } from "./NewsApi";
 
-export const baseUrl = "http://localhost:3001";
+const baseUrl =
+  process.env.NODE_ENV === "production"
+    ? "https://api-newsexplorer.utdnews.com"
+    : "http://localhost:3001";
 
 // const authorize = (email, password) => {
 //   return new Promise((resolve) => {
