@@ -1,4 +1,4 @@
-const baseURL = "https://newsapi.org/v2/everything?";
+const baseURL = "https://nomoreparties.co/news/v2/everything?";
 
 export const checkResponse = (res) => {
   return res.ok ? res.json() : Promise.reject(`Error ${res.status}`);
