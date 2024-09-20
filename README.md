@@ -2,6 +2,9 @@
 
 **NewsExplorer** is a web application that allows users to explore, search, and save up-to-date news articles from an open-source news API. The application is built with React JSX on the frontend and will feature a backend implemented with Express and Node.js, allowing users to create and manage their own accounts.
 
+### Deployment
+#### Live Website: [https://newsexplorer.utdnews.com/]
+
 ## Features
 
 - **Responsive Design**: Accessible on desktop, tablet, and mobile devices.
@@ -30,5 +33,3 @@
 
 - **Open Source News API**: The app will integrate with an open-source news API to fetch real-time news articles: [https://newsapi.org]
 
-### Deployment
-#### This app's deployment is in progress!!!
