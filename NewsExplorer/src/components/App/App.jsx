@@ -130,7 +130,6 @@ function App() {
       .then((res) => {
         if (res) {
           handleSuccessPopup();
-          setServerError(null);
         }
       })
       .catch((err) => {
